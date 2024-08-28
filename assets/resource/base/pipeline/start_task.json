@@ -1,0 +1,86 @@
+{   
+	"启动游戏":{
+		"next":[
+			"掉线",
+			"下载资源",
+			"额外弹窗",
+			"公告",
+			"新手冲刺",
+			"签到",
+			"主界面",
+			"进入游戏",
+			"启动"			
+		]
+	},
+
+	"启动" :{
+		"times_limit":1,
+		"is_sub":true,
+		"recognition":"DirectHit",
+		"action":"StartApp",
+		"package":"tw.sonet.princessconnect/jp.co.cygames.activity.OverrideUnityActivity",
+		"post_delay":11900
+	},
+	"进入游戏":{
+		"is_sub":true,
+		"recognition":"OCR",
+		"expected":"Touch",
+		"action": "Click",
+		"post_delay":15920
+	},
+	"下载资源":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"下载资源.png",
+		"action":"Click",
+		"post_delay":4890,
+		"next":[
+			"确定下载资源"
+		]
+	},
+	"确定下载资源":{
+		"recognition":"TemplateMatch",
+		"template":"OK.png",
+		"action":"Click"
+	},
+	"掉线":{
+		"is_sub":true,
+		"recognition":"OCR",
+		"expected":"前往標題",
+		"action": "Click",
+		"post_delay":4890
+	},
+	"签到":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"跳过.png",
+		"action": "Click"
+	},
+	"公告":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"关闭按钮.png",
+		"action":"Click"
+	},
+	"新手冲刺":{
+		"is_sub":true,
+		"recognition":"OCR",
+		"expected":"新手",
+		"action": "Click",
+		"post_delay":5020
+	},
+	"额外弹窗":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"取消按钮.png",
+		"pre_delay":3830,
+		"post_delay":4923,
+		"action":"Click"
+	},
+	"主界面":{
+		"recognition":"TemplateMatch",
+		"template":"确认主界面.png",
+		"action":"DoNothing",
+		"pre_wait_freezes":3899
+	}	
+}

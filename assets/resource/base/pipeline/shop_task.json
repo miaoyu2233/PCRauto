@@ -1,0 +1,68 @@
+{
+	"商店":{
+		"next":[
+			"商店返回主页",
+			"开始购买",
+			"检查商店",
+			"进入商店"
+		]
+	},
+	"进入商店":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"商店.png",
+		"action": "Click"
+	},
+	"检查商店":{
+		"recognition":"TemplateMatch",
+		"template":"商店已购买.png",
+		"action":"Key",
+		"key":111
+	
+	},
+	"开始购买":{
+		"is_sub":true,
+		"recognition":"OCR",
+		"expected":"全部",
+		"action": "Click",
+		"next":[
+			"全部选择"
+		]
+	},
+	"全部选择":{
+		"recognition":"TemplateMatch",
+		"template":"全部选择.png",
+		"action": "Click",
+			"next":[
+				"一次购买"	
+		]
+	},
+	"一次购买":{
+		"recognition":"TemplateMatch",
+		"template":"一次性购买.png",
+		"action": "Click",
+		"next":[
+			"确定"
+		]
+	},
+	"确定":{
+		"recognition":"TemplateMatch",
+		"template":"OK.png",
+		"action": "Click",
+		"post_delay":3000,
+		"next":[
+			"再次确定"
+		]
+	},
+	"再次确定":{
+		"recognition":"TemplateMatch",
+		"template":"OK.png",
+		"action":"Click"
+	},
+	"商店返回主页":{
+		"recognition":"TemplateMatch",
+		"template":"商店已购买.png",
+		"action":"Key",
+		"key":111
+	}
+}

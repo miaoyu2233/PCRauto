@@ -1,0 +1,7 @@
+{
+"关闭游戏":{
+	"recognition":"DirectHit",
+	"action":"StopApp",
+	"package":"tw.sonet.princessconnect"
+	}
+}
