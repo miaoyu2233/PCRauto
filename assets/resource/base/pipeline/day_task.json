@@ -2,12 +2,7 @@
 	"行程表":{
 		"next":[
 			"已经完成行程表",
-			"购买mana",
-			"mana冒险",
-			"经验值冒险",
-			"扫荡地下城",
 			"全部一键执行",
-			"领取奖励",
 			"查看是否完成行程表",
 			"进入行程表"
 		]
@@ -31,10 +26,12 @@
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"一键执行.png",
-		"action":"Click"
+		"action":"Click",
+		"next":[
+			"购买mana"
+		]
 	},
 	"购买mana":{
-		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"OK.png",
 		"action":"Click",
@@ -45,7 +42,10 @@
 	"购买mana下一步":{
 		"recognition":"TemplateMatch",
 		"template":"OK2.png",
-		"action":"Click"
+		"action":"Click",
+		"next":[
+			"扫荡地下城"
+		]
 	},
 	"扫荡地下城":{
 		"is_sub":true,
@@ -59,7 +59,10 @@
 	"扫荡地下城下一步":{
 		"recognition":"TemplateMatch",
 		"template":"OK2.png",
-		"action":"Click"
+		"action":"Click",
+		"next":[
+			"mana冒险"
+		]
 	},
 	"mana冒险":{
 		"is_sub":true,
@@ -73,7 +76,10 @@
 	"mana冒险下一步":{
 		"recognition":"TemplateMatch",
 		"template":"OK2.png",
-		"action":"Click"
+		"action":"Click",
+		"next":[
+			"经验值冒险"
+		]
 	
 	},	
 	"经验值冒险":{
@@ -88,14 +94,10 @@
 	"经验值冒险下一步":{
 		"recognition":"TemplateMatch",
 		"template":"OK2.png",
-		"action":"Click"
-	},
-	"领取奖励":{
-		"is_sub":true,
-		"recognition":"TemplateMatch",
-		"template":"关闭按钮.png",
 		"action":"Click",
-		"post_delay":6000
+		"next":[
+			"巡游返回主页"
+		]
 	},
 	"已经完成行程表":{
 		"recognition":"OCR",

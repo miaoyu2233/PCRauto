@@ -4,6 +4,7 @@
 			"暂无任务奖励领取",
 			"全部领取任务奖励",
 			"确定全部领取任务奖励",
+			"等级提升",
 			"开始领取任务奖励"
 		]
 	},
@@ -37,5 +38,17 @@
 	"暂无任务奖励领取下一步":{
 		"action":"Key",
 		"key":111
+	},
+	"等级提升":{
+		"recognition":"TemplateMatch",
+		"template":"等级提升.png",
+		"next":[
+			"等级提升下一步"
+		]
+	},
+	"等级提升下一步":{
+		"recognition":"TemplateMatch",
+		"template":"等级提升OK.png",
+		"action":"Click"
 	}
 }

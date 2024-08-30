@@ -15,9 +15,9 @@
 	},
 	"普通扭蛋":{
 		"is_sub":true,
-		"recognition":"TemplateMatch",
-		"template":"普通扭蛋.png",
-		"action":"Click",
+		"recognition":"OCR",
+		"expected":"普通",
+		"action": "Click",
 		"post_delay":1330
 	},
 	"开始免费普通扭蛋":{

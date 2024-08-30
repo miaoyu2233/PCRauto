@@ -2,7 +2,9 @@
 	"竞技场":{
 		"next":[
 			"jjc冷却中返回主页面",
-			"领取战斗jjc奖励",
+			"jjc是否领取完奖励",
+			"战斗jjc确定排名",
+			"领取jjc奖励",
 			"jjc战斗开始",
 			"进入冒险页面"
 		]
@@ -19,7 +21,7 @@
 	"进入战斗jjc页面":{
 		"recognition":"TemplateMatch",
 		"template":"战斗jjc.png",
-		"pre_delay":3300,
+		"pre_delay":3110,
 		"post_delay":1900,
 		"action": "Click",
 		"next":[
@@ -29,7 +31,8 @@
 	"jjc战斗":{
 		"recognition":"TemplateMatch",
 		"template":"已进入jjc.png",
-		"pre_delay":1900,
+		"pre_delay":3250,
+		"post_delay":2870,
 		"action":"Click",
 		"target":[661,514,0,0]
 	},
@@ -38,7 +41,7 @@
 		"recognition":"TemplateMatch",
 		"template":"jjc战斗开始.png",
 		"action":"Click",
-		"post_delay":12500,
+		"post_delay":18500,
 		"next":[
 			"战斗jjc下一步"
 		]
@@ -46,12 +49,12 @@
 	"战斗jjc下一步":{
 		"recognition":"OCR",
 		"expected":"下一步",
-		"action":"Click"
+		"action":"Click",
+		"post_delay":2930
 	},
 	"战斗jjc确定排名":{
-		"recognition":"TemplateMatch",
-		"template":"确认jjc排名.png",
-		"action":"Click",
+		"recognition":"OCR",
+		"expected":"排名奖励",
 		"post_delay":2510,
 		"next":[
 			"战斗jjc确定排名下一步"
@@ -62,16 +65,17 @@
 		"template":"确认OK2.png",
 		"action":"Click"
 	},
-	"领取战斗jjc奖励":{
+	"领取jjc奖励":{
+		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"领取jjc奖励.png",
 		"action":"Click",
 		"post_delay":1200,
 		"next":[
-			"确定领取战斗jjc奖励"
+			"确定领取jjc奖励"
 		]
 	},
-	"确定领取战斗jjc奖励":{
+	"确定领取jjc奖励":{
 		"recognition":"TemplateMatch",
 		"template":"OK2.png",
 		"post_delay":1700,
@@ -83,7 +87,23 @@
 	"战斗jjc返回冒险主页":{
 		"action":"Key",
 		"key":111,
-		"post_delay":2800,
+		"post_delay":2810,
+		"next":[
+			"jjc返回主页"
+		]
+	},
+	"jjc返回主页":{
+		"action":"Key",
+		"key":111,
+		"post_delay":2930,
+		"next":[
+			"进入冒险页面公主jjc"
+		]
+	},
+	"进入冒险页面公主jjc":{
+		"action":"Click",
+		"target":[686,698,0,0],
+		"post_delay":2280,
 		"next":[
 			"公主jjc"
 		]
@@ -93,7 +113,7 @@
 		"template":"公主jjc.png",
 		"action":"Click",
 		"next":[
-		"开始公主jjc战斗"
+			"开始公主jjc战斗"
 		]	
 	},
 	"开始公主jjc战斗":{
@@ -101,29 +121,22 @@
 		"action":"Click",
 		"target":[661,514,0,0],
 		"next":[
-			"公主jjc选择队伍"
-		]
-	},
-	"公主jjc选择队伍":{
-		"pre_delay":1100,
-		"action":"Click",
-		"target":[1146,594,0,0],
-		"next":[
 			"公主jjc选择队伍2"
 		]
 	},
 	"公主jjc选择队伍2":{
-		"pre_delay":700,
+		"pre_delay":1100,
 		"action":"Click",
-		"target":[1103,586,0,0],
+		"target":[1146,594,0,0],
 		"next":[
 			"公主jjc选择队伍3"
 		]
 	},
 	"公主jjc选择队伍3":{
-		"pre_delay":650,
+		"pre_delay":700,
 		"action":"Click",
-		"target":[1128,601,0,0],
+		"target":[1103,586,0,0],
+		"post_delay":2720,
 		"next":[
 			"公主jjc开始战斗"
 		]
@@ -131,7 +144,7 @@
 	"公主jjc开始战斗":{
 		"recognition":"TemplateMatch",
 		"template":"jjc战斗开始.png",
-		"post_delay":24600,
+		"post_delay":59630,
 		"next":[
 			"公主jjc下一步"
 		]
@@ -140,38 +153,7 @@
 		"recognition":"OCR",
 		"expected":"下一步",
 		"action":"Click" ,
-		"post_delay":2150,
-		"next":[
-			"领取公主jjc奖励"
-		]
-	},
-		"领取公主jjc奖励":{
-		"recognition":"TemplateMatch",
-		"template":"领取jjc奖励.png",
-		"action":"Click",
-		"post_delay":1120,
-		"next":[
-			"确定领取公主jjc奖励"
-		]
-	},
-	"确定领取公主jjc奖励":{
-		"recognition":"TemplateMatch",
-		"template":"OK2.png",
-		"post_delay":1432,
-		"action":"Click"
-	},
-	"公主jjc返回冒险主页":{
-		"action":"Key",
-		"key":111,
-		"post_delay":1370,
-		"next":[
-			"公主jjc返回主页"
-		]
-	},
-	"公主jjc返回主页":{
-		"action":"Key",
-		"key":111,
-		"post_delay":1020
+		"post_delay":2150
 	},
 	"jjc冷却中返回主页面":{
 		"recognition":"OCR",
@@ -192,5 +174,13 @@
 	"jjc冷却中返回主页面":{
 		"action":"Key",
 		"key":111
+	},
+	"jjc是否领取完奖励":{
+		"recognition":"FeatureMatch",
+		"template":"竞技场领取判断.png",
+		"green_mask":true,
+		"next":[
+			"jjc冷却中返回主页面下一步"
+		]
 	}
 }
