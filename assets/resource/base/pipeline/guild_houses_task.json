@@ -2,6 +2,7 @@
 	"领取公会小屋奖励":{
 		"next":[
 		"公会小屋回到主页",
+		"公会小屋确定领取",
 		"公会小屋全部领取",
 		"进入公会小屋"
 		]
@@ -16,12 +17,10 @@
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"公会小屋全部领取.png",
-		"action":"Click",
-		"next":[
-			"公会小屋确定领取"
-		]
+		"action":"Click"
 	},
 	"公会小屋确定领取":{
+		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"公会小屋确定领取.png",
 		"action":"Click",

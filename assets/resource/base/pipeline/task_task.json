@@ -29,8 +29,9 @@
 		"post_delay":2130
 	},
 	"暂无任务奖励领取":{
-		"recognition":"TemplateMatch",
-		"template":"没有可领取的任务奖励.png",
+		"recognition":"FeatureMatch",
+		"green_mask":true,
+		"template":"任务奖励全部领取if.png",
 		"next":[
 			"暂无任务奖励领取下一步"
 		]

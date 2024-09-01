@@ -1,25 +1,32 @@
 {   
 	"启动游戏":{
 		"next":[
+			"开始启动",
+			"启动"
+		]
+	
+	},
+	"开始启动":{
+		"recognition":"TemplateMatch",
+		"template":"sone.png",
+		"post_delay":7990,
+		"next":[
 			"掉线",
 			"下载资源",
-			"额外弹窗",
-			"公告",
-			"新手冲刺",
 			"签到",
+			"战队竞赛最终日",
 			"主界面",
 			"进入游戏",
-			"启动"			
+			"确认进入到公告页面"
 		]
 	},
-
-	"启动" :{
+	"启动":{
+		"post_delay":1990,
 		"times_limit":1,
 		"is_sub":true,
 		"recognition":"DirectHit",
 		"action":"StartApp",
-		"package":"tw.sonet.princessconnect/jp.co.cygames.activity.OverrideUnityActivity",
-		"post_delay":11900
+		"package":"tw.sonet.princessconnect/jp.co.cygames.activity.OverrideUnityActivity"
 	},
 	"进入游戏":{
 		"is_sub":true,
@@ -48,16 +55,16 @@
 		"recognition":"OCR",
 		"expected":"前往標題",
 		"action": "Click",
-		"post_delay":4890
+		"post_delay":14890
 	},
 	"签到":{
 		"is_sub":true,
+		"post_delay":6790,
 		"recognition":"TemplateMatch",
 		"template":"跳过.png",
 		"action": "Click"
 	},
 	"公告":{
-		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"关闭按钮.png",
 		"action":"Click"
@@ -69,18 +76,44 @@
 		"action": "Click",
 		"post_delay":5020
 	},
-	"额外弹窗":{
+	"确认进入到公告页面":{
 		"is_sub":true,
+		"next":[
+			"已进入到公告页面",
+			"未进入到公告页面"
+		]
+	},
+	"已进入到公告页面":{
+		"is_sub":true,
+		"post_delay":2020,
 		"recognition":"TemplateMatch",
-		"template":"取消按钮.png",
-		"pre_delay":3830,
-		"post_delay":4923,
-		"action":"Click"
+		"template":"公告.png",
+		"next":[
+			"公告"
+		]
+	},
+	"未进入到公告页面":{
+		"post_delay":2780,
+		"action":"Click",
+		"target":[564,403,0,0]
 	},
 	"主界面":{
 		"recognition":"TemplateMatch",
 		"template":"确认主界面.png",
 		"action":"DoNothing",
-		"pre_wait_freezes":3899
-	}	
+		"pre_wait_freezes":3293
+	},
+	"战队竞赛最终日":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"战队竞赛最终日.png",
+		"next":[
+			"战队竞赛最终日离开"
+		]
+	},
+	"战队竞赛最终日离开":{
+		"recognition":"TemplateMatch",
+		"template":"战队竞赛最终日离开.png",
+		"action":"Click"
+	}
 }
