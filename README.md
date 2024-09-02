@@ -15,7 +15,7 @@ PCR 公主连结（PrincessConnect）**文字识别+图像识别自动化小助�
 >虽说公主连结不怎么肝,但是这个工具主要是为了方便玩公主连结的时候不用管还能节约时间去干其他事情而制作的  
 因为本人是咸鱼玩家，所以本助手很多地方不能实现收益最大化，可以自己看着先试试再说
 
-## 目前主要功能<img alt="LOGO" src="https://img.picui.cn/free/2024/08/28/66ceb8a9d9bcd.png" width="97.8" height="138" />
+## 目前主要功能 <img alt="LOGO" src="https://img.picui.cn/free/2024/08/28/66ceb8a9d9bcd.png" width="97.8" height="138" />
 - 自动启动游戏  
 - 自动刷当期活动（测试中）  
 - 自动看角色剧情
@@ -33,7 +33,7 @@ PCR 公主连结（PrincessConnect）**文字识别+图像识别自动化小助�
 如果**下载慢**也可以加入企鹅群下载
     
     979858935  密码:りのPCRauto
-## 注意事项<img alt="LOGO" src="https://img.picui.cn/free/2024/09/02/66d5512be130b.png" width="128" height="83.5" />
+## 注意事项 <img alt="LOGO" src="https://krseoul.imgtbl.com/i/2024/09/02/66d5a5c494c06.png" width="128" height="83.5" />
 - 模拟器分辨率建议为 **1280x720(DPI 240)**  
 
 - 所有功能最初起点和终点都是**游戏主页**，如果要单独执行某个功能或某几个，请保证游戏**在主页**再**启动 PCRauto助手**  
@@ -55,7 +55,7 @@ PCR 公主连结（PrincessConnect）**文字识别+图像识别自动化小助�
 - **自动看角色剧情**
 >自动寻找new的角色剧情并观看，请注意，下载剧情时长不能超过3分钟。此任务完成后不会返回主页，将会反复跳转
 
-## 璃乃都能学会的使用教程!<img alt="LOGO" src="https://img.picui.cn/free/2024/09/02/66d5512be130b.png" width="128" height="83.5" />
+## 璃乃都能学会的使用教程!  <img alt="LOGO" src="https://krseoul.imgtbl.com/i/2024/09/02/66d5a5c494c06.png" width="128" height="83.5" />
 **点击Releases下载最新版程序(建议Windows系统用户直接下PCRauto-GUI,有GUI界面)**  
 
 **Windows系统用户**  
