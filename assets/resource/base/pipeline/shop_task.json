@@ -22,6 +22,22 @@
 	},
 	"开始购买":{
 		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"已进入商店.png",
+		"post_delay":1230,
+		"next":[
+			"选中一般商店"
+		]
+	},
+	"选中一般商店":{
+		"action":"Click",
+		"post_delay":1010,
+		"target":[172,93,0,0],
+		"next":[
+			"商店全部选择"
+		]
+	},
+	"商店全部选择":{
 		"recognition":"OCR",
 		"expected":"全部",
 		"action": "Click",
@@ -49,7 +65,7 @@
 		"recognition":"TemplateMatch",
 		"template":"OK.png",
 		"action": "Click",
-		"post_delay":3000,
+		"post_delay":2900,
 		"next":[
 			"再次确定"
 		]
@@ -57,12 +73,14 @@
 	"再次确定":{
 		"recognition":"TemplateMatch",
 		"template":"OK.png",
-		"action":"Click"
+		"action":"Click",
+		"post_delay":3312
 	},
 	"商店返回主页":{
 		"recognition":"TemplateMatch",
 		"template":"商店已购买.png",
 		"action":"Key",
+		"post_delay":4101,
 		"key":111
 	}
 }

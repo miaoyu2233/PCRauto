@@ -11,22 +11,25 @@
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"公会小屋.png",
-		"action":"Click"
+		"action":"Click",
+		"post_delay":3419
 	},
 	"公会小屋全部领取":{
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"公会小屋全部领取.png",
-		"action":"Click"
+		"action":"Click",
+		"post_delay":2630
 	},
 	"公会小屋确定领取":{
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"公会小屋确定领取.png",
 		"action":"Click",
-		"post_delay":3030
+		"post_delay":5030
 	},
 	"公会小屋回到主页":{
+		"post_delay":3110,
 		"recognition":"TemplateMatch",
 		"template":"公会小屋全部领取.png",
 		"action":"Click",

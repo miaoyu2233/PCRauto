@@ -8,8 +8,8 @@
 	},
 	"开始启动":{
 		"recognition":"TemplateMatch",
-		"template":"sone.png",
-		"post_delay":7990,
+		"template":"选单.png",
+		"post_delay":4890,
 		"next":[
 			"掉线",
 			"下载资源",
@@ -21,9 +21,8 @@
 		]
 	},
 	"启动":{
-		"post_delay":1990,
-		"times_limit":1,
 		"is_sub":true,
+		"post_delay":18270,
 		"recognition":"DirectHit",
 		"action":"StartApp",
 		"package":"tw.sonet.princessconnect/jp.co.cygames.activity.OverrideUnityActivity"

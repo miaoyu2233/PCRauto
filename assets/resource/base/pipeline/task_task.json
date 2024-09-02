@@ -18,6 +18,13 @@
 	"全部领取任务奖励":{
 		"is_sub":true,
 		"recognition":"TemplateMatch",
+		"template":"每日任务界面.png",
+		"next":[
+			"开始全部领取任务奖励"
+		]
+	},
+	"开始全部领取任务奖励":{
+		"recognition":"TemplateMatch",
 		"template":"全部领取.png",
 		"action":"Click"
 	},

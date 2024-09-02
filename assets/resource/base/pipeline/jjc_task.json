@@ -47,9 +47,11 @@
 		]
 	},
 	"jjc跳过":{
+		"timeout":120000,
 		"recognition":"TemplateMatch",
 		"template":"jjc跳过.png",
-		"post_delay":8120,
+		"action":"Click",
+		"post_delay":7120,
 		"next":[
 			"战斗jjc下一步"
 		]
@@ -58,7 +60,7 @@
 		"recognition":"OCR",
 		"expected":"下一步",
 		"action":"Click",
-		"post_delay":2930
+		"post_delay":4030
 	},
 	"战斗jjc确定排名":{
 		"is_sub":true,
@@ -77,9 +79,17 @@
 		"recognition":"TemplateMatch",
 		"template":"领取jjc奖励.png",
 		"action":"Click",
-		"post_delay":1200,
 		"next":[
+			"无jjc奖励",
 			"确定领取jjc奖励"
+		]
+	},
+	"无jjc奖励":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"jjc奖励已领完.png",
+		"next":[
+			"战斗jjc返回冒险主页"
 		]
 	},
 	"确定领取jjc奖励":{
@@ -106,14 +116,11 @@
 		"post_delay":2930,
 		"next":[
 			"进入冒险页面公主jjc"
-		],
-		"runout_next":[
-			"完成jjc"
 		]
 	},
 	"完成jjc":{
 		"recognition":"DirectHit",
-		"action":"DoNothing"
+		"action":"StopTask"
 	},
 	"进入冒险页面公主jjc":{
 		"action":"Click",
@@ -160,26 +167,65 @@
 		"recognition":"TemplateMatch",
 		"template":"jjc战斗开始.png",
 		"action":"Click",
-		"post_delay":3230,
+		"post_delay":2330,
 		"next":[
 			"公主jjc跳过"
 		]
 	},
 	"公主jjc跳过":{
+		"timeout":120000,
 		"recognition":"TemplateMatch",
 		"template":"jjc跳过.png",
-		"post_delay":8820,
+		"action":"Click",
+		"post_delay":16820,
 		"next":[
 			"公主jjc下一步"
+		]
+	},
+	"公主jjc确定排名":{
+		"times_limit":1,
+		"next":[
+			"公主jjc有排名",
+			"公主jjc无排名"
+		],
+		"runout_next":[
+			"完成jjc"
+		]
+	},
+	"公主jjc无排名":{
+		"times_limit":1,
+		"post_delay":2230,
+		"next":[
+			"领取公主jjc奖励"
+		],
+		"runout_next":[
+			"完成jjc"
+		]
+	},
+	"公主jjc有排名":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"jjc排名.png",
+		"post_delay":2510,
+		"next":[
+			"公主jjc有排名下一步"
+		]
+	},
+	"公主jjc有排名下一步":{
+		"action":"Key",
+		"key":111,
+		"post_delay":3210,
+		"next":[
+			"领取公主jjc奖励"
 		]
 	},
 	"公主jjc下一步":{
 		"recognition":"OCR",
 		"expected":"下一步",
 		"action":"Click",
-		"post_delay":2930,
+		"post_delay":4430,
 		"next":[
-			"领取公主jjc奖励"
+			"公主jjc确定排名"		
 		]
 	},
 	"领取公主jjc奖励":{
@@ -211,8 +257,13 @@
 	"公主jjc返回主页":{
 		"action":"Key",
 		"key":111,
-		"post_delay":2930	
-
+		"post_delay":2930,
+		"next":[
+			"完成jjc任务"
+		]
+	},
+	"完成jjc任务":{
+		"action":"StopTask"
 	},
 	"jjc冷却中返回主页面":{
 		"recognition":"TemplateMatch",
