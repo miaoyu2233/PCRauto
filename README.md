@@ -8,7 +8,7 @@
 </div>
 
 PCR 公主连结（PrincessConnect）**图像识别自动化小助手** ***PCRauto***  
-**禁止将PCRauto用于任何商业盈利行为**
+**禁止将PCRauto用于任何商业盈利行为**  
 **带GUI界面,缡乃都会操作**  
 仅支持 公主连结 台服（中国台湾繁体字服）  
 本项目由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework)及[Tkinter_MAA-GUI](https://github.com/overflow65537/Tkinter_MAA-GUI)
