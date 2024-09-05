@@ -57,8 +57,9 @@
 		"post_delay":14890
 	},
 	"签到":{
+		"timeout":180000,
 		"is_sub":true,
-		"post_delay":6790,
+		"post_delay":4790,
 		"recognition":"TemplateMatch",
 		"template":"跳过.png",
 		"action": "Click"
@@ -76,6 +77,7 @@
 		"post_delay":5020
 	},
 	"确认进入到公告页面":{
+		"timeout":240000,
 		"is_sub":true,
 		"next":[
 			"已进入到公告页面",

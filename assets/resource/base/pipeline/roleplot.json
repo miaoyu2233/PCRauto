@@ -11,7 +11,7 @@
 	"is_sub":true,
 	"action":"Click",
 	"target":[582,691,0,0],
-	"post_delay":2120
+	"post_delay":8120
 	},
 "角色剧情页面":{
 	"timeout":180000,
@@ -21,8 +21,33 @@
 	"action":"Click",
 	"post_delay":2616,
 	"next":[
+		"是否已完成角色剧情",
 		"选中角色new"
 		]
+	},
+	"是否已完成角色剧情":{
+		"is_sub":true,
+		"timeout":180000,
+		"post_delay":2104,
+		"pre_delay":1000,
+		"recognition":"TemplateMatch",
+		"template":"角色剧情已完成.png",
+		"action":"Key",
+		"key":111,
+		"next":[
+			"角色剧情回到主页"
+		]
+	},
+	"角色剧情回到主页":{
+		"action":"Key",
+		"post_delay":1203,
+		"key":111,
+		"next":[
+			"完成角色剧情任务"
+		]
+	},
+	"完成角色剧情任务":{
+		"action":"StopTask"
 	},
 	"选中角色new":{
 		"action":"Click",
@@ -40,8 +65,9 @@
 	"选择new角色剧情":{
 		"recognition":"TemplateMatch",
 		"template":"角色剧情new.png",
-		"post_delay":1012,
+		"post_delay":1612,
 		"action":"Click",
+		"target_offset":[0,20,0,0],
 		"next":[
 			"追加角色剧情资料下载"
 		]
@@ -63,7 +89,7 @@
 	},
 	"角色剧情菜单":{
 		"is_sub":true,
-		"timeout":180000,
+		"timeout":600000,
 		"recognition":"TemplateMatch",
 		"template":"剧情菜单.png",
 		"action":"Click",
@@ -73,6 +99,7 @@
 		]
 	},
 	"跳过角色剧情":{
+		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"跳过剧情.png",
 		"action":"Click",
@@ -82,6 +109,7 @@
 		]
 	},
 	"确定跳过角色剧情":{
+		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"确定跳过剧情.png",
 		"action":"Click",
