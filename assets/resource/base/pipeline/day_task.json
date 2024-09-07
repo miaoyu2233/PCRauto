@@ -11,14 +11,14 @@
 		"recognition":"TemplateMatch",
 		"template":"行程表.png",
 		"action":"Click",
-		"post_delay":3230
+		"post_delay":6230
 	},
 	"全部一键执行":{
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"一键执行.png",
 		"action":"Click",
-		"post_delay":3510,
+		"post_delay":4510,
 		"next":[
 			"购买mana"
 		]
@@ -26,13 +26,13 @@
 	"购买mana":{
 		"target":[794,493,0,0],
 		"action":"Click",
-		"post_delay":3620,
+		"post_delay":4620,
 		"next":[
 			"购买mana下一步"
 		]
 	},
 	"购买mana下一步":{
-		"post_delay":3720,
+		"post_delay":4720,
 		"target":[690,626,0,0],
 		"action":"Click",
 		"next":[
@@ -40,7 +40,7 @@
 		]
 	},
 	"扫荡地下城":{
-		"post_delay":3610,
+		"post_delay":4610,
 		"target":[808,496,0,0],
 		"action":"Click",
 		"next":[
@@ -48,7 +48,7 @@
 		]
 	},
 	"扫荡地下城下一步":{
-		"post_delay":3600,
+		"post_delay":4600,
 		"target":[665,648,0,0],
 		"action":"Click",
 		"next":[
@@ -56,7 +56,7 @@
 		]
 	},
 	"mana冒险":{
-		"post_delay":3710,
+		"post_delay":4710,
 		"target":[826,482,0,0],
 		"action":"Click",
 		"next":[
@@ -64,7 +64,7 @@
 			]
 	},
 	"mana冒险下一步":{
-		"post_delay":3630,
+		"post_delay":4630,
 		"target":[636,640,0,0],
 		"action":"Click",
 		"next":[
@@ -73,7 +73,7 @@
 	
 	},	
 	"经验值冒险":{
-		"post_delay":3610,
+		"post_delay":4610,
 		"target":[834,489,0,0],
 		"action":"Click",
 		"next":[
@@ -81,7 +81,7 @@
 			]
 	},
 	"经验值冒险下一步":{
-		"post_delay":3890,
+		"post_delay":4890,
 		"target":[661,648,0,0],
 		"action":"Click",
 		"next":[
@@ -90,7 +90,7 @@
 	},
 	"公会点赞":{
 		"target":[647,493,0,0],
-		"post_delay":3820,
+		"post_delay":4820,
 		"action":"Click",
 		"next":[
 			"公会点赞下一步"
@@ -98,7 +98,7 @@
 	},
 	"公会点赞下一步":{
 		"target":[647,633,0,0],
-		"post_delay":3991,
+		"post_delay":4991,
 		"action":"Click"
 	},
 	"已经完成行程表":{
@@ -106,7 +106,7 @@
 		"recognition":"FeatureMatch",
 		"template":"已完成全部行程表.png",
 		"target":[399,626,0,0],
-		"post_delay":3661,
+		"post_delay":6361,
 		"action":"Click"
 	}
 }

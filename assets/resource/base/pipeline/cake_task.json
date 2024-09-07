@@ -34,16 +34,25 @@
 	},
 	"选择角色分类3":{
 		"action":"Click",
-		"post_delay":1390,
+		"post_delay":1790,
 		"target":[819,633,0,0],
 		"next":[
+			"确定角色页面是否是升序",
 			"选择角色分类4"
 		]
 	},
 	"选择角色分类4":{
 		"action":"Click",
-		"post_delay":1813,
+		"post_delay":2213,
 		"target":[1057,28,0,0],
+		"next":[
+			"选择角色分类5"
+		]
+	},
+	"确定角色页面是否是升序":{
+		"pre_delay":1879,
+		"recognition":"OCR",
+		"expected":"升序",
 		"next":[
 			"选择角色分类5"
 		]

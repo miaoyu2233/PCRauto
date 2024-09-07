@@ -101,8 +101,10 @@
 	"主界面":{
 		"recognition":"TemplateMatch",
 		"template":"确认主界面.png",
+		"pre_delay":8120,
 		"action":"DoNothing",
-		"pre_wait_freezes":3293
+		"pre_wait_freezes":3293,
+		"post_delay":6266
 	},
 	"战队竞赛最终日":{
 		"is_sub":true,

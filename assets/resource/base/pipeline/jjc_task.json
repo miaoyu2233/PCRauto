@@ -48,6 +48,7 @@
 	},
 	"jjc战斗开始":{
 		"is_sub":true,
+		"timeout":120000,
 		"recognition":"TemplateMatch",
 		"template":"jjc战斗开始.png",
 		"action":"Click",
@@ -57,7 +58,7 @@
 		]
 	},
 	"jjc跳过":{
-		"timeout":120000,
+		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"jjc跳过.png",
 		"action":"Click",
