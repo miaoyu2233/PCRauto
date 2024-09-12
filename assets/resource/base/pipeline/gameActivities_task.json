@@ -104,8 +104,8 @@
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"NEXT.png",
+		"target_offset":[0,-70,0,0],
 		"action":"Click",
-		"target_offset":[0,140,0,0],
 		"post_delay":3321,
 		"next":[
 			"活动开启auto战斗"	

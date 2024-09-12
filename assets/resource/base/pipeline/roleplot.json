@@ -1,7 +1,9 @@
 {
 "角色剧情":{
+	"post_delay":2231,
 	"next":[
 		"角色剧情页面",
+		"对话框选项",
 		"角色剧情菜单",
 		"选中剧情页面"
 		]
@@ -114,5 +116,14 @@
 		"template":"确定跳过剧情.png",
 		"action":"Click",
 		"post_delay":2110
+	},
+	"对话框选项":{
+		"is_sub":true,
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"选择对话框.png",
+		"action":"Click",
+		"pre_delay":2300,
+		"post_delay":1303
 	}
 }

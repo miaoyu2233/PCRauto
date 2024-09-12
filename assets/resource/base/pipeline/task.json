@@ -1,0 +1,13 @@
+{
+	"测试":{
+		"post_delay":1000,
+		"next":[
+			"测试1"
+		]
+	},
+	"测试1":{
+		"recognition":"TemplateMatch",
+		"template":"选择对话框.png",
+		"action":"Click"
+	}
+}

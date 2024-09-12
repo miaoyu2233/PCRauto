@@ -65,6 +65,7 @@
 		"action": "Click"
 	},
 	"公告":{
+		"timeout":240000,
 		"recognition":"TemplateMatch",
 		"template":"关闭按钮.png",
 		"action":"Click"
@@ -99,6 +100,7 @@
 		"target":[564,403,0,0]
 	},
 	"主界面":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"确认主界面.png",
 		"pre_delay":8120,
