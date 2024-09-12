@@ -12,6 +12,7 @@ PCR 公主连结（PrincessConnect）**图像识别自动化小助手** ***PCRau
 **带GUI界面,缡乃都会操作**  
 仅支持 公主连结 台服（中国台湾繁体字服）以及 日服  
 日服将在v1.3.0大版本中更新  
+本人不看Issues，请勿提交，有问题请加入企鹅群私聊反馈  
 本项目由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework)及[WFAWPF](https://github.com/SweetSmellFox/MFAWPF)强力驱动！  
 >虽说公主连结不怎么肝,但是这个工具主要是为了方便玩公主连结的时候不用管还能节约时间去干其他事情而制作的  
 因为本人是咸鱼玩家，这个小助手主要是自己用的，所以本助手很多地方尽量在实现收益最大化，可以自己看着先试试再说
