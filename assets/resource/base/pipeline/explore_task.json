@@ -20,20 +20,23 @@
 		"template":"探险文字.png",
 		"action":"Click",
 		"pre_delay":4990,
-		"post_delay":2780
+		"post_delay":6780
 	},
 	"开始进入探险事件":{
 		"recognition":"TemplateMatch",
 		"template":"冒险目的地.png",
-		"post_delay":3513,
+		"post_delay":3213,
 		"next":[
-			"进入探险事件new"
+			"进入探险事件new",
+			"探险事件已完成"
 		]
 	},
 	"进入探险事件new":{
-		"recognition":"OCR",
-		"expected":["SPECLAL!","EVENT!"],
-		"roi":[1172,205,160,160],
+		"is_sub":true,
+		"threshold":0.6,
+		"recognition":"TemplateMatch",
+		"template":"探险事件确定.png",
+		"roi":[1182,187,160,160],
 		"action":"Click",
 		"post_delay":1567,
 		"next":[
@@ -41,19 +44,17 @@
 		]
 	},
 	"进入探险事件":{
-		"post_delay":6420,
-		"pre_delay":3112,
-		"is_sub":true,
+		"post_delay":1320,
+		"pre_delay":2312,
 		"recognition":"OCR",
-		"expected":["SPECLAL!","EVENT!"],
+		"expected":["SPECIAL!","EVENT!"],
 		"roi":[53,86,1096,540],
 		"target_offset":[0,-100,0,0],
 		"action":"Click",
 		"next":[
 			"探险门",
 			"探险对话事件",
-			"探险获得装备",
-			"探险事件已完成"
+			"探险获得装备"
 		]
 	},
 	"探险门":{
@@ -68,6 +69,7 @@
 	"探险门前进":{
 		"recognition":"TemplateMatch",
 		"template":"探险门前进.png",
+		"action":"Click",
 		"post_delay":4617,
 		"next":[
 			"探险门前进2"

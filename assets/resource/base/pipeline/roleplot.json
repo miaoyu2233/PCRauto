@@ -1,6 +1,6 @@
 {
 "角色剧情":{
-	"post_delay":2231,
+	"post_delay":1131,
 	"next":[
 		"角色剧情页面",
 		"对话框选项",
@@ -9,19 +9,19 @@
 		]
 	},
 "选中剧情页面":{
-	"timeout":180000,
+	"timeout":300000,
 	"is_sub":true,
 	"action":"Click",
 	"target":[582,691,0,0],
-	"post_delay":8120
+	"post_delay":4120
 	},
 "角色剧情页面":{
-	"timeout":180000,
+	"timeout":300000,
 	"is_sub":true,
 	"recognition":"TemplateMatch",
 	"template":"角色剧情.png",
 	"action":"Click",
-	"post_delay":2616,
+	"post_delay":2416,
 	"next":[
 		"是否已完成角色剧情",
 		"选中角色new"
@@ -29,8 +29,8 @@
 	},
 	"是否已完成角色剧情":{
 		"is_sub":true,
-		"timeout":180000,
-		"post_delay":2104,
+		"timeout":300000,
+		"post_delay":2004,
 		"pre_delay":1000,
 		"recognition":"TemplateMatch",
 		"template":"角色剧情已完成.png",
@@ -54,7 +54,7 @@
 	"选中角色new":{
 		"action":"Click",
 		"target":[844,176,0,0],
-		"post_delay":5050,
+		"post_delay":2850,
 		"next":[
 			"选择new角色剧情",
 			"没有new的角色剧情"
@@ -77,23 +77,24 @@
 	"追加角色剧情资料下载":{
 		"recognition":"TemplateMatch",
 		"template":"追加资料下载.png",
-		"post_delay":2631,
+		"post_delay":2031,
 		"next":[
 			"角色剧情无配音"
 		]
 	},
 	"角色剧情无配音":{
-		"timeout":180000,
+		"timeout":300000,
 		"recognition":"TemplateMatch",
 		"template":"无配音.png",
 		"action":"Click",
-		"post_delay":7210
+		"post_delay":2010
 	},
 	"角色剧情菜单":{
 		"is_sub":true,
-		"timeout":600000,
+		"timeout":1200000,
 		"recognition":"TemplateMatch",
 		"template":"剧情菜单.png",
+		"pre_delay":2620,
 		"action":"Click",
 		"post_delay":630,
 		"next":[
@@ -101,29 +102,28 @@
 		]
 	},
 	"跳过角色剧情":{
-		"timeout":180000,
-		"recognition":"TemplateMatch",
-		"template":"跳过剧情.png",
+		"timeout":380000,
+		"target":[1089,68,0,0],
 		"action":"Click",
-		"post_delay":1210,
+		"post_delay":1410,
 		"next":[
 			"确定跳过角色剧情"
 		]
 	},
 	"确定跳过角色剧情":{
-		"timeout":180000,
-		"recognition":"TemplateMatch",
-		"template":"确定跳过剧情.png",
+		"timeout":380000,
+		"target":[819,493,0,0],
 		"action":"Click",
 		"post_delay":2110
 	},
 	"对话框选项":{
 		"is_sub":true,
-		"timeout":180000,
+		"timeout":380000,
+		"threshold":0.9,
 		"recognition":"TemplateMatch",
 		"template":"选择对话框.png",
 		"action":"Click",
-		"pre_delay":2300,
-		"post_delay":1303
+		"pre_delay":2000,
+		"post_delay":1103
 	}
 }

@@ -2,8 +2,8 @@
 	"巡游":{
 		"post_delay":4200,
 		"next":[
-			"开始巡游",
-			"掷骰子"
+			"掷骰子",
+			"开始巡游"
 		]
 		
 	},
@@ -38,7 +38,6 @@
 		"action":"StopTask"
 	},
 	"巡游事件":{
-		"is_sub":true,
 		"post_delay":18310,
 		"next":[
 			"接水果游戏",
@@ -51,8 +50,13 @@
 			"巡游获得料理",
 			"巡游获得宝物",
 			"巡游宝物获得",
-			"巡游回合到达"
+			"巡游回合到达",
+			"巡游事件完成"
 		]
+	},
+	"巡游事件完成":{
+		"template":"DirectHit",
+		"action":"DoNothing"
 	},
 	"巡游获得奖励":{
 		"pre_delay":6200,
@@ -62,7 +66,7 @@
 	},
 	"巡游宝物获得":{
 		"recognition":"OCR",
-		"expected":"Touch!",
+		"expected":"TOUCH!",
 		"action": "Click",
 		"post_delay":6210,
 		"next":[
@@ -165,7 +169,47 @@
 	"料理已满2":{
 		"action":"Click",
 		"post_delay":1000,
-		"target":[701,496,0,0]
+		"target":[701,496,0,0],
+		"next":[
+			"料理已满3"
+		]
+	},
+	"料理已满3":{
+		"action":"Click",
+		"post_delay":1000,
+		"target":[801,572,0,0],
+		"next":[
+			"料理已满4"
+		]
+	},
+	"料理已满4":{
+		"action":"Click",
+		"post_delay":1500,
+		"target":[690,489,0,0],
+		"next":[
+			"料理已满5"
+		]
+	},
+	"料理已满5":{
+		"post_delay":200,
+		"action":"Key",
+		"key":111,
+		"next":[
+			"料理溢出",
+			"料理已满返回"
+		]
+	},
+	"料理已满返回":{
+		"template":"DirectHit",
+		"action":"DoNothing"
+	},
+	"料理溢出":{
+		"recognition":"TemplateMatch",
+		"template":"料理溢出.png",
+		"post_delay":600,
+		"next":[
+			"料理已满"
+		]
 	},
 	"里程商店":{
 		"recognition":"TemplateMatch",

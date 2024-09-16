@@ -9,8 +9,8 @@
 		"recognition":"TemplateMatch",
 		"template":"遗迹调查.png",
 		"action":"Click",
-		"pre_delay":4200,
-		"post_delay":1700,
+		"pre_delay":3200,
+		"post_delay":1600,
 		"next":[
 			"选择神殿"
 		]
@@ -26,44 +26,7 @@
 		"target":[1071,460,0,0],
 		"post_delay":2990,
 		"next":[
-			"选择神殿2"
+			"选择遗迹2"
 		]
-	},
-	"选择神殿2":{
-		"action":"Click",
-		"target":[963,216,0,0],
-		"post_delay":2810,
-		"next":[
-			"选择神殿3"
-		]
-	},
-	"选择神殿3":{
-		"action":"Click",
-		"target":[791,493,0,0],
-		"post_delay":5010,
-		"next":[
-			"选择神殿4"
-		]
-	},
-	"选择神殿4":{
-		"action":"Click",
-		"target":[704,640,0,0],
-		"post_delay":2630,
-		"next":[
-			"选择神殿5"
-		]
-	},
-	"选择神殿5":{
-		"action":"Key",
-		"key":111,
-		"post_delay":2410,
-		"next":[
-			"选择神殿6"
-		]
-	},
-	"选择神殿6":{
-		"action":"Click",
-		"target":[129,680,0,0],
-		"post_delay":1910
 	}
 }

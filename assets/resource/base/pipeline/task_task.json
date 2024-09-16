@@ -48,6 +48,7 @@
 		"key":111
 	},
 	"等级提升":{
+		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"等级提升.png",
 		"next":[

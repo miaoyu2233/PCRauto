@@ -9,8 +9,8 @@
 		"recognition":"TemplateMatch",
 		"template":"遗迹调查.png",
 		"action":"Click",
-		"pre_delay":4200,
-		"post_delay":1700,
+		"pre_delay":3200,
+		"post_delay":1500,
 		"next":[
 			"选择遗迹"
 		]
@@ -39,7 +39,7 @@
 	},
 	"选择遗迹3":{
 		"action":"Click",
-		"target":[791,493,0,0],
+		"target":[1010,457,0,0],
 		"post_delay":5010,
 		"next":[
 			"选择遗迹4"
@@ -47,16 +47,27 @@
 	},
 	"选择遗迹4":{
 		"action":"Click",
-		"target":[704,640,0,0],
-		"post_delay":2630,
+		"target":[683,633,0,0],
+		"post_delay":1730,
 		"next":[
-			"选择遗迹5"
+			"选择遗迹5x"
+		]
+	},
+	"选择遗迹5x":{
+		"target":[683,633,0,0],
+		"post_delay":1830,
+		"next":[
+			"选择遗迹5",
+			"等级提升"
 		]
 	},
 	"选择遗迹5":{
+		"threshold":0.6,
+		"recognition":"TemplateMatch",
+		"template":"遗迹确认.png",
 		"action":"Key",
 		"key":111,
-		"post_delay":2410,
+		"post_delay":2310,
 		"next":[
 			"选择遗迹6"
 		]

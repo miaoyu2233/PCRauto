@@ -1,26 +1,27 @@
 {
 	"活动剧情x":{
+		"post_delay":1131,
 		"next":[
 			"活动剧情页面x",
 			"对话框选项",
-			"活动剧情菜单x",
+			"角色剧情菜单",
 			"选中活动剧情页面x"
 			]
 		},
 	"选中活动剧情页面x":{
-		"timeout":180000,
+		"timeout":380000,
 		"is_sub":true,
 		"action":"Click",
 		"target":[582,691,0,0],
-		"post_delay":8120
+		"post_delay":3420
 		},
 	"活动剧情页面x":{
-		"timeout":180000,
+		"timeout":380000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"额外活动剧情.png",
 		"action":"Click",
-		"post_delay":2616,
+		"post_delay":2216,
 		"next":[
 			"选中活动new"
 			]		
@@ -44,7 +45,7 @@
 		"选中活动new2":{
 			"action":"Click",
 			"target":[1146,173,0,0],
-			"post_delay":2411,
+			"post_delay":2111,
 			"next":[
 				"选择new活动剧情",
 				"没有new的活动剧情"
@@ -67,44 +68,16 @@
 		"追加活动剧情资料下载x":{
 			"recognition":"TemplateMatch",
 			"template":"追加资料下载.png",
-			"post_delay":2631,
+			"post_delay":2131,
 			"next":[
 				"活动剧情无配音x"
 			]
 		},
 		"活动剧情无配音x":{
-			"timeout":180000,
+			"timeout":380000,
 			"recognition":"TemplateMatch",
 			"template":"无配音.png",
 			"action":"Click",
-			"post_delay":7210
-		},
-		"活动剧情菜单x":{
-			"is_sub":true,
-			"timeout":600000,
-			"recognition":"TemplateMatch",
-			"template":"剧情菜单.png",
-			"action":"Click",
-			"post_delay":630,
-			"next":[
-				"跳过活动剧情x"
-			]
-		},
-		"跳过活动剧情x":{
-			"timeout":180000,
-			"recognition":"TemplateMatch",
-			"template":"跳过剧情.png",
-			"action":"Click",
-			"post_delay":1210,
-			"next":[
-				"确定跳过活动剧情x"
-			]
-		},
-		"确定跳过活动剧情x":{
-			"timeout":180000,
-			"recognition":"TemplateMatch",
-			"template":"确定跳过剧情.png",
-			"action":"Click",
-			"post_delay":2110
+			"post_delay":3210
 		}
 	}
