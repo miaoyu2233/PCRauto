@@ -1,7 +1,9 @@
 {
 	"每日探险":{
+		"rate_limit":2000,
 		"next":[
 			"点击探险",
+			"探险有返回的队伍",
 			"选择探险冒险界面"
 		]
 	},
@@ -9,7 +11,7 @@
 		"is_sub":true,
 		"action":"Click",
 		"target":[729,684,0,0],
-		"post_delay":3900,
+		"post_delay":3800,
 		"next":[
 			"进入探险"
 		]
@@ -18,21 +20,100 @@
 		"recognition":"TemplateMatch",
 		"template":"探险文字.png",
 		"action":"Click",
-		"pre_delay":4990,
-		"post_delay":2780
+		"pre_delay":3000,
+		"post_delay":5000
+	},
+	"探险有返回的队伍":{
+		"rate_limit":2000,
+		"recognition":"TemplateMatch",
+		"template":"探险已有返回的队伍.png",
+		"action":"Click",
+		"post_delay":4500,
+		"target":[859,648,0,0],
+		"next":[
+			"探险再次出发"
+		]
+	},
+	"探险再次出发":{
+		"action":"Click",
+		"post_delay":3000,
+		"target":[1046,655,0,0],
+		"next":[
+			"探险回忆事件",
+			"探险再次出发2"
+		]
+	},
+	"探险再次出发2":{
+		"action":"Click",
+		"post_delay":1000,
+		"target":[1046,655,0,0],
+		"next":[
+			"探险确定再次出发"
+		]
+	},
+	"探险回忆事件":{
+		"recognition":"TemplateMatch",
+		"template":"探险回忆事件.png",
+		"action":"Click",
+		"post_delay":2000,
+		"next":[
+			"探险确定再次出发"
+		]
+	},
+	"探险确定再次出发":{
+		"action":"Click",
+		"post_delay":1000,
+		"target":[1157,648,0,0],
+		"next":[
+			"探险确定再次出发2"
+		]
+	},
+	"探险确定再次出发2":{
+		"action":"Click",
+		"post_delay":1000,
+		"target":[711,583,0,0],
+		"next":[
+			"探险离开"
+		]
+	},
+	"探险离开":{
+		"action":"Key",
+		"key":111,
+		"post_delay":1000,
+		"next":[
+			"探险返回主页"
+		]
 	},
 	"点击探险":{
+		"recognition":"TemplateMatch",
+		"template":"探险全部返回.png",
 		"action":"Click",
 		"target":[1222,565,0,0],
 		"post_delay":13210,
 		"next":[
+			"探险没有已返回的队伍",
 			"点击探险2"
+		]
+	},
+	"探险没有已返回的队伍":{
+		"recognition":"TemplateMatch",
+		"template":"探险没有已返回的队伍.png",
+		"next":[
+			"探险返回主页"
 		]
 	},
 	"点击探险2":{
 		"action":"Click",
 		"target":[1146,655,0,0],
-		"post_delay":6210,
+		"post_delay":810,
+		"next":[
+			"点击探险2x"
+		]
+	},
+	"点击探险2x":{
+		"action":"Click",
+		"target":[1146,655,0,0],
+		"post_delay":1500,
 		"next":[
 			"点击探险3"
 		]

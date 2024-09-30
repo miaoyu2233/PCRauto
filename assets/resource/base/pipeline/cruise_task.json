@@ -1,11 +1,13 @@
 {
 	"巡游":{
-		"post_delay":4200,
+		"post_delay":2200,
+		"rate_limit":2000,
+		"timeout":180000,
 		"next":[
 			"掷骰子",
-			"开始巡游"
+			"开始巡游",
+			"巡游事件"
 		]
-		
 	},
 	"开始巡游":{
 		"is_sub":true,
@@ -15,6 +17,7 @@
 		"post_delay":3500
 	},
 	"掷骰子":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"骰子.png",
@@ -38,7 +41,9 @@
 		"action":"StopTask"
 	},
 	"巡游事件":{
-		"post_delay":18310,
+		"timeout":180000,
+		"rate_limit":100,
+		"post_delay":1000,
 		"next":[
 			"接水果游戏",
 			"巡游羁绊效果y",
@@ -51,7 +56,7 @@
 			"巡游获得宝物",
 			"巡游宝物获得",
 			"巡游回合到达",
-			"巡游事件完成"
+			"巡游事件"
 		]
 	},
 	"巡游事件完成":{

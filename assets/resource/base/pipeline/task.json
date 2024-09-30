@@ -9,5 +9,45 @@
 		"recognition":"TemplateMatch",
 		"template":"选择对话框.png",
 		"action":"Click"
+	},
+	"dian":{
+		"post_delay":1,
+		"pre_delay":1,
+		"action":"Click",
+		"target":[582,691,0,0],
+		"next":[
+			"dian1"
+		]
+	},
+	"dian1":{
+		"pre_delay":1,
+		"post_delay":1,
+		"action":"Click",
+		"target":[582,691,0,0],
+		"next":[
+			"dian2"
+		]
+	},
+	"dian2":{
+		"pre_delay":1,
+		"post_delay":1,
+		"action":"Click",
+		"target":[582,691,0,0],
+		"next":[
+			"dian3"
+		]
+	},
+		"dian3":{
+		"pre_delay":1,
+		"post_delay":1,
+		"action":"Click",
+		"next":[
+			"dian4"
+		],
+		"target":[582,691,0,0]
+	},
+	"dian4":{
+		"action":"Key",
+		"key":111
 	}
 }

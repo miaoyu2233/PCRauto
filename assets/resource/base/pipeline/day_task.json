@@ -24,17 +24,9 @@
 		]
 	},
 	"购买mana":{
-		"target":[794,493,0,0],
+		"target":[539,500,0,0],
 		"action":"Click",
 		"post_delay":4920,
-		"next":[
-			"购买mana下一步"
-		]
-	},
-	"购买mana下一步":{
-		"post_delay":4920,
-		"target":[690,626,0,0],
-		"action":"Click",
 		"next":[
 			"扫荡地下城"
 		]
@@ -98,7 +90,14 @@
 	},
 	"公会点赞下一步":{
 		"target":[647,633,0,0],
-		"post_delay":4991,
+		"post_delay":4591,
+		"action":"Click",
+		"next":[
+			"离开行程表"
+		]
+	},
+	"离开行程表":{
+		"target":[391,648,0,0],
 		"action":"Click"
 	},
 	"已经完成行程表":{
