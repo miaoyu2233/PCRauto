@@ -36,7 +36,7 @@
 		"threshold":0.6,
 		"recognition":"OCR",
 		"expected":["SPECIAL!","EVENT!"],
-		"roi":[1182,187,160,160],
+		"roi":[1160,187,160,160],
 		"action":"Click",
 		"post_delay":1567,
 		"next":[

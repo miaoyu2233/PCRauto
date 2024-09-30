@@ -1,11 +1,11 @@
 {
 	"巡游":{
 		"post_delay":2200,
-		"rate_limit":2000,
+		"rate_limit":5000,
 		"timeout":180000,
 		"next":[
-			"掷骰子",
 			"开始巡游",
+			"掷骰子",
 			"巡游事件"
 		]
 	},
@@ -14,7 +14,7 @@
 		"recognition":"TemplateMatch",
 		"template":"巡游.png",
 		"action":"Click",
-		"post_delay":3500
+		"post_delay":6000
 	},
 	"掷骰子":{
 		"timeout":60000,
@@ -151,7 +151,7 @@
 	"巡游回合到达3":{
 		"target":[693,619,0,0],
 		"action":"Click",
-		"post_delay":4310,
+		"post_delay":6000,
 		"next":[
 			"巡游回合到达4"
 		]
@@ -251,6 +251,14 @@
 		]
 	},
 	"里程商店5":{
+		"target":[693,633,0,0],
+		"action":"Click",
+		"post_delay":1000,
+		"next":[
+			"里程商店6"
+		]
+	},
+	"里程商店6":{
 		"target":[783,633,0,0],
 		"action":"Click",
 		"post_delay":1000
