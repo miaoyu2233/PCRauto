@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="LOGO" src="https://img.picui.cn/free/2024/08/27/66cdf2bcb73ab.png" width="280" height="280" />
+  <img alt="LOGO" src="https://s2.loli.net/2024/09/30/I1KkYWRjXsaJ9gf.png" width="280" height="280" />
 </p>
 
 <div align="center">
@@ -10,27 +10,25 @@
 PCR 公主连结（PrincessConnect）**图像识别自动化小助手** ***PCRauto***  
 **禁止将PCRauto用于任何商业盈利行为**  
 **带GUI界面,缡乃都会操作**  
-仅支持 公主连结 台服（中国台湾繁体字服）以及 日服  
-日服将在v1.3.0大版本中更新  
+仅支持 公主连结 台服（中国台湾繁体字服）
+由于日服没人使用，此项计划已暂时搁置，未来有机会会加入
 本人不看Issues，请勿提交，有问题请加入企鹅群私聊反馈  
 本项目由 [MaaFramework](https://github.com/MaaXYZ/MaaFramework)及[WFAWPF](https://github.com/SweetSmellFox/MFAWPF)强力驱动！  
 >虽说公主连结不怎么肝,但是这个工具主要是为了方便玩公主连结的时候不用管还能节约时间去干其他事情而制作的  
 因为本人是咸鱼玩家，这个小助手主要是自己用的，所以本助手很多地方尽量在实现收益最大化，可以自己看着先试试再说
 
-## 目前主要功能 <img alt="LOGO" src="https://img.picui.cn/free/2024/08/28/66ceb8a9d9bcd.png" width="97.8" height="138" />
+## 目前主要功能 <img alt="LOGO" src="https://s2.loli.net/2024/09/30/Xzy6tETFQWI2rAD.png" width="97.8" height="138" />
 - 自动启动游戏
-- 巡游(测试中)（我没骰子了）
-- 自动探险(测试中)
-- 探险事件(测试中)
+- 巡游
+- 自动探险
+- 探险事件
+- 主线扫荡
 - 刷当期活动（测试中）
-- 自动看角色剧情
-- 自动看活动剧情  
-- 自动看露娜塔剧情
+- 自动看剧情
 - 喂蛋糕好感
 - 商店买经验瓶  
 - 一键行程表
 - 竞技场
-- 余下4次竞技场（等待自然冷却）
 - 刷遗迹
 - 刷神殿
 - 公会乞讨装备
@@ -40,12 +38,12 @@ PCR 公主连结（PrincessConnect）**图像识别自动化小助手** ***PCRau
 - 领取礼物邮件
 - >其他功能待开发中
 
-## 关于下载  <img alt="LOGO" src="https://img.picui.cn/free/2024/08/28/66ceb2c5a413f.png" width="128" height="83.5" />
+## 关于下载  <img alt="LOGO" src="https://s2.loli.net/2024/09/30/rYWS1x7HOKLiACj.png" width="128" height="83.5" />
 **Releases**找到最新版下载即可
 如果**下载慢**也可以加入企鹅群下载交流
     
     979858935  密码:りのPCRauto
-## 注意事项 <img alt="LOGO" src="https://krseoul.imgtbl.com/i/2024/09/02/66d5a5c494c06.png" width="128" height="83.5" />
+## 注意事项 <img alt="LOGO" src="https://s2.loli.net/2024/09/30/PqVIaeT9itMj8yn.png" width="128" height="83.5" />
 - 模拟器分辨率建议为 **1280x720(DPI 240)**  
 - 理论上**任何安卓模拟器都能用**，但是还是建议大家用比较主流的那几个  
 - 初次使用的小伙伴，在比较熟悉之前，**强烈建议按PCRauto小助手内默认的任务顺序添加运行**，以免产生不必要的BUG  
@@ -57,12 +55,12 @@ PCR 公主连结（PrincessConnect）**图像识别自动化小助手** ***PCRau
 
 - **设计之初已经考虑到了游戏网络延迟问题**，只要不是过高延迟就不会产生任何影响  
 - 一键行程表需保证**没有在地下城的状态**  
-- 所有任务均有**是否已完成检测**功能，不用担心已经完成的任务会重复执行或产生BUG  
+- 大部分任务均有**是否已完成检测**功能，不用担心已经完成的任务会重复执行或产生BUG  
 
 - 启动PCRauto小助手后请不要随意点击游戏内内容以免发生错误，把**模拟器缩放至后台**，就可以去干其他的事情了  
 - **PCRauto-GUI无法自动更新**，请**手动下载**最新版本PCRauto-GUI    
 
-## 功能详情简介<img alt="LOGO" src="https://img.picui.cn/free/2024/08/28/66ceb8a9d9bcd.png" width="97.8" height="138" />
+## 功能详情简介<img alt="LOGO" src="https://s2.loli.net/2024/09/30/Xzy6tETFQWI2rAD.png" width="97.8" height="138" />
 - **自动启动游戏**  
 >自动寻找游戏启动，并自动下载游戏内更新资源，自动取消弹窗等。但大版本更新等需要跳转到商店更新的无法自动更新  
 - **自动看剧情**
@@ -72,7 +70,7 @@ PCR 公主连结（PrincessConnect）**图像识别自动化小助手** ***PCRau
 - **其他功能介绍**  
 >待编写  
 
-## 璃乃都能学会的使用教程!  <img alt="LOGO" src="https://krseoul.imgtbl.com/i/2024/09/02/66d5a5c494c06.png" width="128" height="83.5" />
+## 璃乃都能学会的使用教程!  <img alt="LOGO" src="https://s2.loli.net/2024/09/30/PqVIaeT9itMj8yn.png" width="128" height="83.5" />
 **点击Releases下载最新版程序(建议Windows系统用户直接下PCRauto-GUI,有GUI界面)**  
 
 **Windows系统用户**  
@@ -90,8 +88,10 @@ PCR 公主连结（PrincessConnect）**图像识别自动化小助手** ***PCRau
 - 添加好自己想要的任务后，选择Runtasks(开始启动任务)（强烈建议按PCRauto内默认的顺序添加，效果更佳）  
 - 启动任务后，请不要随意乱点击游戏内内容，推荐将模拟器缩放至后台就可以去干其他事情了  
 
-## Q&A
+## Q&A<img alt="LOGO" src="https://s2.loli.net/2024/09/30/rYWS1x7HOKLiACj.png" width="128" height="83.5" />
 >出现问题时可参考此逐一排查  
+- PCRauto执行部分任务较慢  
+>公主连结在部分页面切换或执行时需请求网络连接，由于大部分人都是使用加速器等连接游戏的，网络有时会有波动，未来保证大部分人的网络环境及大部分网络情况都能稳定准确运行，所以有些地方小助手在执行时会有点慢，请见谅
 - PCRauto无法启动,闪退,报错
 >PCRauto-GUI版仅支持64位操作系统  
 >请确保含有[.NET 8.0](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0#:~:text=%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6-,Windows,-Arm64)及以上对应你操作系统的环境  
