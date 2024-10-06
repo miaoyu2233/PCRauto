@@ -12,7 +12,7 @@
 	"timeout":300000,
 	"is_sub":true,
 	"action":"Click",
-	"target":[582,691,0,0],
+	"target":[514,691,0,0],
 	"post_delay":4120
 	},
 "角色剧情页面":{
@@ -66,7 +66,7 @@
 	},
 	"选择new角色剧情":{
 		"recognition":"TemplateMatch",
-		"template":"角色剧情new.png",
+		"template":["角色剧情new.png","JZ\\jz_new.png"],
 		"post_delay":1612,
 		"action":"Click",
 		"target_offset":[0,20,0,0],
@@ -76,7 +76,7 @@
 	},
 	"追加角色剧情资料下载":{
 		"recognition":"TemplateMatch",
-		"template":"追加资料下载.png",
+		"template":["追加资料下载.png","JZ\\jz追加剧情资料下载.png"],
 		"post_delay":2031,
 		"next":[
 			"角色剧情无配音"
@@ -85,7 +85,7 @@
 	"角色剧情无配音":{
 		"timeout":300000,
 		"recognition":"TemplateMatch",
-		"template":"无配音.png",
+		"template":["无配音.png","JZ\\jz无语音.png"],
 		"action":"Click",
 		"post_delay":2010
 	},
@@ -93,7 +93,7 @@
 		"is_sub":true,
 		"timeout":1200000,
 		"recognition":"TemplateMatch",
-		"template":"剧情菜单.png",
+		"template":["剧情菜单.png","JZ\\jz剧情菜单.png"],
 		"pre_delay":2620,
 		"action":"Click",
 		"post_delay":630,

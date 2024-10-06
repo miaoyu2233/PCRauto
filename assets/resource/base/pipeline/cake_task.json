@@ -66,7 +66,7 @@
 		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
-		"template":"羁绊剧情.png",
+		"template":["羁绊剧情.png","JZ\\jz好感度剧情.png"],
 		"action":"Click",
 		"post_delay":1835,
 		"next":[
@@ -94,7 +94,7 @@
 	"羁绊已满":{
 		"is_sub":true,
 		"recognition":"TemplateMatch",
-		"template":"羁绊已上限.png",
+		"template":["羁绊已上限.png","JZ\\jz_好感度已上限.png"],
 		"action":"Key",
 		"post_delay":710,
 		"key":111,
@@ -140,7 +140,7 @@
 	"羁绊剧情4":{
 		"post_delay":1220,
 		"recognition":"TemplateMatch",
-		"template":"羁绊剧情离开.png",
+		"template":["羁绊剧情离开.png","JZ\\jz好感度剧情离开.png"],
 		"action":"Click",
 		"next":[
 			"羁绊剧情5"

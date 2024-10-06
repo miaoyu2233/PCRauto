@@ -1,5 +1,6 @@
 {
 	"商店":{
+		"rate_limit":500,
 		"next":[
 			"商店返回主页",
 			"开始购买",
@@ -10,12 +11,13 @@
 	"进入商店":{
 		"is_sub":true,
 		"recognition":"TemplateMatch",
-		"template":"商店.png",
-		"action": "Click"
+		"template":["商店.png","JZ\\jz商店.png"],
+		"action": "Click",
+		"post_delay":1500
 	},
 	"检查商店":{
 		"recognition":"TemplateMatch",
-		"template":"商店已购买.png",
+		"template":["商店已购买.png","JZ\\jz商店已购买.png"],
 		"action":"Key",
 		"key":111
 	
@@ -23,16 +25,17 @@
 	"开始购买":{
 		"is_sub":true,
 		"recognition":"TemplateMatch",
-		"template":"已进入商店.png",
+		"template":["已进入商店.png","JZ\\jz已进入商店.png"],
 		"post_delay":1230,
 		"next":[
 			"选中一般商店"
 		]
 	},
 	"选中一般商店":{
+		"recognition":"TemplateMatch",
+		"template":["一般商店.png","JZ\\jz一般商店.png"],
 		"action":"Click",
 		"post_delay":1010,
-		"target":[172,93,0,0],
 		"next":[
 			"商店全部选择"
 		]
@@ -41,29 +44,31 @@
 		"recognition":"OCR",
 		"expected":"全部",
 		"action": "Click",
+		"post_delay":1000,
 		"next":[
 			"全部选择"
 		]
 	},
 	"全部选择":{
 		"recognition":"TemplateMatch",
-		"template":"全部选择.png",
+		"template":["全部选择.png","JZ\\jz一般商店全选.png"],
 		"action": "Click",
+		"post_delay":2000,
 			"next":[
 				"一次购买"	
 		]
 	},
 	"一次购买":{
-		"recognition":"TemplateMatch",
-		"template":"一次性购买.png",
 		"action": "Click",
+		"target":[1053,583,0,0],
+		"post_delay":1000,
 		"next":[
 			"确定"
 		]
 	},
 	"确定":{
 		"recognition":"TemplateMatch",
-		"template":"OK.png",
+		"template":["OK.png","JZ\\jz一般商店确认.png"],
 		"action": "Click",
 		"post_delay":2900,
 		"next":[
@@ -72,13 +77,13 @@
 	},
 	"再次确定":{
 		"recognition":"TemplateMatch",
-		"template":"OK.png",
+		"template":["OK.png","JZ\\jz一般商店确认.png"],
 		"action":"Click",
 		"post_delay":3312
 	},
 	"商店返回主页":{
 		"recognition":"TemplateMatch",
-		"template":"商店已购买.png",
+		"template":["商店已购买.png","JZ\\jz商店已购买.png"],
 		"action":"Key",
 		"post_delay":4101,
 		"key":111

@@ -57,7 +57,7 @@
 		},
 		"选择new活动剧情":{
 			"recognition":"TemplateMatch",
-			"template":"活动剧情new.png",
+			"template":["活动剧情new.png","jz活动剧情new.png"],
 			"target_offset":[0,23,0,0],
 			"post_delay":1531,
 			"action":"Click",
@@ -67,7 +67,7 @@
 		},
 		"追加活动剧情资料下载x":{
 			"recognition":"TemplateMatch",
-			"template":"追加资料下载.png",
+			"template":["追加资料下载.png","JZ\\jz追加剧情资料下载.png"],
 			"post_delay":2131,
 			"next":[
 				"活动剧情无配音x"
@@ -76,7 +76,7 @@
 		"活动剧情无配音x":{
 			"timeout":380000,
 			"recognition":"TemplateMatch",
-			"template":"无配音.png",
+			"template":["无配音.png","JZ\\jz无语音.png"],
 			"action":"Click",
 			"post_delay":3210
 		}

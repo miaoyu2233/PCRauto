@@ -7,7 +7,7 @@
 	},
 	"开始竞技场":{
 		"recognition":"TemplateMatch",
-		"template":"战斗jjc.png",
+		"template":["战斗jjc.png","JZ//jz战斗jjc.png"],
 		"post_delay":3690,
 		"next":[
 			"jjc冷却中返回主页面",
@@ -30,7 +30,7 @@
 	"进入战斗jjc页面":{
 		"is_sub":true,
 		"recognition":"TemplateMatch",
-		"template":"战斗jjc.png",
+		"template":["战斗jjc.png","JZ//jz战斗jjc.png"],
 		"pre_delay":3110,
 		"post_delay":1900,
 		"action": "Click",
@@ -40,7 +40,7 @@
 	},
 	"jjc战斗":{
 		"recognition":"TemplateMatch",
-		"template":"已进入jjc.png",
+		"template":["已进入jjc.png","JZ//jz已进入jjc.png"],
 		"pre_delay":3250,
 		"post_delay":2870,
 		"action":"Click",
@@ -50,9 +50,9 @@
 		"is_sub":true,
 		"timeout":120000,
 		"recognition":"TemplateMatch",
-		"template":"jjc战斗开始.png",
+		"template":["jjc战斗开始.png","JZ//jz_jjc战斗开始.png"],
 		"action":"Click",
-		"post_delay":1890,
+		"post_delay":3890,
 		"next":[
 			"jjc跳过"
 		]
@@ -60,9 +60,9 @@
 	"jjc跳过":{
 		"timeout":180000,
 		"recognition":"TemplateMatch",
-		"template":"jjc跳过.png",
+		"template":["jjc跳过.png","JZ//jz_jjc跳过.png"],
 		"action":"Click",
-		"post_delay":7120,
+		"post_delay":4200,
 		"next":[
 			"战斗jjc下一步"
 		]
@@ -84,7 +84,7 @@
 	},
 	"战斗jjc确定排名":{
 		"recognition":"TemplateMatch",
-		"template":"jjc排名.png",
+		"template":["jjc排名.png","JZ//jz_jjc排名.png"],
 		"post_delay":2510,
 		"next":[
 			"战斗jjc确定排名下一步"
@@ -130,7 +130,7 @@
 	},
 	"公主jjc":{
 		"recognition":"TemplateMatch",
-		"template":"公主jjc.png",
+		"template":["公主jjc.png","JZ//jz公主jjc.png"],
 		"action":"Click",
 		"next":[
 			"开始公主jjc战斗"
@@ -163,7 +163,7 @@
 	},
 	"公主jjc开始战斗":{
 		"recognition":"TemplateMatch",
-		"template":"jjc战斗开始.png",
+		"template":["jjc战斗开始.png","JZ//jz_jjc战斗开始.png"],
 		"action":"Click",
 		"post_delay":2330,
 		"next":[
@@ -173,10 +173,10 @@
 	"公主jjc跳过":{
 		"timeout":120000,
 		"recognition":"TemplateMatch",
-		"template":"jjc跳过.png",
+		"template":["jjc跳过.png","JZ//jz_jjc跳过.png"],
 		"action":"Click",
 		"pre_delay":1060,
-		"post_delay":10820,
+		"post_delay":12000,
 		"next":[
 			"公主jjc下一步"
 		]
@@ -199,7 +199,7 @@
 	},
 	"公主jjc有排名":{
 		"recognition":"TemplateMatch",
-		"template":"jjc排名.png",
+		"template":["jjc排名.png","JZ//jz_jjc排名.png"],
 		"post_delay":3510,
 		"next":[
 			"公主jjc有排名下一步"
@@ -218,7 +218,7 @@
 		"recognition":"OCR",
 		"expected":"下一步",
 		"action":"Click",
-		"post_delay":15430,
+		"post_delay":10000,
 		"next":[
 			"公主jjc确定排名"		
 		]
@@ -238,7 +238,7 @@
 	},
 	"jjc冷却中返回主页面":{
 		"recognition":"TemplateMatch",
-		"template":"jjc冷却中.png",
+		"template":["jjc冷却中.png","JZ//jz_jjc冷却.png"],
 		"action":"Key",
 		"key":111,
 		"post_delay":1790,

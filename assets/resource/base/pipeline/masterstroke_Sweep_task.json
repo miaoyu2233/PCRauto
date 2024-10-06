@@ -17,13 +17,13 @@
     },
     "选择进入主线冒险":{
         "recognition":"TemplateMatch",
-		"template":"主线冒险.png",
+		"template":["主线冒险.png","JZ\\jz主线冒险.png"],
         "action":"Click",
         "post_delay":3300
     },
     "主线冒险扫荡":{
         "recognition":"TemplateMatch",
-		"template":"主线冒险扫荡.png",
+		"template":["主线冒险扫荡.png","JZ\\jz扫荡.png"],
         "action":"Click",
         "next":[
             "主线冒险扫荡预设队伍7"
@@ -55,7 +55,7 @@
     },
     "主线扫荡体力不足":{
         "recognition":"TemplateMatch",
-		"template":"主线扫荡体力不足.png",
+		"template":["主线扫荡体力不足.png","JZ\\jz主线扫荡体力不足.png"],
         "post_delay":1000,
         "next":[
             "主线扫荡体力不足2"
@@ -79,7 +79,7 @@
     },
     "主线扫荡恢复次数":{
         "recognition":"TemplateMatch",
-		"template":"确定是否消耗宝石恢复扫荡次数.png",
+		"template":["确定是否消耗宝石恢复扫荡次数.png","JZ\\jz主线扫荡次数不足.png"],
         "action":"Click",
         "post_delay":1500,
         "target":[521,644,0,0],
@@ -89,7 +89,7 @@
     },
     "主线扫荡开始":{
         "recognition":"TemplateMatch",
-		"template":"主线扫荡进行挑战.png",
+		"template":["主线扫荡进行挑战.png","JZ\\jz主线扫荡进行挑战.png"],
         "action":"Click",
         "post_delay":3000,
         "next":[
@@ -128,14 +128,14 @@
     },
     "主线扫荡等级提升":{
 		"recognition":"TemplateMatch",
-		"template":"等级提升.png",
+		"template":["等级提升.png","JZ\\jz等级提升.png"],
 		"next":[
 			"主线扫荡等级提升下一步"
 		]
 	},
 	"主线扫荡等级提升下一步":{
 		"recognition":"TemplateMatch",
-		"template":"等级提升OK.png",
+		"template":["等级提升OK.png","JZ\\jz_等级提升确认.png"],
 		"action":"Click",
         "post_delay":1000,
         "next":[
@@ -146,7 +146,7 @@
 	},
     "限定商店":{
         "recognition":"TemplateMatch",
-		"template":"限定商店.png",
+		"template":["限定商店.png","JZ\\jz限定商店.png"],
         "action":"Click",
         "post_delay":1000,
 		"target":[819,640,0,0],
