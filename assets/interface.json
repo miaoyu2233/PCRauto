@@ -63,18 +63,25 @@
             "entry":"神殿"
         },
 	    {
-            "name": "关闭游戏(不支持简中)",
-            "entry": "关闭游戏"
+            "name": "挂机或关闭游戏(不支持简中)",
+            "entry": "游戏状态",
+            "option":[
+                "游戏状态"
+            ]
         },
         {   "name": "巡游(不支持简中)",
             "entry": "巡游"
         },        
-        {    "name": "每日免费扭蛋(不支持简中)",
-             "entry": "免费扭蛋"
-        },        
+        {   "name": "每日免费扭蛋(不支持简中)",
+            "entry": "免费扭蛋"
+        },   
         {
-             "name": "公会小屋奖励(不支持简中)",
-             "entry": "领取公会小屋奖励"
+            "name": "公会小屋奖励(不支持简中)",
+            "entry": "领取公会小屋奖励"
+        },
+        {
+            "name": "小屋Like(需在小屋页面)(不支持简中)",
+            "entry": "公会小屋Like"
         },
         {
             "name": "地下城角色碎片",
@@ -137,6 +144,30 @@
         }
     ],
     "option": {
+        "游戏状态":{
+            "cases":[
+                {
+                    "name":"主页挂机",
+                    "pipeline_override":{
+                        "确定游戏状态":{
+                            "timeout":60000,
+                            "template":"主页挂机.png",
+                            "action":"Click"
+                        }
+                    }
+                },
+                {
+                    "name":"关闭游戏",
+                    "pipeline_override":{
+                        "确定游戏状态":{
+                            "recognition":"DirectHit",
+                            "action":"StopApp",
+                            "package":"tw.sonet.princessconnect"
+                        }
+                    }
+                }
+            ]
+        },
         "地下城角色碎片购买项": {
             "cases": [
             {
