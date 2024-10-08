@@ -47,22 +47,47 @@
 	},
 	"选择遗迹4":{
 		"action":"Click",
-		"target":[683,633,0,0],
+		"target":[751,493,0,0],
 		"post_delay":1730,
+		"next":[
+			"选择遗迹4x"
+		]
+	},
+	"选择遗迹4x":{
+		"target":[672,633,0,0],
+		"post_delay":400,
+		"action":"Click",
 		"next":[
 			"选择遗迹5x"
 		]
 	},
 	"选择遗迹5x":{
-		"target":[683,633,0,0],
-		"post_delay":1830,
+		"target":[672,633,0,0],
+		"post_delay":2400,
+		"action":"Click",
+		"next":[
+			"判断完成遗迹后的状态"
+		]
+	},
+	"判断完成遗迹后的状态":{
 		"next":[
 			"选择遗迹5",
+			"遗迹限定商店",
 			"等级提升"
 		]
 	},
+	"遗迹限定商店":{
+		"recognition":"TemplateMatch",
+		"template":["限定商店.png","JZ\\jz限定商店.png"],
+        "action":"Click",
+        "post_delay":1000,
+		"target":[819,640,0,0],
+		"next":[
+			"选择遗迹5"
+		]
+	},
 	"选择遗迹5":{
-		"threshold":0.6,
+		"threshold":0.5,
 		"recognition":"TemplateMatch",
 		"template":["遗迹确认.png","JZ\\jz遗迹确认.png"],
 		"action":"Key",
