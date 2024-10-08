@@ -1,15 +1,16 @@
 {
 	"露娜塔剧情":{
 		"post_delay":1131,
+		"timeout":1200000,
 		"next":[
-			"对话框选项",
 			"选中额外露娜塔",
+			"对话框选项",
 			"角色剧情菜单",
 			"选中剧情页面"
 		]
-
 	},
 	"选中额外露娜塔":{
+		"is_sub":true,
 		"timeout":300000,
 		"recognition":"TemplateMatch",
 		"template":"额外活动剧情.png",
@@ -37,7 +38,7 @@
 		]
 	},
 	"选中露娜塔new":{
-		"post_delay":2250,
+		"post_delay":4500,
 		"next":[
 			"选择new露娜塔剧情",
 			"没有new的角色剧情"
@@ -46,12 +47,12 @@
 	"选择new露娜塔剧情":{
 		"timeout":300000,
 		"recognition":"TemplateMatch",
-		"template":["露娜塔new.png","jz活动剧情new.png"],
+		"template":["露娜塔new.png","JZ\\jz活动剧情new.png"],
 		"post_delay":1612,
 		"action":"Click",
 		"target_offset":[0,20,0,0],
 		"next":[
-			"追加角色剧情资料下载"
+			"追加活动剧情资料下载x"
 		]
 	}
 }

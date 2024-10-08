@@ -14,7 +14,6 @@
 		"post_delay":6230
 	},
 	"全部一键执行":{
-		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":["一键执行.png","JZ\\行程表一键执行.png"],
 		"action":"Click",
@@ -40,7 +39,7 @@
 		]
 	},
 	"扫荡地下城下一步":{
-		"post_delay":1000,
+		"post_delay":300,
 		"target":[665,648,0,0],
 		"action":"Click",
 		"next":[
@@ -48,7 +47,7 @@
 		]
 	},
 	"扫荡地下城下一步2":{
-		"post_delay":1900,
+		"post_delay":2000,
 		"target":[665,648,0,0],
 		"action":"Click",
 		"next":[
@@ -64,7 +63,7 @@
 			]
 	},
 	"mana冒险下一步":{
-		"post_delay":1000,
+		"post_delay":300,
 		"target":[636,640,0,0],
 		"action":"Click",
 		"next":[
@@ -88,7 +87,7 @@
 			]
 	},
 	"经验值冒险下一步":{
-		"post_delay":1000,
+		"post_delay":300,
 		"target":[661,648,0,0],
 		"action":"Click",
 		"next":[

@@ -1,5 +1,6 @@
 {
 	"活动剧情x":{
+		"timeout":1200000,
 		"post_delay":1131,
 		"next":[
 			"活动剧情页面x",
@@ -12,7 +13,7 @@
 		"timeout":380000,
 		"is_sub":true,
 		"action":"Click",
-		"target":[582,691,0,0],
+		"target":[514,691,0,0],
 		"post_delay":3420
 		},
 	"活动剧情页面x":{
@@ -37,15 +38,31 @@
 		"选中活动new1":{
 			"action":"Click",
 			"target":[791,172,0,0],
-			"post_delay":1100,
+			"post_delay":1500,
 			"next":[
 				"选中活动new2"
 			]
 		},
 		"选中活动new2":{
+			"post_delay":1100,
+			"next":[
+				"已进入到剧情活动内",
+				"未进入到剧情活动内"
+			]
+		},
+		"已进入到剧情活动内":{
+			"recognition":"TemplateMatch",
+			"template":["剧情第一话.png","JZ\\jz剧情第一话.png"],
+			"post_delay":3000,
+			"next":[
+				"选择new活动剧情",
+				"没有new的活动剧情"
+			]
+		},
+		"未进入到剧情活动内":{
 			"action":"Click",
-			"target":[1146,173,0,0],
-			"post_delay":2111,
+			"target":[791,172,0,0],
+			"post_delay":3000,
 			"next":[
 				"选择new活动剧情",
 				"没有new的活动剧情"
@@ -57,7 +74,7 @@
 		},
 		"选择new活动剧情":{
 			"recognition":"TemplateMatch",
-			"template":["活动剧情new.png","jz活动剧情new.png"],
+			"template":["活动剧情new.png","JZ\\jz活动剧情new.png"],
 			"target_offset":[0,23,0,0],
 			"post_delay":1531,
 			"action":"Click",
@@ -66,6 +83,7 @@
 			]
 		},
 		"追加活动剧情资料下载x":{
+			"timeout":60000,
 			"recognition":"TemplateMatch",
 			"template":["追加资料下载.png","JZ\\jz追加剧情资料下载.png"],
 			"post_delay":2131,
@@ -78,6 +96,6 @@
 			"recognition":"TemplateMatch",
 			"template":["无配音.png","JZ\\jz无语音.png"],
 			"action":"Click",
-			"post_delay":3210
+			"post_delay":3500
 		}
 	}

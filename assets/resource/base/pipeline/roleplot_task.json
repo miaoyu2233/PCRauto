@@ -1,5 +1,6 @@
 {
 "角色剧情":{
+	"timeout":1200000,
 	"post_delay":1131,
 	"next":[
 		"角色剧情页面",
@@ -21,7 +22,7 @@
 	"recognition":"TemplateMatch",
 	"template":"角色剧情.png",
 	"action":"Click",
-	"post_delay":2416,
+	"post_delay":3000,
 	"next":[
 		"是否已完成角色剧情",
 		"选中角色new"
@@ -54,7 +55,7 @@
 	"选中角色new":{
 		"action":"Click",
 		"target":[844,176,0,0],
-		"post_delay":2850,
+		"post_delay":3000,
 		"next":[
 			"选择new角色剧情",
 			"没有new的角色剧情"
@@ -75,6 +76,7 @@
 		]
 	},
 	"追加角色剧情资料下载":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["追加资料下载.png","JZ\\jz追加剧情资料下载.png"],
 		"post_delay":2031,
@@ -87,7 +89,7 @@
 		"recognition":"TemplateMatch",
 		"template":["无配音.png","JZ\\jz无语音.png"],
 		"action":"Click",
-		"post_delay":2010
+		"post_delay":3500
 	},
 	"角色剧情菜单":{
 		"is_sub":true,
