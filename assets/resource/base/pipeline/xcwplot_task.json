@@ -46,6 +46,7 @@
 	},
 	"选择new露娜塔剧情":{
 		"timeout":300000,
+		"roi":[417,72,700,450],
 		"recognition":"TemplateMatch",
 		"template":["露娜塔new.png","JZ\\jz活动剧情new.png"],
 		"post_delay":1612,

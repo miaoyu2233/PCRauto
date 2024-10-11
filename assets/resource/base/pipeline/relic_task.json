@@ -32,20 +32,23 @@
 	"选择遗迹2":{
 		"action":"Click",
 		"target":[963,216,0,0],
-		"post_delay":2810,
+		"post_delay":2000,
 		"next":[
 			"选择遗迹3"
 		]
 	},
 	"选择遗迹3":{
 		"action":"Click",
-		"target":[1010,457,0,0],
-		"post_delay":5010,
+		"target":[1021,450,0,0],
+		"post_delay":1000,
 		"next":[
 			"选择遗迹4"
 		]
 	},
 	"选择遗迹4":{
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":["扫荡券确认.png","JZ\\jz扫荡券确认.png"],
 		"action":"Click",
 		"target":[751,493,0,0],
 		"post_delay":1730,
@@ -54,16 +57,21 @@
 		]
 	},
 	"选择遗迹4x":{
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":["调查扫荡结果.png","JZ\\jz扫荡结果.png"],
 		"target":[672,633,0,0],
-		"post_delay":400,
+		"post_delay":300,
 		"action":"Click",
 		"next":[
 			"选择遗迹5x"
 		]
 	},
 	"选择遗迹5x":{
+		"recognition":"TemplateMatch",
+		"template":["遗迹扫荡完成.png","JZ\\jz遗迹扫荡完成.png"],
 		"target":[672,633,0,0],
-		"post_delay":2400,
+		"post_delay":3000,
 		"action":"Click",
 		"next":[
 			"判断完成遗迹后的状态"
@@ -87,9 +95,9 @@
 		]
 	},
 	"选择遗迹5":{
-		"threshold":0.5,
+		"threshold":0.6,
 		"recognition":"TemplateMatch",
-		"template":["遗迹确认.png","JZ\\jz遗迹确认.png"],
+		"template":["遗迹取消.png","JZ\\jz遗迹取消.png"],
 		"action":"Key",
 		"key":111,
 		"post_delay":2310,

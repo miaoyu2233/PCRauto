@@ -104,7 +104,7 @@
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"NEXT.png",
-		"target_offset":[0,-70,0,0],
+		"target_offset":[0,70,0,0],
 		"action":"Click",
 		"post_delay":3321,
 		"next":[

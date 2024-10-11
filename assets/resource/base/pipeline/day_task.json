@@ -17,21 +17,47 @@
 		"recognition":"TemplateMatch",
 		"template":["一键执行.png","JZ\\行程表一键执行.png"],
 		"action":"Click",
-		"post_delay":4710,
+		"post_delay":2000,
 		"next":[
-			"购买mana"
+			"行程表事件"
 		]
+	},
+	"行程表事件":{
+		"rate_limit":100,
+		"next":[
+			"购买mana",
+			"扫荡地下城",
+			"地下城跳过失败",
+			"mana冒险",
+			"经验值冒险",
+			"公会点赞",
+			"行程表领取奖励"
+		],
+		"interrupt":[
+			"行程表事件"
+		]
+	},
+	"地下城跳过失败":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":["JZ\\jz地下城失败.png"],
+		"target":[668,504,0,0],
+		"post_delay":1000,
+		"action":"Click"
 	},
 	"购买mana":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":["购买mana.png","JZ\\jz购买mana.png"],
 		"target":[539,500,0,0],
-		"action":"Click",
-		"post_delay":4920,
-		"next":[
-			"扫荡地下城"
-		]
+		"post_delay":1000,
+		"action":"Click"
 	},
 	"扫荡地下城":{
-		"post_delay":4810,
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":["地下城扫荡.png","JZ\\jz地下城跳过.png"],
+		"post_delay":4600,
 		"target":[808,496,0,0],
 		"action":"Click",
 		"next":[
@@ -49,13 +75,13 @@
 	"扫荡地下城下一步2":{
 		"post_delay":2000,
 		"target":[665,648,0,0],
-		"action":"Click",
-		"next":[
-			"mana冒险"
-		]
+		"action":"Click"
 	},
 	"mana冒险":{
-		"post_delay":4810,
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":["mana冒险.png","JZ\\jz_mana扫荡.png"],
+		"post_delay":4600,
 		"target":[826,482,0,0],
 		"action":"Click",
 		"next":[
@@ -73,13 +99,13 @@
 	"mana冒险下一步2":{
 		"post_delay":2000,
 		"target":[636,640,0,0],
-		"action":"Click",
-		"next":[
-			"经验值冒险"
-		]
+		"action":"Click"
 	},	
 	"经验值冒险":{
-		"post_delay":4510,
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":["经验值冒险.png","JZ\\jz经验值扫荡.png"],
+		"post_delay":4600,
 		"target":[834,489,0,0],
 		"action":"Click",
 		"next":[
@@ -97,22 +123,21 @@
 	"经验值冒险下一步2":{
 		"post_delay":2000,
 		"target":[661,648,0,0],
-		"action":"Click",
-		"next":[
-			"公会点赞"
-		]
+		"action":"Click"
 	},
 	"公会点赞":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":["公会点赞.png","JZ\\jz公会点赞.png"],
 		"target":[647,493,0,0],
-		"post_delay":4820,
-		"action":"Click",
-		"next":[
-			"公会点赞下一步"
-		]
+		"post_delay":2000,
+		"action":"Click"
 	},
-	"公会点赞下一步":{
+	"行程表领取奖励":{
+		"recognition":"TemplateMatch",
+		"template":["行程表_领取奖励.png","JZ\\jz行程表_领取奖励.png"],
 		"target":[647,633,0,0],
-		"post_delay":4591,
+		"post_delay":3000,
 		"action":"Click",
 		"next":[
 			"离开行程表"

@@ -74,6 +74,7 @@
 		},
 		"选择new活动剧情":{
 			"recognition":"TemplateMatch",
+			"roi":[417,72,700,450],
 			"template":["活动剧情new.png","JZ\\jz活动剧情new.png"],
 			"target_offset":[0,23,0,0],
 			"post_delay":1531,
