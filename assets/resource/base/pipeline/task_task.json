@@ -1,5 +1,6 @@
 {
 	"领取任务奖励":{
+		"post_delay":3000,
 		"next":[
 			"暂无任务奖励领取",
 			"全部领取任务奖励",
@@ -7,6 +8,7 @@
 		]
 	},
 	"开始领取任务奖励":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":["任务.png","JZ\\jz任务.png"],
@@ -14,6 +16,7 @@
 		"post_delay":3520
 	},
 	"全部领取任务奖励":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"每日任务界面.png",
 		"next":[
@@ -21,15 +24,17 @@
 		]
 	},
 	"开始全部领取任务奖励":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["全部领取.png","JZ\\jz全部领取.png"],
 		"action":"Click",
-		"post_delay":2000,
+		"post_delay":1000,
 		"next":[
 			"确定全部领取任务奖励"
 		]
 	},
 	"确定全部领取任务奖励":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["关闭按钮.png","JZ\\jz任务领取关闭.png"],
 		"action":"Click",
@@ -40,6 +45,7 @@
 		]
 	},
 	"暂无任务奖励领取":{
+		"timeout":60000,
 		"recognition":"FeatureMatch",
 		"green_mask":true,
 		"template":"任务奖励全部领取if.png",
@@ -52,6 +58,7 @@
 		"key":111
 	},
 	"等级提升":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":["等级提升.png","JZ\\jz等级提升.png"],
@@ -60,6 +67,7 @@
 		]
 	},
 	"等级提升下一步":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["等级提升OK.png","JZ\\jz_等级提升确认.png"],
 		"action":"Click"

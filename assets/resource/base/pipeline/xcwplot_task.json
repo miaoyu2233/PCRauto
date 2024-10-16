@@ -1,6 +1,6 @@
 {
 	"露娜塔剧情":{
-		"post_delay":1131,
+		"post_delay":3000,
 		"timeout":1200000,
 		"next":[
 			"选中额外露娜塔",
@@ -30,6 +30,7 @@
 		]
 	},
 	"选中露娜塔2":{
+		"timeout":60000,
 		"action":"Click",
 		"target":[949,172,0,0],
 		"post_delay":2300,
@@ -38,6 +39,7 @@
 		]
 	},
 	"选中露娜塔new":{
+		"timeout":60000,
 		"post_delay":4500,
 		"next":[
 			"选择new露娜塔剧情",

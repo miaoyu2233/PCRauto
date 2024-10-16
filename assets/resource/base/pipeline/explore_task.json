@@ -1,21 +1,23 @@
 {
 	"探险事件":{
-		"post_delay":3105,
+		"post_delay":3000,
 		"next":[
 			"开始进入探险事件",
 			"选择探险冒险界面2"
 		]
 	},
 	"选择探险冒险界面2":{
+		"timeout":60000,
 		"is_sub":true,
 		"action":"Click",
 		"target":[729,684,0,0],
-		"post_delay":3900,
+		"post_delay":1000,
 		"next":[
 			"进入探险2"
 		]
 	},
 	"进入探险2":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"探险文字.png",
 		"action":"Click",
@@ -23,6 +25,7 @@
 		"post_delay":6780
 	},
 	"开始进入探险事件":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"冒险目的地.png",
 		"post_delay":3213,
@@ -32,18 +35,20 @@
 		]
 	},
 	"进入探险事件new":{
+		"timeout":60000,
 		"is_sub":true,
 		"threshold":0.6,
 		"recognition":"OCR",
 		"expected":["SPECIAL!","EVENT!"],
 		"roi":[1160,187,160,160],
 		"action":"Click",
-		"post_delay":1567,
+		"post_delay":1000,
 		"next":[
 			"进入探险事件"
 		]
 	},
 	"进入探险事件":{
+		"timeout":60000,
 		"post_delay":1320,
 		"pre_delay":2312,
 		"recognition":"OCR",
@@ -58,15 +63,17 @@
 		]
 	},
 	"探险门":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"探险门.png",
-		"post_delay":3647,
+		"post_delay":1000,
 		"action":"Click",
 		"next":[
 			"探险门前进"
 		]
 	},
 	"探险门前进":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"探险门前进.png",
 		"action":"Click",
@@ -85,6 +92,7 @@
 		]
 	},
 	"探险门失败":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"探险门失败.png",
 		"post_delay":2017,
@@ -94,17 +102,18 @@
 
 	},
 	"探险门失败2":{
-		"post_delay":2105,
+		"post_delay":3000,
 		"action":"Click",
 		"target":[624,354,0,0]
 	},
 	"探险获得装备":{
-		"post_delay":1607,
+		"post_delay":2000,
 		"recognition":"OCR",
 		"expected":"得了",
 		"action":"Click"
 	},
 	"探险对话事件":{
+		"timeout":60000,
 		"pre_delay":1602,
 		"recognition":"TemplateMatch",
 		"template":"探险对话事件跳过.png",
@@ -116,7 +125,7 @@
 		]
 	},
 	"探险对话事件点击":{
-		"pre_delay":1502,
+		"pre_delay":2000,
 		"action":"Click",
 		"post_delay":3000,
 		"target":[654,324,0,0]

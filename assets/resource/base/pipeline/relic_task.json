@@ -1,11 +1,13 @@
 {
 	"遗迹":{
+		"post_delay":3000,
 		"next":[
 			"进入遗迹",
 			"选择遗迹冒险界面"
 		]
 	},
 	"进入遗迹":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["遗迹调查.png","JZ\\jz调查.png"],
 		"action":"Click",
@@ -16,6 +18,7 @@
 		]
 	},
 	"选择遗迹冒险界面":{
+		"timeout":60000,
 		"is_sub":true,
 		"action":"Click",
 		"target":[729,684,0,0],
@@ -38,6 +41,7 @@
 		]
 	},
 	"选择遗迹3":{
+		"timeout":60000,
 		"action":"Click",
 		"target":[1021,450,0,0],
 		"post_delay":1000,
@@ -68,6 +72,7 @@
 		]
 	},
 	"选择遗迹5x":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["遗迹扫荡完成.png","JZ\\jz遗迹扫荡完成.png"],
 		"target":[672,633,0,0],
@@ -78,6 +83,7 @@
 		]
 	},
 	"判断完成遗迹后的状态":{
+		"timeout":60000,
 		"next":[
 			"选择遗迹5",
 			"遗迹限定商店",
@@ -85,6 +91,7 @@
 		]
 	},
 	"遗迹限定商店":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["限定商店.png","JZ\\jz限定商店.png"],
         "action":"Click",
@@ -95,6 +102,7 @@
 		]
 	},
 	"选择遗迹5":{
+		"timeout":60000,
 		"threshold":0.6,
 		"recognition":"TemplateMatch",
 		"template":["遗迹取消.png","JZ\\jz遗迹取消.png"],

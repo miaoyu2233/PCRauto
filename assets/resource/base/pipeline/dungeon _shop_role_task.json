@@ -1,11 +1,12 @@
 {
 	"商店买地下城角色碎片":{
-        "post_delay":2000,
+        "post_delay":3000,
         "next":[
             "进入地下城商店"
         ]
     },
     "进入地下城商店":{
+        "timeout":60000,
         "threshold":0.9,
 		"recognition":"TemplateMatch",
 		"template":["商店.png","JZ\\jz商店.png"],
@@ -16,6 +17,7 @@
         ]
     },
     "进入地下城商店2":{
+        "timeout":60000,
         "threshold":0.9,
         "recognition":"TemplateMatch",
 		"template":["地下城商店.png","JZ\\jz地下城商店.png"],

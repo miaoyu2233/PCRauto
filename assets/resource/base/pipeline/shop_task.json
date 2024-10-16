@@ -1,6 +1,7 @@
 {
 	"商店":{
-		"rate_limit":500,
+		"post_delay":3000,
+		"rate_limit":10,
 		"next":[
 			"商店返回主页",
 			"开始购买",
@@ -9,6 +10,7 @@
 		]
 	},
 	"进入商店":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":["商店.png","JZ\\jz商店.png"],
@@ -16,6 +18,7 @@
 		"post_delay":1500
 	},
 	"检查商店":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["商店已购买.png","JZ\\jz商店已购买.png"],
 		"action":"Key",
@@ -23,24 +26,27 @@
 	
 	},
 	"开始购买":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":["已进入商店.png","JZ\\jz已进入商店.png"],
-		"post_delay":1230,
+		"post_delay":1000,
 		"next":[
 			"选中一般商店"
 		]
 	},
 	"选中一般商店":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["一般商店.png","JZ\\jz一般商店.png"],
 		"action":"Click",
-		"post_delay":1010,
+		"post_delay":1000,
 		"next":[
 			"商店全部选择"
 		]
 	},
 	"商店全部选择":{
+		"timeout":60000,
 		"recognition":"OCR",
 		"expected":"全部",
 		"action": "Click",
@@ -50,6 +56,7 @@
 		]
 	},
 	"全部选择":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["全部选择.png","JZ\\jz一般商店全选.png"],
 		"action": "Click",
@@ -67,21 +74,24 @@
 		]
 	},
 	"确定":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["OK.png","JZ\\jz一般商店确认.png"],
 		"action": "Click",
-		"post_delay":2900,
+		"post_delay":2600,
 		"next":[
 			"再次确定"
 		]
 	},
 	"再次确定":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["OK.png","JZ\\jz一般商店确认.png"],
 		"action":"Click",
-		"post_delay":3312
+		"post_delay":2000
 	},
 	"商店返回主页":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["商店已购买.png","JZ\\jz商店已购买.png"],
 		"action":"Key",

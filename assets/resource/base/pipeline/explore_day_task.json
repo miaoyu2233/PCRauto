@@ -1,5 +1,6 @@
 {
 	"每日探险":{
+		"post_delay":3000,
 		"rate_limit":2000,
 		"next":[
 			"点击探险",
@@ -8,20 +9,22 @@
 		]
 	},
 	"选择探险冒险界面":{
+		"timeout":60000,
 		"is_sub":true,
 		"action":"Click",
 		"target":[729,684,0,0],
-		"post_delay":3800,
+		"post_delay":1000,
 		"next":[
 			"进入探险"
 		]
 	},
 	"进入探险":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"探险文字.png",
 		"action":"Click",
 		"pre_delay":3000,
-		"post_delay":5000
+		"post_delay":3000
 	},
 	"探险有返回的队伍":{
 		"rate_limit":2000,
@@ -35,6 +38,7 @@
 		]
 	},
 	"探险再次出发":{
+		"timeout":60000,
 		"action":"Click",
 		"post_delay":3000,
 		"target":[1046,655,0,0],
@@ -52,6 +56,7 @@
 		]
 	},
 	"探险回忆事件":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"探险回忆事件.png",
 		"action":"Click",
@@ -85,17 +90,20 @@
 		]
 	},
 	"点击探险":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"探险全部返回.png",
 		"action":"Click",
 		"target":[1222,565,0,0],
-		"post_delay":13210,
+		"post_delay":1000,
+		"rate_limit":2000,
 		"next":[
 			"探险没有已返回的队伍",
 			"点击探险2"
 		]
 	},
 	"探险没有已返回的队伍":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"探险没有已返回的队伍.png",
 		"next":[
@@ -137,6 +145,6 @@
 	"探险返回主页":{
 		"action":"Click",
 		"target":[136,680,0,0],
-		"post_delay":6100
+		"post_delay":2000
 	}
 }

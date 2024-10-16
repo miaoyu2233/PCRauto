@@ -28,6 +28,7 @@
 		"package":"tw.sonet.princessconnect/jp.co.cygames.activity.OverrideUnityActivity"
 	},
 	"进入游戏":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"OCR",
 		"expected":"Touch",
@@ -35,6 +36,7 @@
 		"post_delay":15920
 	},
 	"下载资源":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"下载资源.png",
@@ -45,11 +47,13 @@
 		]
 	},
 	"确定下载资源":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"OK.png",
 		"action":"Click"
 	},
 	"掉线":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"OCR",
 		"expected":"前往標題",
@@ -71,6 +75,7 @@
 		"action":"Click"
 	},
 	"新手冲刺":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"OCR",
 		"expected":"新手",
@@ -86,6 +91,7 @@
 		]
 	},
 	"已进入到公告页面":{
+		"timeout":60000,
 		"is_sub":true,
 		"post_delay":2020,
 		"recognition":"TemplateMatch",
@@ -109,6 +115,7 @@
 		"post_delay":6266
 	},
 	"战队竞赛最终日":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"战队竞赛最终日.png",
@@ -117,6 +124,7 @@
 		]
 	},
 	"战队竞赛最终日离开":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"战队竞赛最终日离开.png",
 		"action":"Click"

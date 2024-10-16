@@ -18,7 +18,7 @@
 	},
 	"掷骰子":{
 		"timeout":60000,
-		"post_delay":1000,
+		"post_delay":2500,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"骰子.png",
@@ -29,11 +29,12 @@
 		]
 	},
 	"未持有骰子":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"未持有骰子.png",
 		"target":[129,684,0,0],
 		"action":"Click",
-		"post_delay":1600,
+		"post_delay":1000,
 		"next":[
 			"停止骰子事件"
 		]
@@ -44,7 +45,7 @@
 	"巡游事件":{
 		"timeout":180000,
 		"rate_limit":100,
-		"post_delay":2000,
+		"post_delay":1000,
 		"next":[
 			"接水果游戏",
 			"巡游羁绊效果y",

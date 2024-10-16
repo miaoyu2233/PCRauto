@@ -1,11 +1,13 @@
 {
 	"神殿":{
+		"post_delay":3000,
 		"next":[
 			"进入神殿",
 			"选择神殿冒险界面"
 		]
 	},
 	"进入神殿":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["遗迹调查.png","JZ\\jz调查.png"],
 		"action":"Click",

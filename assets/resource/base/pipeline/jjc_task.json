@@ -1,14 +1,17 @@
 {
 	"竞技场":{
+		"post_delay":3000,
 		"next":[
 			"开始竞技场",
 			"进入冒险页面"
 		]
 	},
 	"开始竞技场":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["战斗jjc.png","JZ//jz战斗jjc.png"],
-		"post_delay":3690,
+		"post_delay":3000,
+		"rate_limit":500,
 		"next":[
 			"jjc冷却中返回主页面",
 			"已完成竞技场",
@@ -17,7 +20,8 @@
 		]
 	},
 	"已完成竞技场":{
-		"post_delay":2190,
+		"timeout":60000,
+		"post_delay":2000,
 		"recognition":"TemplateMatch",
 		"template":"竞技场已抵达主页.png"
 	},
@@ -28,10 +32,11 @@
 		"post_delay":1900
 	},
 	"进入战斗jjc页面":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":["战斗jjc.png","JZ//jz战斗jjc.png"],
-		"pre_delay":3110,
+		"pre_delay":3000,
 		"post_delay":1900,
 		"action": "Click",
 		"next":[
@@ -39,9 +44,10 @@
 		]
 	},
 	"jjc战斗":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["已进入jjc.png","JZ//jz已进入jjc.png"],
-		"pre_delay":3250,
+		"pre_delay":3000,
 		"post_delay":2870,
 		"action":"Click",
 		"target":[661,514,0,0]
@@ -52,7 +58,7 @@
 		"recognition":"TemplateMatch",
 		"template":["jjc战斗开始.png","JZ//jz_jjc战斗开始.png"],
 		"action":"Click",
-		"post_delay":3890,
+		"post_delay":1000,
 		"next":[
 			"jjc跳过"
 		]
@@ -62,12 +68,13 @@
 		"recognition":"TemplateMatch",
 		"template":["jjc跳过.png","JZ//jz_jjc跳过.png"],
 		"action":"Click",
-		"post_delay":4200,
+		"post_delay":1000,
 		"next":[
 			"战斗jjc下一步"
 		]
 	},
 	"战斗jjc下一步":{
+		"timeout":180000,
 		"recognition":"OCR",
 		"expected":"下一步",
 		"action":"Click",
@@ -77,12 +84,14 @@
 		]
 	},
 	"确定战斗jjc有无排名":{
+		"timeout":60000,
 		"next":[
 			"战斗jjc确定排名",
 			"战斗jjc无排名"
 		]
 	},
 	"战斗jjc确定排名":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["jjc排名.png","JZ//jz_jjc排名.png"],
 		"post_delay":2510,
@@ -123,12 +132,13 @@
 	"进入冒险页面公主jjc":{
 		"action":"Click",
 		"target":[686,698,0,0],
-		"post_delay":2280,
+		"post_delay":1000,
 		"next":[
 			"公主jjc"
 		]
 	},
 	"公主jjc":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["公主jjc.png","JZ//jz公主jjc.png"],
 		"action":"Click",
@@ -153,19 +163,21 @@
 		]
 	},
 	"公主jjc选择队伍3":{
+		"timeout":60000,
 		"pre_delay":700,
 		"action":"Click",
 		"target":[1103,586,0,0],
-		"post_delay":2720,
+		"post_delay":1000,
 		"next":[
 			"公主jjc开始战斗"
 		]
 	},
 	"公主jjc开始战斗":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["jjc战斗开始.png","JZ//jz_jjc战斗开始.png"],
 		"action":"Click",
-		"post_delay":2330,
+		"post_delay":1000,
 		"next":[
 			"公主jjc跳过"
 		]
@@ -175,13 +187,14 @@
 		"recognition":"TemplateMatch",
 		"template":["jjc跳过.png","JZ//jz_jjc跳过.png"],
 		"action":"Click",
-		"pre_delay":1060,
+		"pre_delay":1000,
 		"post_delay":12000,
 		"next":[
 			"公主jjc下一步"
 		]
 	},
 	"公主jjc确定排名":{
+		"timeout":60000,
 		"next":[
 			"公主jjc有排名",
 			"公主jjc无排名"
@@ -194,10 +207,12 @@
 		]
 	},
 	"结束公主jjc":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"jjc排名.png"
 	},
 	"公主jjc有排名":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["jjc排名.png","JZ//jz_jjc排名.png"],
 		"post_delay":3510,

@@ -1,5 +1,6 @@
 {
 	"好感":{
+		"post_delay":3000,
 		"next":[
 			"羁绊剧情",
 			"选中角色页面"
@@ -33,6 +34,7 @@
 		]
 	},
 	"选择角色分类3":{
+		"timeout":60000,
 		"action":"Click",
 		"post_delay":1790,
 		"target":[819,633,0,0],
@@ -50,6 +52,7 @@
 		]
 	},
 	"确定角色页面是否是升序":{
+		"timeout":60000,
 		"pre_delay":1879,
 		"recognition":"OCR",
 		"expected":"升序",
@@ -92,6 +95,7 @@
 		]
 	},
 	"羁绊已满":{
+		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":["羁绊已上限.png","JZ\\jz_好感度已上限.png"],
@@ -130,6 +134,7 @@
 		"action":"StopTask"
 	},
 	"羁绊剧情3":{
+		"timeout":60000,
 		"action":"Click",
 		"post_delay":2810,
 		"target":[819,648,0,0],
@@ -138,6 +143,7 @@
 		]
 	},
 	"羁绊剧情4":{
+		"timeout":60000,
 		"post_delay":1220,
 		"recognition":"TemplateMatch",
 		"template":["羁绊剧情离开.png","JZ\\jz好感度剧情离开.png"],

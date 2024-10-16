@@ -1,6 +1,6 @@
 {
 "角色剧情":{
-	"post_delay":1000,
+	"post_delay":3000,
 	"rate_limit":2000,
 		"next":[
 			"角色剧情DMM",
@@ -80,6 +80,7 @@
 		"key":111
 	},
 	"选择new角色剧情":{
+		"timeout":60000,
 		"threshold":0.6,
 		"roi":[417,72,700,450],
 		"recognition":"TemplateMatch",
