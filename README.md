@@ -7,7 +7,7 @@
 # PCRauto公主连结小助手
 </div>
 
-PCR 公主连结（PrincessConnect）**图像识别自动化小助手**  ***PCRauto*** <kbd>**璃乃版**</kbd>  
+PCR 公主连结（PrincessConnect）**图像识别自动化小助手**  ***PCRauto*** <kbd>璃乃版</kbd>  
 **禁止将PCRauto用于任何商业盈利行为**  
 **带GUI界面,缡乃都会操作**  
 目前PCRauto  
