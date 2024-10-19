@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="LOGO" src="https://s2.loli.net/2024/10/06/XSPUyb2VKuA9DQT.png" width="270" height="270" />
+  <img alt="LOGO" src="https://s2.loli.net/2024/10/06/XSPUyb2VKuA9DQT.png" width="260" height="260" />
 </p>
 
 <div align="center">
@@ -7,7 +7,7 @@
 # PCRauto公主连结小助手
 </div>
 
-PCR 公主连结（PrincessConnect）**图像识别自动化小助手** ***PCRauto***  
+PCR 公主连结（PrincessConnect）**图像识别自动化小助手**  ***PCRauto*** <kbd>璃乃版</kbd>  
 **禁止将PCRauto用于任何商业盈利行为**  
 **带GUI界面,缡乃都会操作**  
 目前PCRauto  
@@ -19,9 +19,9 @@ PCRauto支持大部分模拟器及DMM端,但推荐大家用比较主流的那几
 >因为本人是咸鱼玩家，这个小助手主要是自己用的，所以本助手很多地方尽量实现收益最大化,没法满足所有玩家需求，可以自己看着先试试再说。本人是繁中服玩家,做出来主要还是自己使用的,所以其他服务器只会做部分功能适配,以后会慢慢添加。  
 
 ## 目前主要功能 <img alt="LOGO" src="https://s2.loli.net/2024/09/30/Xzy6tETFQWI2rAD.png" width="97.8" height="138" />
-**默认所有任务<kbd>均适配 繁体字服</kbd>**  
+**默认所有任务均适配 繁体字服**  
 **额外支持的服务器将用简写字母代替**  
- <kbd> J-简体字服</kbd> <kbd> R-日服</kbd>  
+J-简体字服 R-日服  
 |     |   |   |
 |  ----  | ----  | ----  |
 | 启动游戏  | 行程表(J) | 商店买药(J) | 
