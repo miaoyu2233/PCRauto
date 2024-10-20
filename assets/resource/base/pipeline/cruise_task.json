@@ -28,11 +28,21 @@
 	"吃料理":{
 		"is_sub":true,
 		"timeout":180000,
+		"rate_limit":300,
 		"next":[
 			"未持有料理",
+			"一回合只能吃一道料理",
 			"掷骰子",
 			"持有料理",
 			"巡游事件"
+		]
+	},
+	"一回合只能吃一道料理":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"一回合只能吃一道料理.png",
+		"next":[
+			"掷骰子"
 		]
 	},
 	"未持有料理":{
