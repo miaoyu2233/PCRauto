@@ -40,7 +40,10 @@
         },
         {
             "name": "行程表/日程表(J)",
-            "entry": "行程表"
+            "entry": "行程表",
+            "option":[
+                "是否消耗宝石买mana"
+            ]
         },
         {
             "name": "商店买药(J)",
@@ -55,10 +58,17 @@
         },
         {   "name": "探险事件",
             "entry": "探险事件"
-        }, 
+        },
         {
             "name": "领取日常奖励(J)",
             "entry": "领取任务奖励"
+        },
+        {
+            "name":"宝石买体力(J)",
+            "entry":"宝石买体力",
+            "option":[
+                "买体力数量"
+            ]
         },
         {
             "name": "主线扫荡预设(J)",
@@ -66,6 +76,10 @@
             "option":[
                 "选择预设扫荡"
             ]
+        },
+        {
+            "name":"公主骑士属性等级",
+            "entry":"公主骑士"
         },
         {
             "name": "领取礼物邮件(J)",
@@ -87,7 +101,12 @@
             ]
         },
         {   "name": "巡游",
-            "entry": "巡游"
+            "entry": "巡游",
+            "option":[
+                "是否每次掷骰子前使用料理",
+                "一次投骰子数量",
+                "是否走捷径"
+            ]
         },        
         {   "name": "每日免费扭蛋",
             "entry": "免费扭蛋"
@@ -130,6 +149,22 @@
                 "公主竞技场商店刷新次数"
             ]
         },
+        {  
+            "name": "刷当期活动",
+            "entry": "自动活动",
+            "option":[
+                "当期选择队伍编组",
+                "当期选择当前编组的第几个队伍"
+            ]
+        },
+        {
+            "name":"刷支线活动",
+            "entry":"支线活动",
+            "option":[
+                "选择队伍编组",
+                "选择当前编组的第几个队伍"
+            ]
+        },
         {
             "name": "喂蛋糕好感(J)",
             "entry": "好感"
@@ -146,19 +181,6 @@
             "name": "露娜塔剧情(J)",
             "entry": "露娜塔剧情"
         },
-        {  
-            "name": "刷当期活动",
-            "entry": "自动活动"
-    
-        },
-        {
-            "name":"刷支线活动",
-            "entry":"支线活动",
-            "option":[
-                "选择队伍编组",
-                "选择当前编组的第几个队伍"
-            ]
-        },
         {
             "name":"公会乞讨装备",
             "entry":"公会乞讨"
@@ -169,6 +191,86 @@
         }
     ],
     "option": {
+        "是否消耗宝石买mana":{
+            "cases":[
+                {
+                    "name":"不消耗宝石",
+                    "pipeline_override":{
+                       "购买mana是否花费钻石":{
+                            "action":"Click",
+                            "target":[539,500,0,0]
+                       }
+                    }
+                },
+                {
+                    "name":"消耗宝石",
+                    "pipeline_override":{
+                       "购买mana是否花费钻石":{
+                            "action":"Click",
+                            "target":[812,500,0,0]
+                       }
+                    }
+                }
+            ]
+        },
+        "买体力数量":{
+            "cases":[
+                {
+                    "name":"买1次",
+                    "pipeline_override":{
+                        "购买体力数量":{
+                            "action":"Click",
+                            "target":[640,169,0,0]
+                        }
+                    }
+                },
+                {
+                    "name":"买2次",
+                    "pipeline_override":{
+                        "购买体力数量":{
+                            "action":"Click",
+                            "target":[647,230,0,0]
+                        }
+                    }
+                },
+                {
+                    "name":"买3次",
+                    "pipeline_override":{
+                        "购买体力数量":{
+                            "action":"Click",
+                            "target":[640,298,0,0]
+                        }
+                    }
+                },
+                {
+                    "name":"买4次",
+                    "pipeline_override":{
+                        "购买体力数量":{
+                            "action":"Click",
+                            "target":[647,367,0,0]
+                        }
+                    }
+                },
+                {
+                    "name":"买5次",
+                    "pipeline_override":{
+                        "购买体力数量":{
+                            "action":"Click",
+                            "target":[640,432,0,0]
+                        }
+                    }
+                },
+                {
+                    "name":"买6次",
+                    "pipeline_override":{
+                        "购买体力数量":{
+                            "action":"Click",
+                            "target":[647,507,0,0]
+                        }
+                    }
+                }
+            ]
+        },
         "选择预设扫荡":{
             "cases":[
                 {
@@ -238,6 +340,73 @@
                             "action":"Click",
                             "post_delay":1000,
                             "target":[1082,108,0,0]
+                        }
+                    }
+                }
+            ]
+        },
+        "是否每次掷骰子前使用料理":{
+            "cases":[
+                {
+                    "name":"不使用料理",
+                    "pipeline_override":{
+                        "吃料理":{
+                            "action":"DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name":"使用料理",
+                    "pipeline_override":{
+                        "吃料理":{
+                            "recognition":"TemplateMatch",
+                            "template":["巡游吃料理.png","吃料理2.png"],
+                            "action":"Click"
+                        }
+                    }
+                }
+            ]
+        },
+        "一次投骰子数量":{
+            "cases":[
+                {
+                    "name":"一次一个",
+                    "pipeline_override":{
+                        "骰子次数判断":{
+                            "recognition":"TemplateMatch",
+                            "template":"掷骰子.png"
+                        }
+                    }
+                },
+                {
+                    "name":"三个一起",
+                    "pipeline_override":{
+                        "骰子次数判断":{
+                            "recognition":"TemplateMatch",
+                            "template":"3个骰子.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "是否走捷径":{
+            "cases":[
+                {
+                    "name":"不走捷径",
+                    "pipeline_override":{
+                        "选择捷径":{
+                            "recognition":"TemplateMatch",
+                            "template":"巡游捷径.png",
+                            "action":"Click"
+                        }
+                    }
+                },
+                {
+                    "name":"走捷径",
+                    "pipeline_override":{
+                        "选择捷径":{
+                            "target":[837,446,0,0],
+                            "action":"Click"
                         }
                     }
                 }
@@ -1693,6 +1862,77 @@
                     "name":"选择第2个队伍",
                     "pipeline_override":{
                         "呼叫支线活动编组":{
+                            "action":"Click",
+                            "target":[1067,439,0,0]
+                        }
+                    }
+                }
+            ]
+        },
+         "当期选择队伍编组":{
+            "cases":[
+                {
+                    "name":"编组1",
+                    "pipeline_override":{
+                        "选择当期活动编组2":{
+                            "action":"Click",
+                            "target":[172,115,0,0]
+                        }
+                    }
+                },
+                {
+                    "name":"编组2",
+                    "pipeline_override":{
+                        "选择当期活动编组2":{
+                            "action":"Click",
+                            "target":[355,118,0,0]
+                        }
+                    }
+                },
+                {
+                    "name":"编组3",
+                    "pipeline_override":{
+                        "选择当期活动编组2":{
+                            "action":"Click",
+                            "target":[546,126,0,0]
+                        }
+                    }
+                },
+                {
+                    "name":"编组4",
+                    "pipeline_override":{
+                        "选择当期活动编组2":{
+                            "action":"Click",
+                            "target":[744,122,0,0]
+                        }
+                    }
+                },
+                {
+                    "name":"编组5",
+                    "pipeline_override":{
+                        "选择当期活动编组2":{
+                            "action":"Click",
+                            "target":[906,122,0,0]
+                        }
+                    }
+                }
+            ]
+        },
+        "当期选择当前编组的第几个队伍":{
+            "cases":[
+                {
+                    "name":"选择第1个队伍",
+                    "pipeline_override":{
+                        "呼叫当期活动编组":{
+                            "action":"Click",
+                            "target":[1064,288,0,0]
+                        }
+                    }
+                },
+                {
+                    "name":"选择第2个队伍",
+                    "pipeline_override":{
+                        "呼叫当期活动编组":{
                             "action":"Click",
                             "target":[1067,439,0,0]
                         }

@@ -1,27 +1,369 @@
 {
 	"巡游":{
 		"post_delay":4000,
-		"rate_limit":2000,
 		"timeout":180000,
 		"next":[
-			"开始巡游",
+			"开始巡游"
+		]
+	},
+	"开始巡游":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"巡游.png",
+		"action":"Click",
+		"next":[
+			"巡游界面"
+		]
+	},
+	"巡游界面":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"已进入巡游.png",
+		"post_delay":2000,
+		"next":[
+			"骰子次数判断",
+			"点击三个一起"
+		]
+	},
+	"吃料理":{
+		"is_sub":true,
+		"timeout":180000,
+		"next":[
+			"未持有料理",
+			"掷骰子",
+			"持有料理",
+			"巡游事件"
+		]
+	},
+	"未持有料理":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"未持有料理.png",
+		"next":[
 			"掷骰子",
 			"巡游事件"
 		]
 	},
-	"开始巡游":{
-		"is_sub":true,
+	"持有料理":{
+		"timeout":180000,
 		"recognition":"TemplateMatch",
-		"template":"巡游.png",
+		"template":"料理界面.png",
+		"next":[
+			"判断料理"
+		]
+	},
+	"料理滑动":{
+		"duration":300,
+		"action":"Swipe",
+		"post_delay":800,
+		"begin":[550,511,0,0],
+		"end":[557,300,0,0],
+		"next":[
+			"判断料理2"
+		]
+	},
+	"料理滑动2":{
+		"duration":300,
+		"action":"Swipe",
+		"post_delay":800,
+		"begin":[550,511,0,0],
+		"end":[557,160,0,0],
+		"next":[
+			"判断料理3"
+		]
+	},
+	"判断料理3":{
+		"rate_limit":10,
+		"timeout":60000,
+		"next":[
+			"户外野餐组",
+			"炽热烤鸡拼盘",
+			"加倍沙威玛",
+			"即食八分饱咖喱",
+			"绝妙5星汉堡",
+			"马铃薯炖肉",
+			"吃饱饱双倍饭团",
+			"贪吃鬼噗噗肉包",
+			"看透真相的糖果巧克力",
+			"开运点心拼盘",
+			"离开料理"
+		]
+	},
+	"判断料理2":{
+		"rate_limit":10,
+		"timeout":60000,
+		"next":[
+			"户外野餐组",
+			"炽热烤鸡拼盘",
+			"加倍沙威玛",
+			"即食八分饱咖喱",
+			"绝妙5星汉堡",
+			"马铃薯炖肉",
+			"吃饱饱双倍饭团",
+			"贪吃鬼噗噗肉包",
+			"看透真相的糖果巧克力",
+			"开运点心拼盘",
+			"料理滑动2"
+		]
+	},
+	"判断料理":{
+		"rate_limit":10,
+		"timeout":60000,
+		"next":[
+			"户外野餐组",
+			"炽热烤鸡拼盘",
+			"加倍沙威玛",
+			"即食八分饱咖喱",
+			"绝妙5星汉堡",
+			"马铃薯炖肉",
+			"吃饱饱双倍饭团",
+			"贪吃鬼噗噗肉包",
+			"看透真相的糖果巧克力",
+			"开运点心拼盘",
+			"料理滑动"
+		]
+	},
+	"离开料理":{
+		"timeout":180000,
+		"target":[632,637,0,0],
 		"action":"Click",
-		"post_delay":8000
+		"next":[
+			"掷骰子"
+		]
+	},
+	"开运点心拼盘":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"Delicacy\\开运点心拼盘.png",
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用2"
+		]
+	},
+	"料理确认食用2":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"确认食用.png",
+		"action":"Click",
+		"next":[
+			"料理获得道具2"
+		]
+	},
+	"料理获得道具2":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":["料理获得道具.png","料理获得宝物.png"],
+		"target":[686,637,0,0],
+		"action":"Click",
+		"next":[
+			"料理里程商店"
+		]
+	},
+	"料理里程商店":{
+		"recognition":"TemplateMatch",
+		"template":"里程商店.png",
+		"target":[1031,162,0,0],
+		"action":"Click",
+		"post_delay":1000,
+		"next":[
+			"料理商店里程不足",
+			"料理里程商店2"
+		]
+	},
+	"料理商店里程不足":{
+		"recognition":"TemplateMatch",
+		"template":"商店里程不足.png",
+		"next":[
+			"料理里程商店6"
+		]
+	},
+	"料理里程商店2":{
+		"target":[1089,612,0,0],
+		"action":"Click",
+		"post_delay":1000,
+		"next":[
+			"料理商店里程不足",
+			"料理里程商店3"
+		]
+	},
+	"料理里程商店3":{
+		"target":[812,644,0,0],
+		"action":"Click",
+		"post_delay":1000,
+		"next":[
+			"料理里程商店4"
+		]
+	},
+	"料理里程商店4":{
+		"target":[693,637,0,0],
+		"action":"Click",
+		"post_delay":1000,
+		"next":[
+			"料理里程商店5"
+		]
+	},
+	"料理里程商店5":{
+		"target":[693,633,0,0],
+		"action":"Click",
+		"post_delay":1000,
+		"next":[
+			"料理里程商店6"
+		]
+	},
+	"料理里程商店6":{
+		"timeout":180000,
+		"target":[783,633,0,0],
+		"action":"Click",
+		"post_delay":1000,
+		"next":[
+			"掷骰子"
+		]
+	},
+	"看透真相的糖果巧克力":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"Delicacy\\看透真相的糖果巧克力.png",
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用"
+		]
+	},
+	"贪吃鬼噗噗肉包":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"Delicacy\\贪吃鬼噗噗肉包.png",
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用"
+		]
+	},
+	"吃饱饱双倍饭团":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"Delicacy\\吃饱饱双倍饭团.png",
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用"
+		]
+	},
+	"马铃薯炖肉":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"Delicacy\\马铃薯炖肉.png",
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用"
+		]
+	},
+	"绝妙5星汉堡":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"Delicacy\\绝妙5星汉堡.png",
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用"
+		]
+	},
+	"即食八分饱咖喱":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"Delicacy\\即食八分饱咖喱.png",
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用无窗口"
+		]
+	},
+	"加倍沙威玛":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"Delicacy\\加倍沙威玛.png",
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用"
+		]
+	},
+	"炽热烤鸡拼盘":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"Delicacy\\炽热烤鸡拼盘.png",
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用无窗口"
+		]
+	},
+	"料理确认食用无窗口":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"确认食用.png",
+		"action":"Click",
+		"next":[
+			"掷骰子"
+		]
+	},
+	"户外野餐组":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"Delicacy\\户外野餐组.png",
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用"
+		]
+	},
+	"料理确认食用":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"确认食用.png",
+		"action":"Click",
+		"next":[
+			"料理获得道具"
+		]
+	},
+	"料理获得道具":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":["料理获得道具.png","料理获得宝物.png"],
+		"target":[686,637,0,0],
+		"action":"Click",
+		"next":[
+			"掷骰子"
+		]
+	},
+	"骰子次数判断":{
+		"next":[
+			"吃料理",
+			"巡游事件"
+		]
+	},
+	"点击三个一起":{
+		"is_sub":true,
+		"target":[1114,586,0,0],
+		"action":"Click"
 	},
 	"掷骰子":{
 		"timeout":60000,
-		"post_delay":2500,
-		"is_sub":true,
+		"post_delay":1000,
 		"recognition":"TemplateMatch",
-		"template":"骰子.png",
+		"template":["掷骰子.png","3个骰子.png"],
 		"action":"Click",
 		"next":[
 			"未持有骰子",
@@ -44,7 +386,7 @@
 	},
 	"巡游事件":{
 		"timeout":180000,
-		"rate_limit":100,
+		"rate_limit":10,
 		"post_delay":1000,
 		"next":[
 			"接水果游戏",
@@ -57,8 +399,9 @@
 			"巡游获得料理",
 			"巡游获得宝物",
 			"巡游宝物获得",
+			"巡游捷径",
 			"巡游回合到达",
-			"掷骰子"
+			"吃料理"
 		],
 		"interrupt":[
 			"巡游事件"
@@ -111,21 +454,44 @@
 		"post_delay":300
 	},
 	"接水果游戏":{
+		"timeout":240000,
 		"recognition":"TemplateMatch",
 		"template":["接水果.png","接水果2.png"],
+		"pre_delay":1000,
+		"action":"Click",
+		"target":[1139,601,0,0],
+		"post_delay":2000,
 		"next":[
-			"接水果游戏2"
+			"接水果游戏3"
 		]
 	},
 	"接水果游戏2":{
+		"next":[
+			"接水果宝箱"
+		]
+	},
+	"接水果宝箱":{
+		"timeout":10000,
+		"recognition":"FeatureMatch",
+		"template":"巡游游戏宝箱.png",
 		"action":"Click",
-		"target":[1139,601,0,0],
-		"post_delay":45500,
+		"next":[
+			"接水果游戏2"
+		],
+		"on_error":[
+			"接水果游戏3x"
+		]
+	},
+	"接水果游戏3x":{
+		"timeout":240000,
 		"next":[
 			"接水果游戏3"
 		]
 	},
 	"接水果游戏3":{
+		"timeout":240000,
+		"recognition":"TemplateMatch",
+		"template":"接水果下一步.png",
 		"action":"Click",
 		"target":[1136,651,0,0]
 	},
@@ -228,7 +594,15 @@
 		"action":"Click",
 		"post_delay":1000,
 		"next":[
+			"商店里程不足",
 			"里程商店2"
+		]
+	},
+	"商店里程不足":{
+		"recognition":"TemplateMatch",
+		"template":"商店里程不足.png",
+		"next":[
+			"里程商店6"
 		]
 	},
 	"里程商店2":{
@@ -236,6 +610,7 @@
 		"action":"Click",
 		"post_delay":1000,
 		"next":[
+			"商店里程不足",
 			"里程商店3"
 		]
 	},
@@ -289,6 +664,48 @@
 		"recognition":"TemplateMatch",
 		"template":"巡游获得宝物.png",
 		"target":[607,637,0,0],
+		"action":"Click"
+	},
+	"巡游捷径":{
+		"recognition":"TemplateMatch",
+		"template":"巡游捷径.png",
+		"post_delay":1000,
+		"next":[
+			"选择捷径"
+		]
+	},
+	"选择捷径":{
+		"next":[
+			"捷径里程不足",
+			"确认走捷径"
+		]
+	},
+	"确认走捷径":{
+		"recognition":"TemplateMatch",
+		"template":"确认走捷径.png",
+		"action":"Click",
+		"post_delay":4000
+	},
+	"捷径里程不足":{
+		"recognition":"TemplateMatch",
+		"template":"捷径里程不足.png",
+		"next":[
+			"不走捷径"
+		]
+	},
+	"不走捷径":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"巡游捷径.png",
+		"action":"Click",
+		"next":[
+			"巡游离开捷径"
+		]
+	},
+	"巡游离开捷径":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"巡游离开捷径.png",
 		"action":"Click"
 	}
 }

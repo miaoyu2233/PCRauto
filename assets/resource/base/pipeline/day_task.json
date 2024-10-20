@@ -39,7 +39,7 @@
 	"地下城跳过失败":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":["JZ\\jz地下城失败.png"],
+		"template":["地下城失败.png","JZ\\jz地下城失败.png"],
 		"target":[668,504,0,0],
 		"post_delay":2000,
 		"action":"Click",
@@ -51,9 +51,13 @@
 		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["购买mana.png","JZ\\jz购买mana.png"],
-		"target":[539,500,0,0],
 		"post_delay":1000,
-		"action":"Click",
+		"next":[
+			"购买mana是否花费钻石"
+		]
+	},
+	"购买mana是否花费钻石":{
+		"post_delay":1000,
 		"next":[
 			"购买mana2"
 		]
