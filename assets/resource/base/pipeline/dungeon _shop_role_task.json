@@ -1,6 +1,7 @@
 {
 	"商店买地下城角色碎片":{
         "post_delay":3000,
+        "timeout":60000,
         "next":[
             "进入地下城商店"
         ]
@@ -11,7 +12,6 @@
 		"recognition":"TemplateMatch",
 		"template":["商店.png","JZ\\jz商店.png"],
 		"action": "Click",
-        "post_delay":4000,
         "next":[
              "进入地下城商店2"
         ]
@@ -70,7 +70,6 @@
 		"template":["角色碎片一次购买.png","JZ\\jz碎片一次购买.png"],
 		"target":[995,583,0,0],
 		"action":"Click",
-		"post_delay":2000,
 		"next":[
 			"碎片购买确认2"
 		]
@@ -80,7 +79,6 @@
         "recognition":"TemplateMatch",
 		"template":["碎片购买确认0.png","JZ\\jz碎片购买确认.png"],
 		"action":"Click",
-		"post_delay":2000,
 		"next":[
 			"碎片购买确认3"
 		]
@@ -127,7 +125,6 @@
         "recognition":"TemplateMatch",
 		"template":["用10立即更新.png","JZ\\jz用10立即更新.png"],
         "action":"Click",
-        "post_delay":3000,
         "next":[
             "碎片重置确认1回刷新"
         ]
@@ -173,8 +170,6 @@
     "停止碎片任务":{
         "action":"StopTask"
     },
-   
-   
    
    
    

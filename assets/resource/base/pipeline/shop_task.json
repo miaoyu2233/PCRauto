@@ -1,6 +1,7 @@
 {
 	"商店":{
 		"post_delay":3000,
+		"timeout":60000,
 		"rate_limit":10,
 		"next":[
 			"商店返回主页",
@@ -15,7 +16,7 @@
 		"recognition":"TemplateMatch",
 		"template":["商店.png","JZ\\jz商店.png"],
 		"action": "Click",
-		"post_delay":1500
+		"post_delay":1000
 	},
 	"检查商店":{
 		"timeout":60000,
@@ -23,7 +24,6 @@
 		"template":["商店已购买.png","JZ\\jz商店已购买.png"],
 		"action":"Key",
 		"key":111
-	
 	},
 	"开始购买":{
 		"timeout":60000,
@@ -78,7 +78,7 @@
 		"recognition":"TemplateMatch",
 		"template":["OK.png","JZ\\jz一般商店确认.png"],
 		"action": "Click",
-		"post_delay":2600,
+		"post_delay":2000,
 		"next":[
 			"再次确定"
 		]
@@ -88,14 +88,14 @@
 		"recognition":"TemplateMatch",
 		"template":["OK.png","JZ\\jz一般商店确认.png"],
 		"action":"Click",
-		"post_delay":2000
+		"post_delay":1000
 	},
 	"商店返回主页":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["商店已购买.png","JZ\\jz商店已购买.png"],
 		"action":"Key",
-		"post_delay":4101,
+		"post_delay":1000,
 		"key":111
 	}
 }

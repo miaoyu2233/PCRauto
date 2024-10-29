@@ -30,14 +30,12 @@
 		"选中活动new":{
 			"action":"Click",
 			"target":[967,178,0,0],
-			"post_delay":1020,
+			"post_delay":1000,
 			"next":[
-				"选中活动new1"
+				"选中活动位置"
 			]
 		},
-		"选中活动new1":{
-			"action":"Click",
-			"target":[791,172,0,0],
+		"选中活动位置":{
 			"post_delay":1500,
 			"next":[
 				"选中活动new2"
@@ -80,7 +78,6 @@
 			"roi":[417,72,700,450],
 			"template":["活动剧情new.png","JZ\\jz活动剧情new.png"],
 			"target_offset":[0,23,0,0],
-			"post_delay":1531,
 			"action":"Click",
 			"next":[
 				"追加活动剧情资料下载x"
@@ -90,7 +87,6 @@
 			"timeout":60000,
 			"recognition":"TemplateMatch",
 			"template":["追加资料下载.png","JZ\\jz追加剧情资料下载.png"],
-			"post_delay":2131,
 			"next":[
 				"活动剧情无配音x"
 			]

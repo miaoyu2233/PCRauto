@@ -86,16 +86,10 @@
 		"rate_limit":10,
 		"timeout":60000,
 		"next":[
-			"户外野餐组",
-			"炽热烤鸡拼盘",
-			"加倍沙威玛",
-			"即食八分饱咖喱",
-			"绝妙5星汉堡",
-			"马铃薯炖肉",
-			"吃饱饱双倍饭团",
-			"贪吃鬼噗噗肉包",
-			"看透真相的糖果巧克力",
-			"开运点心拼盘",
+			"获取道具料理",
+			"无窗口料理",
+			"商店类料理",
+			"商店类料理无窗口",
 			"离开料理"
 		]
 	},
@@ -103,16 +97,10 @@
 		"rate_limit":10,
 		"timeout":60000,
 		"next":[
-			"户外野餐组",
-			"炽热烤鸡拼盘",
-			"加倍沙威玛",
-			"即食八分饱咖喱",
-			"绝妙5星汉堡",
-			"马铃薯炖肉",
-			"吃饱饱双倍饭团",
-			"贪吃鬼噗噗肉包",
-			"看透真相的糖果巧克力",
-			"开运点心拼盘",
+			"获取道具料理",
+			"无窗口料理",
+			"商店类料理",
+			"商店类料理无窗口",
 			"料理滑动2"
 		]
 	},
@@ -120,17 +108,137 @@
 		"rate_limit":10,
 		"timeout":60000,
 		"next":[
-			"户外野餐组",
-			"炽热烤鸡拼盘",
-			"加倍沙威玛",
-			"即食八分饱咖喱",
-			"绝妙5星汉堡",
-			"马铃薯炖肉",
-			"吃饱饱双倍饭团",
-			"贪吃鬼噗噗肉包",
-			"看透真相的糖果巧克力",
-			"开运点心拼盘",
+			"获取道具料理",
+			"无窗口料理",
+			"商店类料理",
+			"商店类料理无窗口",
 			"料理滑动"
+		]
+	},
+	"无窗口料理":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":[
+			"Delicacy\\炽热烤鸡拼盘.png",
+			"Delicacy\\即食八分饱咖喱.png",
+			"Delicacy\\烂漫牛排沙拉.png"
+		],
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用无窗口"
+		]
+	},
+	"获取道具料理":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":[
+			"Delicacy\\户外野餐组.png",
+			"Delicacy\\加倍沙威玛.png",
+			"Delicacy\\绝妙5星汉堡.png",
+			"Delicacy\\马铃薯炖肉.png",
+			"Delicacy\\吃饱饱双倍饭团.png",
+			"Delicacy\\贪吃鬼噗噗肉包.png",
+			"Delicacy\\看透真相的糖果巧克力.png",
+			"Delicacy\\彩虹招财鲷鱼烧.png",
+			"Delicacy\\好好休息沙拉.png"
+		],
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用"
+		]
+	},
+	"商店类料理":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":[
+			"Delicacy\\开运点心拼盘.png"
+		],
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"料理确认食用2"
+		]
+	},
+	"商店类料理无窗口":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":[
+			"Delicacy\\秘密隐形蛋糕.png"
+		],
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"商店类料理无窗口确定食用"
+		]
+	},
+	"商店类料理无窗口确定食用":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"确认食用.png",
+		"action":"Click",
+		"next":[
+			"料理里程商店"
+		]
+	},
+	"活动类料理":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":[
+			"Delicacy\\番茄炖煮混沌蛋.png"
+		],
+		"action":"Click",
+		"target_offset":[407,58,0,0],
+		"next":[
+			"活动类料理确认食用"
+		]
+	},
+	"活动类料理确认食用":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":["料理获得道具.png","料理获得宝物.png"],
+		"target":[686,637,0,0],
+		"action":"Click",
+		"post_delay":1000,
+		"next":[
+			"活动料理食用"
+		]
+	},
+	"活动料理食用":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"确认食用.png",
+		"action":"Click",
+		"next":[
+			"活动料理随机事件"
+		]
+	},
+	"活动料理随机事件":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":["巡游料理活动奖励.png"],
+		"action":"Click",
+		"post_delay":3000,
+		"rate_limit":10,
+		"next":[
+			"接水果游戏",
+			"巡游羁绊效果y",
+			"里程商店",
+			"巡游路口",
+			"料理已满",
+			"里程转蛋",
+			"巡游获得奖励",
+			"巡游获得料理",
+			"巡游获得宝物",
+			"巡游宝物获得",
+			"巡游捷径",
+			"巡游回合到达"
 		]
 	},
 	"离开料理":{
@@ -172,6 +280,7 @@
 		]
 	},
 	"料理里程商店":{
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"里程商店.png",
 		"target":[1031,162,0,0],
@@ -186,7 +295,7 @@
 		"recognition":"TemplateMatch",
 		"template":"商店里程不足.png",
 		"next":[
-			"料理里程商店6"
+			"料理里程商店5"
 		]
 	},
 	"料理里程商店2":{
@@ -216,15 +325,6 @@
 	},
 	"料理里程商店5":{
 		"target":[693,633,0,0],
-		"action":"Click",
-		"post_delay":1000,
-		"next":[
-			"料理里程商店6"
-		]
-	},
-	"料理里程商店6":{
-		"timeout":180000,
-		"target":[783,633,0,0],
 		"action":"Click",
 		"post_delay":1000,
 		"next":[
@@ -370,7 +470,7 @@
 		"action":"Click"
 	},
 	"掷骰子":{
-		"timeout":60000,
+		"timeout":120000,
 		"post_delay":1000,
 		"recognition":"TemplateMatch",
 		"template":["掷骰子.png","3个骰子.png"],
