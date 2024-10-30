@@ -1,90 +1,157 @@
 {   
 	"启动游戏":{
+		"post_delay":1000,
 		"next":[
-			"开始启动",
-			"启动"
+			"选择服务器"
 		]
-	
 	},
 	"开始启动":{
 		"recognition":"TemplateMatch",
 		"template":"选单.png",
 		"post_delay":4890,
 		"next":[
-			"掉线",
-			"下载资源",
-			"签到",
-			"战队竞赛最终日",
-			"主界面",
-			"进入游戏",
-			"确认进入到公告页面"
+
 		]
 	},
-	"启动":{
-		"is_sub":true,
-		"post_delay":18270,
+	"选择服务器":{
+		"post_delay":1000,
+		"timeout":180000,
+		"next":[
+			"进入游戏"
+		]
+	},
+	"繁体字服":{
+		"timeout":120000,
 		"recognition":"DirectHit",
 		"action":"StartApp",
-		"package":"tw.sonet.princessconnect/jp.co.cygames.activity.OverrideUnityActivity"
+		"package":"tw.sonet.princessconnect/jp.co.cygames.activity.OverrideUnityActivity",
+		"post_delay":1000,
+		"next":[
+			"进入游戏"
+		]
+	},
+	"简体字服":{
+		"timeout":120000,
+		"recognition":"DirectHit",
+		"action":"StartApp",
+		"package":"com.bilibili.priconne",
+		"post_delay":1000,
+		"next":[
+			"进入游戏"
+		]
 	},
 	"进入游戏":{
-		"timeout":60000,
-		"is_sub":true,
+		"timeout":120000,
 		"recognition":"OCR",
-		"expected":"Touch",
+		"expected":["Touch","点击屏幕"],
 		"action": "Click",
-		"post_delay":15920
+		"post_delay":3000,
+		"next":[
+			"游戏进入状态"
+		]
+	},
+	"游戏进入状态":{
+		"timeout":120000,
+		"rate_limit":10,
+		"next":[
+			"下载资源",
+			"签到",
+			"公告",
+			"新手冲刺",
+			"掉线",
+			"进入游戏",
+			"游戏进入状态"
+		]
 	},
 	"下载资源":{
+		"threshold":0.9,
 		"timeout":60000,
-		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"下载资源.png",
 		"action":"Click",
-		"post_delay":4890,
 		"next":[
 			"确定下载资源"
 		]
 	},
 	"确定下载资源":{
-		"timeout":60000,
+		"timeout":240000,
 		"recognition":"TemplateMatch",
 		"template":"OK.png",
-		"action":"Click"
+		"action":"Click",
+		"post_delay":1000,
+		"next":[
+			"确定下载资源状态"
+		]
+	},
+	"确定下载资源状态":{
+		"timeout":240000,
+		"next":[
+			"掉线",
+			"公告",
+			"签到",
+			"确定下载资源状态"
+		]
 	},
 	"掉线":{
-		"timeout":60000,
-		"is_sub":true,
+		"timeout":120000,
 		"recognition":"OCR",
 		"expected":"前往標題",
 		"action": "Click",
-		"post_delay":14890
+		"post_delay":3000,
+		"next":[
+			"进入游戏"
+		]
 	},
 	"签到":{
 		"timeout":180000,
-		"is_sub":true,
-		"post_delay":4790,
+		"post_delay":1000,
 		"recognition":"TemplateMatch",
-		"template":"跳过.png",
-		"action": "Click"
+		"template":["跳过.png","JZ\\jz跳过.png"],
+		"action": "Click",
+		"next":[
+			"公告"
+		]	
 	},
 	"公告":{
 		"timeout":240000,
 		"recognition":"TemplateMatch",
-		"template":"关闭按钮.png",
-		"action":"Click"
+		"template":["关闭按钮.png","JZ\\jz关闭按钮.png"],
+		"action":"Click",
+		"next":[
+			"公告后状态"
+		]
+	},
+	"公告后状态":{
+		"next":[
+			"战队竞赛最终日",
+			"确定是否已经处于游戏主页"
+		]
+	},
+	"确定是否已经处于游戏主页":{
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":["商店.png","JZ\\jz商店.png"],
+		"post_delay":6000,
+		"next":[
+			"再次确认是否到达主页",
+			"未进入到公告页面"
+		]
+	},
+	"再次确认是否到达主页":{
+		"recognition":"TemplateMatch",
+		"template":["商店.png","JZ\\jz商店.png"]
 	},
 	"新手冲刺":{
 		"timeout":60000,
-		"is_sub":true,
 		"recognition":"OCR",
 		"expected":"新手",
 		"action": "Click",
-		"post_delay":5020
+		"next":[
+			"公告"
+		]
 	},
 	"确认进入到公告页面":{
 		"timeout":240000,
-		"is_sub":true,
 		"next":[
 			"已进入到公告页面",
 			"未进入到公告页面"
@@ -92,16 +159,16 @@
 	},
 	"已进入到公告页面":{
 		"timeout":60000,
-		"is_sub":true,
-		"post_delay":2020,
+		"post_delay":2000,
 		"recognition":"TemplateMatch",
-		"template":"公告.png",
+		"template":["公告.png","JZ\\jz公告.png"],
 		"next":[
 			"公告"
 		]
 	},
 	"未进入到公告页面":{
-		"post_delay":2780,
+		"is_sub":true,
+		"post_delay":2000,
 		"action":"Click",
 		"target":[564,403,0,0]
 	},
@@ -109,16 +176,14 @@
 		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"确认主界面.png",
-		"pre_delay":8120,
+		"pre_delay":1000,
 		"action":"DoNothing",
-		"pre_wait_freezes":3293,
-		"post_delay":6266
+		"pre_wait_freezes":3293
 	},
 	"战队竞赛最终日":{
 		"timeout":60000,
-		"is_sub":true,
 		"recognition":"TemplateMatch",
-		"template":"战队竞赛最终日.png",
+		"template":["战队竞赛最终日.png","JZ\\jz会战最终日.png"],
 		"next":[
 			"战队竞赛最终日离开"
 		]
@@ -126,7 +191,10 @@
 	"战队竞赛最终日离开":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"战队竞赛最终日离开.png",
-		"action":"Click"
+		"template":["战队竞赛最终日离开.png","JZ\\jz会战最终日离开.png"],
+		"action":"Click",
+		"next":[
+			"确定是否已经处于游戏主页"
+		]
 	}
 }

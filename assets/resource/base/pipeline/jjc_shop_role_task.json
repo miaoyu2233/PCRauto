@@ -1,21 +1,23 @@
 {
 	"商店买竞技场角色碎片":{
         "post_delay":3000,
+        "timeout":60000,
         "next":[
             "进入竞技场商店"
         ]
     },
     "进入竞技场商店":{
+        "timeout":60000,
         "threshold":0.9,
 		"recognition":"TemplateMatch",
 		"template":["商店.png","JZ\\jz商店.png"],
 		"action": "Click",
-        "post_delay":4000,
         "next":[
              "进入竞技场商店2"
         ]
     },
     "进入竞技场商店2":{
+        "timeout":60000,
         "threshold":0.9,
         "recognition":"TemplateMatch",
 		"template":"竞技场商店.png",
@@ -68,7 +70,6 @@
 		"template":["角色碎片一次购买.png","JZ\\jz碎片一次购买.png"],
 		"target":[995,583,0,0],
 		"action":"Click",
-		"post_delay":2000,
 		"next":[
 			"竞技场碎片购买确认2"
 		]
@@ -78,7 +79,6 @@
         "recognition":"TemplateMatch",
 		"template":["碎片购买确认0.png","JZ\\jz碎片购买确认.png"],
 		"action":"Click",
-		"post_delay":2000,
 		"next":[
 			"竞技场碎片购买确认3"
 		]
@@ -121,17 +121,18 @@
         ]
     },
     "竞技场角色碎片刷新1回":{
+        "timeout":60000,
         "threshold":0.9,
         "recognition":"TemplateMatch",
 		"template":["用10立即更新.png","JZ\\jz用10立即更新.png"],
         "action":"Click",
-        "post_delay":3000,
         "next":[
             "竞技场碎片重置确认1回刷新"
         ]
     },
     "竞技场碎片重置确认1回刷新":{
         "threshold":0.9,
+        "timeout":60000,
         "recognition":"TemplateMatch",
 		"template":["碎片重置确认.png","JZ\\jz碎片重置确认.png"],
         "action":"Click",

@@ -1,6 +1,7 @@
 {
 "角色剧情":{
 	"post_delay":3000,
+	"timeout":60000,
 	"rate_limit":2000,
 		"next":[
 			"角色剧情DMM",
@@ -85,7 +86,6 @@
 		"roi":[417,72,700,450],
 		"recognition":"TemplateMatch",
 		"template":["角色剧情new.png","JZ\\jz_new.png","JP\\jp角色剧情new.png"],
-		"post_delay":1612,
 		"action":"Click",
 		"target_offset":[0,20,0,0],
 		"next":[
@@ -96,7 +96,6 @@
 		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["追加资料下载.png","JZ\\jz追加剧情资料下载.png","JP\\jp追加资料下载.png"],
-		"post_delay":2031,
 		"next":[
 			"角色剧情无配音"
 		]

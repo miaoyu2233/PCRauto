@@ -1,6 +1,7 @@
 {
 	"好感":{
 		"post_delay":3000,
+		"timeout":60000,
 		"next":[
 			"羁绊剧情",
 			"选中角色页面"
@@ -139,8 +140,16 @@
 		"post_delay":2810,
 		"target":[819,648,0,0],
 		"next":[
-			"羁绊剧情4"
+			"羁绊剧情4",
+			"羁绊剧情跳过"
 		]
+	},
+	"羁绊剧情跳过":{
+		"timeout":120000,
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":["羁绊剧情跳过.png","JZ\\jz羁绊剧情跳过.png"],
+		"action":"Click"
 	},
 	"羁绊剧情4":{
 		"timeout":60000,

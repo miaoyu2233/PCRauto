@@ -1,6 +1,7 @@
 {
 	"竞技场4":{
 		"post_delay":3200,
+		"timeout":60000,
 		"next":[
 			"开始jjc循环"
 		]

@@ -1,6 +1,7 @@
 {
 	"自动活动":{
 		"post_delay":3000,
+		"timeout":180000,
 		"next":[
 			"追加资料下载",
 			"开始活动",
@@ -21,6 +22,7 @@
 		]
 	},
 	"进入活动页面":{
+		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"活动.png",
 		"action":"Click",
@@ -28,6 +30,7 @@
 	},
 	"追加资料下载":{
 		"is_sub":true,
+		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"追加资料下载.png",
 		"post_delay":2631,
@@ -36,6 +39,7 @@
 		]
 	},
 	"活动无配音":{
+		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"无配音.png",
 		"action":"Click",
@@ -43,6 +47,7 @@
 	},
 	"剧情菜单":{
 		"is_sub":true,
+		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"剧情菜单.png",
 		"action":"Click",
@@ -52,6 +57,7 @@
 		]
 	},
 	"跳过剧情":{
+		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"跳过剧情.png",
 		"action":"Click",
@@ -74,6 +80,7 @@
 		"post_delay":8110
 	},
 	"活动妈":{
+		"timeout":180000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"活动妈.png",
@@ -95,6 +102,7 @@
 		"post_delay":1310
 	},
 	"活动冒险":{
+		"timeout":180000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"活动冒险.png",
@@ -105,7 +113,7 @@
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"NEXT.png",
-		"target_offset":[0,70,0,0],
+		"target_offset":[0,120,0,0],
 		"action":"Click",
 		"post_delay":3321,
 		"next":[
@@ -113,43 +121,56 @@
 		]
 	},
 	"活动开启auto战斗":{
+		"timeout":180000,
 		"next":[
-			"已开启活动开启auto战斗",
-			"未开启活动开启auto战斗"
+			"当期活动检查AUTO战斗是否开启",
+			"当期活动支线活动开始挑战"
 		]
 	},
-	"未开启活动开启auto战斗":{
-		"is_sub":true,
+	"当期活动检查AUTO战斗是否开启":{
+		"threshold":0.9,
 		"recognition":"TemplateMatch",
-		"template":"活动开启auto战斗.png",
-		"action":"Click"
+		"template":"AUTO.png",
+		"action":"Click",
+		"next":[
+			"当期活动支线活动开始挑战"
+		]
 	},
-	"已开启活动开启auto战斗":{
+	"当期活动支线活动开始挑战":{
 		"recognition":"TemplateMatch",
-		"template":"已开启活动auto.png",
+		"template":"支线活动进行挑战.png",
+		"action":"Click",
+		"post_delay":2000,
 		"next":[
-			"活动进行挑战"
+			"当期活动编组"
 		]
 	},
-	"活动进行挑战":{
+	"当期活动编组":{
+		"recognition":"TemplateMatch",
+		"template":"队伍编组.png",
 		"action":"Click",
-		"target":[1121,601,0,0],
-		"post_delay":1820,
 		"next":[
-		"活动进行挑战下一步"
+			"选择当期活动编组"
 		]
 	},
-	"活动进行挑战下一步": {
-		"action":"Click",
-		"target":[1143,602,0,0],
-		"post_delay":1610,
+	"选择当期活动编组":{
+		"recognition":"TemplateMatch",
+		"template":"我的队伍.png",
+		"post_delay":2000,
 		"next":[
-			"活动战斗开始"
+			"选择当期活动编组2"
 		]
 	},
-	"活动战斗开始":{
-		"action":"Click",
-		"target":[794,637,0,0],
-		"post_delay":1310
+	"选择当期活动编组2":{
+		"post_delay":2000,
+		"next":[
+			"呼叫当期活动编组"
+		]
+	},
+	"呼叫当期活动编组":{
+		"post_delay":1000,
+		"next":[
+			"支线活动下一步"
+		]
 	}
 }
