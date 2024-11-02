@@ -83,7 +83,6 @@
 		]
 	},
 	"扫荡地下城下一步":{
-		"post_delay":1000,
 		"target":[665,648,0,0],
 		"action":"Click",
 		"next":[
@@ -91,10 +90,11 @@
 		]
 	},
 	"扫荡地下城下一步2":{
+		"recognition":"OCR",
+		"expected":["OK","确认"],
 		"timeout":60000,
 		"target":[665,648,0,0],
 		"action":"Click",
-		"post_delay":1000,
 		"next":[
 			"mana冒险"
 		]
@@ -111,7 +111,6 @@
 			]
 	},
 	"mana冒险下一步":{
-		"post_delay":1000,
 		"target":[636,640,0,0],
 		"action":"Click",
 		"next":[
@@ -119,10 +118,11 @@
 		]
 	},	
 	"mana冒险下一步2":{
+		"recognition":"OCR",
+		"expected":["OK","确认"],
 		"timeout":60000,
 		"target":[636,640,0,0],
 		"action":"Click",
-		"post_delay":1000,
 		"next":[
 			"经验值冒险"
 		]
@@ -139,7 +139,6 @@
 			]
 	},
 	"经验值冒险下一步":{
-		"post_delay":1000,
 		"target":[661,648,0,0],
 		"action":"Click",
 		"next":[
@@ -147,9 +146,10 @@
 		]
 	},
 	"经验值冒险下一步2":{
+		"recognition":"OCR",
+		"expected":["OK","确认"],
 		"target":[661,648,0,0],
 		"action":"Click",
-		"post_delay":1000,
 		"next":[
 			"经验值冒险下一步3"
 		]

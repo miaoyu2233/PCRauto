@@ -2,34 +2,106 @@
 	"自动活动":{
 		"post_delay":3000,
 		"timeout":180000,
+		"rate_limit":1,
 		"next":[
-			"追加资料下载",
 			"开始活动",
-			"活动妈",
 			"剧情菜单",
 			"活动冒险",
 			"开始活动冒险",
+			"活动妈",
+			"活动登录奖励",
+			"活动确认奖励",
 			"进入冒险活动页面"
 		]
 	},
+	"活动登录奖励":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"活动登录奖励.png",
+		"action":"Click",
+		"target":[643,493,0,0]
+	},
+	"活动确认奖励":{
+		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"活动登录奖励.png",
+		"action":"Click",
+		"target":[668,644,0,0]
+	},
 	"进入冒险活动页面":{
 		"is_sub":true,
+		"recognition":"TemplateMatch",
+		"template":"商店.png",
 		"action":"Click",
 		"target":[726,680,0,0],
 		"post_delay":6130,
 		"next":[
-			"进入活动页面"
+			"进入活动页面",
+			"进入冒险活动页面"
 		]
 	},
 	"进入活动页面":{
 		"timeout":180000,
+		"threshold":0.6,
 		"recognition":"TemplateMatch",
 		"template":"活动.png",
 		"action":"Click",
-		"post_delay":14312
+		"next":[
+			"追加资料下载",
+			"开始活动冒险",
+			"活动剧情一览"
+		]
+	},
+	"活动剧情一览":{
+		"timeout":180000,
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"活动剧情一览.png",
+		"action":"Click",
+		"target":[647,640,0,0],
+		"next":[
+			"再次进入当期活动"
+		]
+	},
+	"再次进入当期活动":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"活动冒险.png",
+		"action": "Click",
+		"next":[
+			"支线BOSS位置"
+		]
+	},
+	"活动剧情解放2":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"活动剧情解放2.png",
+		"action":"Click",
+		"target":[654,500,0,0],
+		"post_delay":4000,
+		"next":[
+			"再次进入当期活动2"
+		]
+	},
+	"再次进入当期活动2":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"活动冒险.png",
+		"action": "Click",
+		"next":[
+			"开始活动冒险"
+		]
+	},
+	"活动boss击败下一步":{
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"活动boss击败下一步.png",
+		"action": "Click",
+		"next":[
+			"击败boss后状态判断"
+		]
 	},
 	"追加资料下载":{
-		"is_sub":true,
 		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"追加资料下载.png",
@@ -42,8 +114,7 @@
 		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"无配音.png",
-		"action":"Click",
-		"post_delay":7210
+		"action":"Click"
 	},
 	"剧情菜单":{
 		"is_sub":true,
@@ -61,7 +132,6 @@
 		"recognition":"TemplateMatch",
 		"template":"跳过剧情.png",
 		"action":"Click",
-		"post_delay":1210,
 		"next":[
 			"确定跳过剧情"
 		]
@@ -69,15 +139,13 @@
 	"确定跳过剧情":{
 		"recognition":"TemplateMatch",
 		"template":"确定跳过剧情.png",
-		"action":"Click",
-		"post_delay":2110
+		"action":"Click"
 	},
 	"开始活动":{
 		"is_sub":true,
 		"recognition":"OCR",
-		"expected":"Touch",
-		"action": "Click",
-		"post_delay":8110
+		"expected":"TOUCH",
+		"action": "Click"
 	},
 	"活动妈":{
 		"timeout":180000,
@@ -106,8 +174,7 @@
 		"is_sub":true,
 		"recognition":"TemplateMatch",
 		"template":"活动冒险.png",
-		"action": "Click",
-		"post_delay":4119
+		"action": "Click"
 	},
 	"开始活动冒险":{
 		"is_sub":true,
@@ -124,8 +191,21 @@
 		"timeout":180000,
 		"next":[
 			"当期活动检查AUTO战斗是否开启",
-			"当期活动支线活动开始挑战"
+			"当期活动支线活动开始挑战",
+			"当期活动结束"
 		]
+	},
+	"当期活动结束":{
+		"recognition":"TemplateMatch",
+		"template":"活动冒险.png",
+		"post_delay":1000,
+		"next":[
+			"当期活动结束2"
+		]
+	},
+	"当期活动结束2":{
+		"action":"Key",
+		"key":111
 	},
 	"当期活动检查AUTO战斗是否开启":{
 		"threshold":0.9,

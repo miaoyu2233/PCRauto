@@ -106,8 +106,8 @@
         {   "name": "巡游",
             "entry": "巡游",
             "option":[
-                "是否每次掷骰子前使用料理",
                 "一次投骰子数量",
+                "是否每次掷骰子前使用料理",
                 "是否走捷径"
             ]
         },        
@@ -371,28 +371,6 @@
                 }
             ]
         },
-        "是否每次掷骰子前使用料理":{
-            "cases":[
-                {
-                    "name":"不使用料理",
-                    "pipeline_override":{
-                        "吃料理":{
-                            "action":"DoNothing"
-                        }
-                    }
-                },
-                {
-                    "name":"使用料理",
-                    "pipeline_override":{
-                        "吃料理":{
-                            "recognition":"TemplateMatch",
-                            "template":["巡游吃料理.png","吃料理2.png"],
-                            "action":"Click"
-                        }
-                    }
-                }
-            ]
-        },
         "一次投骰子数量":{
             "cases":[
                 {
@@ -410,6 +388,26 @@
                         "骰子次数判断":{
                             "recognition":"TemplateMatch",
                             "template":"3个骰子.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "是否每次掷骰子前使用料理":{
+            "cases":[
+                {
+                    "name":"不使用料理",
+                    "pipeline_override":{
+                        "吃料理":{
+                            "action":"DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name":"使用料理",
+                    "pipeline_override":{
+                        "吃料理":{
+                            "action":"Click"
                         }
                     }
                 }

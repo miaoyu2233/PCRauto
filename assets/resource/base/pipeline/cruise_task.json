@@ -25,20 +25,29 @@
 			"点击三个一起"
 		]
 	},
-	"吃料理":{
+	"是否吃料理":{
 		"is_sub":true,
+		"next":[
+			"吃料理"
+		]
+	},
+	"吃料理":{
 		"timeout":180000,
-		"rate_limit":300,
+		"post_delay":500,
+		"rate_limit":100,
+		"recognition":"TemplateMatch",
+		"template":["巡游吃料理.png","吃料理2.png"],
 		"next":[
 			"未持有料理",
 			"一回合只能吃一道料理",
+			"当前持有料理",
 			"掷骰子",
-			"持有料理",
 			"巡游事件"
 		]
 	},
 	"一回合只能吃一道料理":{
 		"timeout":180000,
+		"threshold":0.9,
 		"recognition":"TemplateMatch",
 		"template":"一回合只能吃一道料理.png",
 		"next":[
@@ -46,6 +55,7 @@
 		]
 	},
 	"未持有料理":{
+		"threshold":0.9,
 		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"未持有料理.png",
@@ -54,10 +64,10 @@
 			"巡游事件"
 		]
 	},
-	"持有料理":{
+	"当前持有料理":{
 		"timeout":180000,
 		"recognition":"TemplateMatch",
-		"template":"料理界面.png",
+		"template":"料理选择界面.png",
 		"next":[
 			"判断料理"
 		]
@@ -224,7 +234,7 @@
 		"recognition":"TemplateMatch",
 		"template":["巡游料理活动奖励.png"],
 		"action":"Click",
-		"post_delay":3000,
+		"post_delay":2000,
 		"rate_limit":10,
 		"next":[
 			"接水果游戏",
@@ -237,6 +247,7 @@
 			"巡游获得料理",
 			"巡游获得宝物",
 			"巡游宝物获得",
+			"巡游获得抽奖券",
 			"巡游捷径",
 			"巡游回合到达"
 		]
@@ -459,9 +470,10 @@
 		]
 	},
 	"骰子次数判断":{
+		"timeout":180000,
+		"post_delay":1000,
 		"next":[
-			"吃料理",
-			"巡游事件"
+			"是否吃料理"
 		]
 	},
 	"点击三个一起":{
@@ -472,6 +484,7 @@
 	"掷骰子":{
 		"timeout":120000,
 		"post_delay":1000,
+		"threshold":0.8,
 		"recognition":"TemplateMatch",
 		"template":["掷骰子.png","3个骰子.png"],
 		"action":"Click",
@@ -482,6 +495,7 @@
 	},
 	"未持有骰子":{
 		"timeout":60000,
+		"threshold":0.9,
 		"recognition":"TemplateMatch",
 		"template":"未持有骰子.png",
 		"target":[129,684,0,0],
@@ -509,17 +523,29 @@
 			"巡游获得料理",
 			"巡游获得宝物",
 			"巡游宝物获得",
+			"巡游获得抽奖券",
 			"巡游捷径",
 			"巡游回合到达",
-			"吃料理",
+			"是否吃料理",
 			"巡游事件"
 		]
 	},
 	"巡游事件完成":{
 		"action":"DoNothing"
 	},
+	"巡游获得抽奖券":{
+		"recognition":"TemplateMatch",
+		"template":"巡游获得抽奖券",
+		"post_delay":1000,
+		"next":[
+			"领取抽奖券"
+		]
+	},
+	"领取抽奖券":{
+		"action":"Key",
+		"key":111
+	},
 	"巡游获得奖励":{
-		"pre_delay":6200,
 		"recognition":"TemplateMatch",
 		"template":"巡游活动奖励.png",
 		"action":"Click"

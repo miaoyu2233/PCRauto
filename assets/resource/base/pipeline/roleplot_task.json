@@ -221,7 +221,7 @@
 	"JP选择new角色剧情":{
 		"threshold":0.6,
 		"roi":[417,72,700,450],
-		"recognition":"TemplateMatch",
+		"recognition":"FeatureMatch",
 		"template":["角色剧情new.png","JZ\\jz_new.png","JP\\jp角色剧情new.png"],
 		"post_delay":1612,
 		"action":"Click",
@@ -260,7 +260,7 @@
 	},
 	"JP跳过角色剧情":{
 		"timeout":380000,
-		"target":[1026,90,0,0],
+		"target":[1026,80,0,0],
 		"action":"Click",
 		"post_delay":1410,
 		"next":[
