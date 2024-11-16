@@ -147,6 +147,9 @@
 	"探险返回主页":{
 		"action":"Click",
 		"target":[136,680,0,0],
-		"post_delay":2000
+		"post_delay":1000,
+		"next":[
+			"结束任务"
+		]
 	}
 }

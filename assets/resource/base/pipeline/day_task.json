@@ -146,6 +146,7 @@
 		]
 	},
 	"经验值冒险下一步2":{
+		"timeout":60000,
 		"recognition":"OCR",
 		"expected":["OK","确认"],
 		"target":[661,648,0,0],

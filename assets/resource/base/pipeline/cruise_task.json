@@ -132,7 +132,8 @@
 		"template":[
 			"Delicacy\\炽热烤鸡拼盘.png",
 			"Delicacy\\即食八分饱咖喱.png",
-			"Delicacy\\烂漫牛排沙拉.png"
+			"Delicacy\\烂漫牛排沙拉.png",
+			"Delicacy\\冲刺三明治.png"
 		],
 		"action":"Click",
 		"target_offset":[407,58,0,0],
@@ -327,7 +328,9 @@
 		]
 	},
 	"料理里程商店4":{
-		"target":[693,637,0,0],
+		"timeout":60000,
+        "recognition":"OCR",
+		"expected":["OK","确认"],
 		"action":"Click",
 		"post_delay":1000,
 		"next":[
@@ -335,7 +338,7 @@
 		]
 	},
 	"料理里程商店5":{
-		"target":[693,633,0,0],
+		"target":[791,615,0,0],
 		"action":"Click",
 		"post_delay":1000,
 		"next":[
@@ -734,7 +737,7 @@
 		"recognition":"TemplateMatch",
 		"template":"商店里程不足.png",
 		"next":[
-			"里程商店6"
+			"里程商店5"
 		]
 	},
 	"里程商店2":{
@@ -755,7 +758,9 @@
 		]
 	},
 	"里程商店4":{
-		"target":[693,637,0,0],
+		"timeout":60000,
+        "recognition":"OCR",
+		"expected":["OK","确认"],
 		"action":"Click",
 		"post_delay":1000,
 		"next":[
@@ -763,17 +768,8 @@
 		]
 	},
 	"里程商店5":{
-		"target":[693,633,0,0],
-		"action":"Click",
-		"post_delay":1000,
-		"next":[
-			"里程商店6"
-		]
-	},
-	"里程商店6":{
-		"target":[783,633,0,0],
-		"action":"Click",
-		"post_delay":1000
+		"target":[791,615,0,0],
+		"action":"Click"
 	},
 	"里程转蛋":{
 		"recognition":"TemplateMatch",
@@ -802,25 +798,6 @@
 		"recognition":"TemplateMatch",
 		"template":"巡游捷径.png",
 		"post_delay":1000,
-		"next":[
-			"选择捷径"
-		]
-	},
-	"选择捷径":{
-		"next":[
-			"捷径里程不足",
-			"确认走捷径"
-		]
-	},
-	"确认走捷径":{
-		"recognition":"TemplateMatch",
-		"template":"确认走捷径.png",
-		"action":"Click",
-		"post_delay":4000
-	},
-	"捷径里程不足":{
-		"recognition":"TemplateMatch",
-		"template":"捷径里程不足.png",
 		"next":[
 			"不走捷径"
 		]

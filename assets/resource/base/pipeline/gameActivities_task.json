@@ -16,6 +16,7 @@
 	},
 	"活动登录奖励":{
 		"is_sub":true,
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"活动登录奖励.png",
 		"action":"Click",
@@ -23,6 +24,7 @@
 	},
 	"活动确认奖励":{
 		"is_sub":true,
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"活动登录奖励.png",
 		"action":"Click",
@@ -30,11 +32,12 @@
 	},
 	"进入冒险活动页面":{
 		"is_sub":true,
+		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"商店.png",
 		"action":"Click",
 		"target":[726,680,0,0],
-		"post_delay":6130,
+		"post_delay":1000,
 		"next":[
 			"进入活动页面",
 			"进入冒险活动页面"
@@ -143,6 +146,7 @@
 	},
 	"开始活动":{
 		"is_sub":true,
+		"timeout":60000,
 		"recognition":"OCR",
 		"expected":"TOUCH",
 		"action": "Click"

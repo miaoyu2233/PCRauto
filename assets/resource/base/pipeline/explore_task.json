@@ -60,6 +60,22 @@
 		"next":[
 			"探险门",
 			"探险对话事件",
+			"探险获得装备",
+			"怪鸟来袭"
+		]
+	},
+	"怪鸟来袭":{
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":"怪鸟来袭.png",
+		"next":[
+			"怪鸟来袭选项"
+		]
+	},
+	"怪鸟来袭选项":{
+		"timeout":60000,
+		"action":"Click",
+		"next":[
 			"探险获得装备"
 		]
 	},

@@ -12,7 +12,7 @@
 		"is_sub":true,
 		"action":"Click",
 		"target":[269,680,0,0],
-		"post_delay":3120,
+		"post_delay":3000,
 		"next":[
 			"选择角色分类"
 		]

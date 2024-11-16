@@ -1,7 +1,7 @@
 {
 	"主线扫荡预设":{
         "timeout":60000,
-        "rate_limit":4000,
+        "post_delay":4000,
         "next":[
             "进入主线冒险"
         ]
@@ -43,14 +43,14 @@
     },
     "主线冒险扫荡下一步":{
         "action":"Click",
-        "post_delay":2000,
+        "post_delay":3000,
 		"target":[1128,655,0,0],
         "next":[
-            "识别主线扫荡是否由次数"
+            "识别主线扫荡是否有次数"
         ]
     },
-    "识别主线扫荡是否由次数":{
-        "rate_limit":3000,
+    "识别主线扫荡是否有次数":{
+        "rate_limit":2000,
         "next":[
             "主线扫荡开始",
             "主线扫荡恢复次数",
@@ -67,25 +67,28 @@
         ]
     },
     "主线扫荡体力不足2":{
-        "action":"Key",
-		"key":111,
-        "post_delay":500,
+        "timeout":60000,
+        "recognition":"OCR",
+		"expected":["OK","确认"],
+        "action":"Click",
         "next":[
-            "主线扫荡体力不足3"
+            "主线扫荡开始x"
         ]
     },
-    "主线扫荡体力不足3":{
-        "action":"Key",
-		"key":111,
+    "主线扫荡开始x":{
+        "timeout":60000,
+        "recognition":"TemplateMatch",
+		"template":["主线扫荡进行挑战.png","主线扫荡进行挑战2.png","JZ\\jz主线扫荡进行挑战.png"],
+        "action":"Click",
         "post_delay":1500,
         "next":[
-            "主线扫荡返回主页"
+            "主线扫荡开始2"
         ]
     },
     "主线扫荡恢复次数":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":["确定是否消耗宝石恢复扫荡次数.png","JZ\\jz主线扫荡次数不足.png"],
+		"template":["恢复挑战次数.png","jz恢复挑战次数.png"],
         "action":"Click",
         "post_delay":1500,
         "target":[521,644,0,0],
@@ -96,9 +99,9 @@
     "主线扫荡开始":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":["主线扫荡进行挑战.png","JZ\\jz主线扫荡进行挑战.png"],
+		"template":["主线扫荡进行挑战.png","主线扫荡进行挑战2.png","JZ\\jz主线扫荡进行挑战.png"],
         "action":"Click",
-        "post_delay":1000,
+        "post_delay":1500,
         "next":[
             "主线扫荡开始2"
         ]
@@ -128,7 +131,7 @@
     "工会战次数增加页面":{
         "timeout":60000,
         "recognition":"TemplateMatch",
-		"template":"工会战次数增加页面.png",
+		"template":["工会战次数增加页面.png","jz公会战次数增加.png"],
         "action":"Click",
         "post_delay":1000,
 		"target":[514,583,0,0],
@@ -161,16 +164,17 @@
         "recognition":"TemplateMatch",
 		"template":["限定商店.png","JZ\\jz限定商店.png"],
         "action":"Click",
-        "post_delay":1000,
+        "post_delay":2000,
 		"target":[819,640,0,0],
         "next":[
             "主线扫荡开始4"
         ]
     },
     "主线扫荡开始4":{
-        "action":"Click",
-        "post_delay":1200,
-		"target":[816,633,0,0],
+        "pre_delay":2000,
+        "action":"Key",
+		"key":111,
+        "post_delay":2000,
         "next":[
             "主线扫荡返回主页"
         ]

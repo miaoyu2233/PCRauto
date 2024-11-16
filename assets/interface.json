@@ -35,7 +35,7 @@
     ],
     "task": [
         {
-            "name": "启动游戏",
+            "name": "启动游戏(J)",
             "entry": "启动游戏",
             "option":[
                 "选择服务器"
@@ -55,10 +55,6 @@
         {
             "name": "竞技场(J)",
             "entry": "竞技场"
-        },
-        {
-            "name": "领取日常奖励(J)",
-            "entry": "领取任务奖励"
         },
         {
             "name": "主线扫荡预设(J)",
@@ -83,6 +79,18 @@
             ]
         },
         {
+            "name":"当期活动日常",
+            "entry":"日常活动"
+        },
+        {
+            "name":"露娜塔日常扫荡",
+            "entry":"露娜塔日常扫荡"
+        },
+        {
+            "name": "领取日常奖励(J)",
+            "entry": "领取任务奖励"
+        },
+        {
             "name":"遗迹/圣迹(J)",
             "entry":"遗迹"
         },
@@ -94,10 +102,13 @@
             "entry": "每日探险"
         },
         {   "name": "探险事件",
-            "entry": "探险事件"
-        },       
+            "entry": "探险事件",
+            "option":[
+                "怪鸟来袭选择"
+            ]
+        },    
 	    {
-            "name": "挂机或关闭游戏",
+            "name": "-----挂机或关闭游戏(J)-----",
             "entry": "游戏状态",
             "option":[
                 "游戏状态"
@@ -107,21 +118,9 @@
             "entry": "巡游",
             "option":[
                 "一次投骰子数量",
-                "是否每次掷骰子前使用料理",
-                "是否走捷径"
+                "是否每次掷骰子前使用料理"
             ]
         },        
-        {   "name": "每日免费扭蛋",
-            "entry": "免费扭蛋"
-        },   
-        {
-            "name": "公会小屋奖励",
-            "entry": "领取公会小屋奖励"
-        },
-        {
-            "name": "小屋Like(需在小屋页面)",
-            "entry": "公会小屋Like"
-        },
         {
             "name": "地下城角色碎片(J)",
             "entry": "商店买地下城角色碎片",
@@ -187,9 +186,27 @@
             "name": "露娜塔剧情(J)",
             "entry": "露娜塔剧情"
         },
+        {   "name": "每日免费扭蛋",
+            "entry": "免费扭蛋"
+        },   
+        {
+            "name": "公会小屋奖励",
+            "entry": "领取公会小屋奖励"
+        },
+        {
+            "name": "小屋Like(需在小屋页面)",
+            "entry": "公会小屋Like"
+        },
         {
             "name":"公会乞讨装备",
             "entry":"公会乞讨"
+        },
+        {
+            "name":"小工具-角色倒下暂停(J)",
+            "entry":"小工具_角色存活",
+            "option":[
+                "识别频率"
+            ]
         }
     ],
     "option": {
@@ -413,24 +430,23 @@
                 }
             ]
         },
-        "是否走捷径":{
+        "怪鸟来袭选择":{
             "cases":[
                 {
-                    "name":"不走捷径",
+                    "name":"乖乖就范",
                     "pipeline_override":{
-                        "选择捷径":{
+                        "怪鸟来袭选项":{
                             "recognition":"TemplateMatch",
-                            "template":"巡游捷径.png",
-                            "action":"Click"
+                            "template":"乖乖就范.png"
                         }
                     }
                 },
                 {
-                    "name":"走捷径",
+                    "name":"挣扎逃跑",
                     "pipeline_override":{
-                        "选择捷径":{
-                            "target":[837,446,0,0],
-                            "action":"Click"
+                        "怪鸟来袭选项":{
+                            "recognition":"TemplateMatch",
+                            "template":"怪鸟来袭.png"
                         }
                     }
                 }
@@ -442,9 +458,12 @@
                     "name":"主页挂机",
                     "pipeline_override":{
                         "确定游戏状态":{
-                            "timeout":60000,
+                            "recognition":"TemplateMatch",
                             "template":"主页挂机.png",
                             "action":"Click"
+                        },
+                        "当前游戏状态":{
+                            "action":"StopTask"
                         }
                     }
                 },
@@ -452,9 +471,14 @@
                     "name":"关闭游戏",
                     "pipeline_override":{
                         "确定游戏状态":{
-                            "recognition":"DirectHit",
-                            "action":"StopApp",
-                            "package":"tw.sonet.princessconnect"
+                            "action":"Key",
+                            "key":111
+                        },
+                        "当前游戏状态":{
+                            "roi":[352,450,600,120],
+                            "recognition":"OCR",
+                            "template":["OK","确认"],
+                            "action":"Click"
                         }
                     }
                 }
@@ -801,7 +825,7 @@
             {
                 "name": "不额外购买",
                 "pipeline_override":{
-                    "识别地下城碎片":{
+                    "识别地下城碎片3":{
                         "action":"DoNothing"
                     }
                 }
@@ -1999,6 +2023,66 @@
                         "选中活动位置":{
                             "action":"Click",
                             "target":[924,604,0,0]
+                        }
+                    }
+                }
+            ]
+        },
+        "识别频率":{
+            "cases":[
+                {
+                    "name":"每3秒识别一次(推荐)",
+                    "pipeline_override":{
+                        "灰度识别":{
+                            "rate_limit":3000
+                        }
+                    }
+                },
+                {
+                    "name":"每5秒识别一次",
+                    "pipeline_override":{
+                        "灰度识别":{
+                            "rate_limit":5000
+                        }
+                    }
+                },
+                {
+                    "name":"每4秒识别一次",
+                    "pipeline_override":{
+                        "灰度识别":{
+                            "rate_limit":4000
+                        }
+                    }
+                },
+                {
+                    "name":"每2秒识别一次",
+                    "pipeline_override":{
+                        "灰度识别":{
+                            "rate_limit":2000
+                        }
+                    }
+                },
+                {
+                    "name":"每1.5秒识别一次",
+                    "pipeline_override":{
+                        "灰度识别":{
+                            "rate_limit":1500
+                        }
+                    }
+                },
+                {
+                    "name":"每1秒识别一次",
+                    "pipeline_override":{
+                        "灰度识别":{
+                            "rate_limit":1000
+                        }
+                    }
+                },
+                {
+                    "name":"每0.5秒识别一次",
+                    "pipeline_override":{
+                        "灰度识别":{
+                            "rate_limit":500
                         }
                     }
                 }
