@@ -4,7 +4,7 @@
 
 <div align="center">
 
-# PCRauto公主连结小助手
+# PCRauto公主连结璃乃助手
 </div>
 
 PCR 公主连结（PrincessConnect）**图像识别自动化小助手**  ***PCRauto*** <kbd>璃乃版</kbd>  
