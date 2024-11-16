@@ -15,19 +15,7 @@
     ],
     "resource": [
         {
-            "name": "繁体字服",
-            "path": [
-                "{PROJECT_DIR}/resource/base"
-            ]
-        },
-        {
-            "name": "简体字服",
-            "path": [
-                "{PROJECT_DIR}/resource/base"
-            ]
-        },
-        {
-            "name": "日服",
+            "name": "璃乃版",
             "path": [
                 "{PROJECT_DIR}/resource/base"
             ]
