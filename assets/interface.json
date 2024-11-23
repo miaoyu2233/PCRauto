@@ -67,7 +67,7 @@
             ]
         },
         {
-            "name":"当期活动日常",
+            "name":"当期/复刻活动日常",
             "entry":"日常活动"
         },
         {
@@ -140,7 +140,7 @@
             ]
         },
         {  
-            "name": "刷当期活动",
+            "name": "刷当期/复刻活动",
             "entry": "自动活动",
             "option":[
                 "当期选择队伍编组",
@@ -173,6 +173,10 @@
         {
             "name": "露娜塔剧情(J)",
             "entry": "露娜塔剧情"
+        },
+        {
+            "name":"公主生日剧情",
+            "entry":"生日剧情"
         },
         {   "name": "每日免费扭蛋",
             "entry": "免费扭蛋"
@@ -1709,12 +1713,32 @@
                     }
                 },
                 {
+                    "name":"刷新到200停止刷新",
+                    "pipeline_override":{
+                        "碎片刷新次数":{
+                            "threshold":0.9,
+                            "recognition":"TemplateMatch",
+                            "template":["用200立即更新.png","JZ\\jz用200立即更新.png"]
+                        }
+                    }
+                },
+                {
                     "name":"刷新到500停止刷新",
                     "pipeline_override":{
                         "碎片刷新次数":{
                             "threshold":0.9,
                             "recognition":"TemplateMatch",
                             "template":["用500立即更新.png","JZ\\jz用500立即刷新.png"]
+                        }
+                    }
+                },
+                {
+                    "name":"无限刷新",
+                    "pipeline_override":{
+                        "碎片刷新次数":{
+                            "threshold":0.9,
+                            "recognition":"TemplateMatch",
+                            "template":"商店.png"
                         }
                     }
                 }
@@ -1774,6 +1798,16 @@
                             "template":["用500立即更新.png","JZ\\jz用500立即刷新.png"]
                         }
                     }
+                },
+                {
+                    "name":"无限刷新",
+                    "pipeline_override":{
+                        "竞技场碎片刷新次数":{
+                            "threshold":0.9,
+                            "recognition":"TemplateMatch",
+                            "template":"商店.png"
+                        }
+                    }
                 }
             ]
         },
@@ -1829,6 +1863,16 @@
                             "threshold":0.9,
                             "recognition":"TemplateMatch",
                             "template":["用500立即更新.png","JZ\\jz用500立即刷新.png"]
+                        }
+                    }
+                },
+                {
+                    "name":"无限刷新",
+                    "pipeline_override":{
+                        "公主竞技场碎片刷新次数":{
+                            "threshold":0.9,
+                            "recognition":"TemplateMatch",
+                            "template":"商店.png"
                         }
                     }
                 }

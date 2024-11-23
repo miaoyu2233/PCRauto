@@ -23,7 +23,7 @@
 	"is_sub":true,
 	"action":"Click",
 	"target":[514,691,0,0],
-	"post_delay":4120
+	"post_delay":3000
 	},
 "角色剧情页面":{
 	"timeout":300000,
@@ -33,7 +33,6 @@
 	"action":"Click",
 	"post_delay":3000,
 	"next":[
-		"是否已完成角色剧情",
 		"选中角色new"
 		]
 	},
@@ -109,7 +108,7 @@
 	},
 	"角色剧情菜单":{
 		"is_sub":true,
-		"timeout":1200000,
+		"timeout":3600000,
 		"recognition":"TemplateMatch",
 		"template":["剧情菜单.png","JZ\\jz剧情菜单.png","JP\\jp剧情菜单.png"],
 		"pre_delay":2620,
@@ -171,7 +170,6 @@
 	"action":"Click",
 	"post_delay":3000,
 	"next":[
-		"JP是否已完成角色剧情",
 		"JP选中角色new"
 		]
 	},
@@ -248,7 +246,7 @@
 	},
 	"JP角色剧情菜单":{
 		"is_sub":true,
-		"timeout":1200000,
+		"timeout":3600000,
 		"recognition":"FeatureMatch",
 		"template":["剧情菜单.png","JZ\\jz剧情菜单.png","JP\\jp剧情菜单.png"],
 		"pre_delay":2620,

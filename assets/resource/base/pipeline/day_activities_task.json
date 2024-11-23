@@ -21,10 +21,30 @@
 	"开始日常活动2":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"活动.png",
+		"template":["活动.png","复刻活动.png"],
 		"action": "Click",
+		"post_delay":1000,
 		"next":[
-			"日常活动登录奖励"
+			"日常活动进入状态"
+		]
+	},
+	"日常活动进入状态":{
+		"next":[
+			"日常活动剧情菜单",
+			"日常活动登录奖励",
+			"日常活动进入状态"
+		]
+	},
+	"日常活动剧情菜单":{
+		"threshold":0.6,
+		"timeout":360000,
+		"recognition":"TemplateMatch",
+		"template":"剧情菜单.png",
+		"action":"Click",
+		"target":[643,493,0,0],
+		"next":[
+			"日常活动登录奖励",
+			"日常活动剧情菜单"
 		]
 	},
 	"日常活动登录奖励":{

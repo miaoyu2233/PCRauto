@@ -191,11 +191,98 @@
 		"action":"Click",
 		"target":[801,637,0,0],
 		"next":[
-			"支线AUTO结束"
+			"支线AUTO结束",
+			"活动特别内容解放"
+		]
+	},
+	"活动特别内容解放":{
+		"is_sub":true,
+		"timeout":1800000,
+		"recognition":"TemplateMatch",
+		"template":"活动特别内容解放.png",
+		"next":[
+			"活动特别内容解放2"
+		]
+	},
+	"活动特别内容解放2":{
+		"timeout":60000,
+        "recognition":"OCR",
+		"expected":["OK","确认"],
+        "action":"Click",
+		"post_delay":2000,
+		"next":[
+			"活动特别内容解放3"
+		]
+	},
+	"活动特别内容解放3":{
+		"action":"Click",
+		"target":[650,644,0,0],
+		"post_delay":3000,
+		"next":[
+			"活动特别内容解放4"
+		]
+	},
+	"活动特别内容解放4":{
+		"action":"Key",
+		"key":111,
+		"post_delay":1000,
+		"next":[
+			"再次进入活动冒险"
+		]
+	},
+	"再次进入活动冒险":{
+		"timeout":1800000,
+		"recognition":"TemplateMatch",
+		"template":["活动冒险.png","复刻活动.png"],
+		"action": "Click",
+		"next":[
+			"再次进入活动冒险2"
+		]
+	},
+	"再次进入活动冒险2":{
+		"timeout":60000,
+		"recognition":"OCR",
+		"expected":"NEXT",
+		"target_offset":[0,120,0,0],
+		"action":"Click",
+		"post_delay":3000,
+		"next":[
+			"再次进入活动冒险2进行挑战"
+		]
+	},
+	"再次进入活动冒险2进行挑战":{
+		"action":"Click",
+		"target":[1121,615,0,0],
+		"post_delay":3000,
+		"next":[
+			"再次进入活动冒险2进行挑战下一步"
+		]
+	},
+	"再次进入活动冒险2进行挑战下一步":{
+		"action":"Click",
+		"target":[1146,604,0,0],
+		"post_delay":2000,
+		"next":[
+			"再次进入活动冒险2战斗开始"
+		]
+	},
+	"再次进入活动冒险2战斗开始":{
+		"action":"Click",
+		"target":[794,648,0,0],
+		"post_delay":60000,
+		"next":[
+			"支线auto状态判断"
+		]
+	},
+	"支线auto状态判断":{	
+		"next":[
+			"支线AUTO结束",
+			"支线AUTO停止下一步",
+			"支线auto状态判断"
 		]
 	},
 	"支线AUTO结束":{
-		"timeout":1800000,
+		"timeout":18000000,
 		"recognition":"TemplateMatch",
 		"template":"支线AUTO进行结束.png",
 		"action":"Click",
@@ -261,7 +348,7 @@
 	},
 	"活动剧情菜单":{
 		"is_sub":true,
-		"timeout":1200000,
+		"timeout":3600000,
 		"recognition":"TemplateMatch",
 		"template":["支线活动剧情跳过.png"],
 		"pre_delay":2600,

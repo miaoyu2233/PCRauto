@@ -2,15 +2,8 @@
 	"自动活动":{
 		"post_delay":3000,
 		"timeout":180000,
-		"rate_limit":1,
+		"rate_limit":100,
 		"next":[
-			"开始活动",
-			"剧情菜单",
-			"活动冒险",
-			"开始活动冒险",
-			"活动妈",
-			"活动登录奖励",
-			"活动确认奖励",
 			"进入冒险活动页面"
 		]
 	},
@@ -31,23 +24,28 @@
 		"target":[668,644,0,0]
 	},
 	"进入冒险活动页面":{
-		"is_sub":true,
 		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":"商店.png",
 		"action":"Click",
 		"target":[726,680,0,0],
-		"post_delay":1000,
+		"post_delay":2000,
 		"next":[
 			"进入活动页面",
-			"进入冒险活动页面"
+			"开始活动",
+			"剧情菜单",
+			"活动冒险",
+			"开始活动冒险",
+			"活动妈",
+			"活动登录奖励",
+			"活动确认奖励"
 		]
 	},
 	"进入活动页面":{
 		"timeout":180000,
 		"threshold":0.6,
 		"recognition":"TemplateMatch",
-		"template":"活动.png",
+		"template":["活动.png","复刻活动.png"],
 		"action":"Click",
 		"next":[
 			"追加资料下载",
@@ -121,7 +119,7 @@
 	},
 	"剧情菜单":{
 		"is_sub":true,
-		"timeout":180000,
+		"timeout":360000,
 		"recognition":"TemplateMatch",
 		"template":"剧情菜单.png",
 		"action":"Click",
@@ -131,7 +129,7 @@
 		]
 	},
 	"跳过剧情":{
-		"timeout":180000,
+		"timeout":360000,
 		"recognition":"TemplateMatch",
 		"template":"跳过剧情.png",
 		"action":"Click",
