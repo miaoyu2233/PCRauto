@@ -87,8 +87,10 @@
 	},
 	"角色死亡立刻暂停":{
 		"timeout":6000000,
-		"action":"Key",
-		"key":111,
+		"recognition":"TemplateMatch",
+		"template":["战斗页面菜单.png","JZ\\jz_暂停菜单.png"],
+		"action":"Click",
+		"pre_delay":10,
 		"post_delay":1000,
 		"next":[
 			"结束任务"

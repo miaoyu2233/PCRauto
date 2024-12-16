@@ -20,7 +20,7 @@
 		"recognition":"TemplateMatch",
 		"template":"探险文字.png",
 		"action":"Click",
-		"post_delay":2000,
+		"post_delay":2500,
 		"next":[
 			"探险有返回的队伍",
 			"点击探险"
@@ -32,16 +32,18 @@
 		"recognition":"TemplateMatch",
 		"template":"探险已有返回的队伍.png",
 		"action":"Click",
-		"post_delay":4500,
+		"post_delay":3000,
 		"target":[859,648,0,0],
 		"next":[
 			"探险再次出发"
 		]
 	},
 	"探险再次出发":{
-		"timeout":60000,
+		"timeout":180000,
+		"recognition":"TemplateMatch",
+		"template":"探险再次出发.png",
 		"action":"Click",
-		"post_delay":3000,
+		"post_delay":2000,
 		"target":[1046,655,0,0],
 		"next":[
 			"探险回忆事件",

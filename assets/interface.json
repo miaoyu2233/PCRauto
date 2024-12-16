@@ -23,6 +23,13 @@
     ],
     "task": [
         {
+            "name":"加速器加速PCR",
+            "entry":"打开加速器加速PCR",
+            "option":[
+                "选择加速器"
+            ]
+        },
+        {
             "name": "启动游戏(J)",
             "entry": "启动游戏",
             "option":[
@@ -92,7 +99,7 @@
         {   "name": "探险事件",
             "entry": "探险事件",
             "option":[
-                "怪鸟来袭选择"
+                "概率事件选择"
             ]
         },    
 	    {
@@ -178,6 +185,10 @@
             "name":"公主生日剧情",
             "entry":"生日剧情"
         },
+        {
+            "name":"主线剧情(J)",
+            "entry":"主线剧情"
+        },
         {   "name": "每日免费扭蛋",
             "entry": "免费扭蛋"
         },   
@@ -199,9 +210,44 @@
             "option":[
                 "识别频率"
             ]
+        },
+        {
+            "name":"小工具-剩余时间暂停(J)",
+            "entry":"小工具_剩余时间"
         }
     ],
     "option": {
+        "选择加速器":{
+            "cases":[
+                {
+                    "name":"Uu",
+                    "pipeline_override":{
+                        "加速器":{
+                            "recognition":"TemplateMatch",
+                            "template":"uu.png"
+                        }
+                    }
+                },
+                {
+                    "name":"Biubiu",
+                    "pipeline_override":{
+                        "加速器":{
+                            "recognition":"TemplateMatch",
+                            "template":"buibui.png"
+                        }
+                    }
+                },
+                {
+                    "name":"Surfboard",
+                    "pipeline_override":{
+                        "加速器":{
+                             "recognition":"TemplateMatch",
+                            "template":"su.png"
+                        }
+                    }
+                }
+            ]
+        },
         "选择服务器":{
             "cases":[
                 {
@@ -422,12 +468,12 @@
                 }
             ]
         },
-        "怪鸟来袭选择":{
+        "概率事件选择":{
             "cases":[
                 {
                     "name":"乖乖就范",
                     "pipeline_override":{
-                        "怪鸟来袭选项":{
+                        "来袭选项":{
                             "recognition":"TemplateMatch",
                             "template":"乖乖就范.png"
                         }
