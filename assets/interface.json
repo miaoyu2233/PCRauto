@@ -189,20 +189,9 @@
             "name":"主线剧情(J)",
             "entry":"主线剧情"
         },
-        {   "name": "每日免费扭蛋",
-            "entry": "免费扭蛋"
-        },   
-        {
-            "name": "公会小屋奖励",
-            "entry": "领取公会小屋奖励"
-        },
         {
             "name": "小屋Like(需在小屋页面)",
             "entry": "公会小屋Like"
-        },
-        {
-            "name":"公会乞讨装备",
-            "entry":"公会乞讨"
         },
         {
             "name":"小工具-角色倒下暂停(J)",
@@ -220,20 +209,22 @@
         "选择加速器":{
             "cases":[
                 {
-                    "name":"Uu",
+                    "name":"UU",
                     "pipeline_override":{
                         "加速器":{
-                            "recognition":"TemplateMatch",
-                            "template":"uu.png"
+                            "recognition":"DirectHit",
+                            "action":"StartApp",
+                            "package":"com.netease.uu"
                         }
                     }
                 },
                 {
-                    "name":"Biubiu",
+                    "name":"BiuBiu",
                     "pipeline_override":{
                         "加速器":{
-                            "recognition":"TemplateMatch",
-                            "template":"buibui.png"
+                            "recognition":"DirectHit",
+                            "action":"StartApp",
+                            "package":"com.njh.biubiu"
                         }
                     }
                 },
@@ -241,11 +232,23 @@
                     "name":"Surfboard",
                     "pipeline_override":{
                         "加速器":{
-                             "recognition":"TemplateMatch",
-                            "template":"su.png"
+                            "recognition":"DirectHit",
+                            "action":"StartApp",
+                            "package":"com.getsurfboard"
+                        }
+                    }
+                },
+                {
+                    "name":"ClashMeta",
+                    "pipeline_override":{
+                        "加速器":{
+                            "recognition":"DirectHit",
+                            "action":"StartApp",
+                            "package":"com.github.metacubex.clash.meta"
                         }
                     }
                 }
+
             ]
         },
         "选择服务器":{
@@ -471,20 +474,20 @@
         "概率事件选择":{
             "cases":[
                 {
-                    "name":"乖乖就范",
+                    "name":"100%获得",
                     "pipeline_override":{
-                        "来袭选项":{
+                        "怪鸟来袭选项":{
                             "recognition":"TemplateMatch",
-                            "template":"乖乖就范.png"
+                            "template":"概率获得100.png"
                         }
                     }
                 },
                 {
-                    "name":"挣扎逃跑",
+                    "name":"概率获得",
                     "pipeline_override":{
                         "怪鸟来袭选项":{
                             "recognition":"TemplateMatch",
-                            "template":"怪鸟来袭.png"
+                            "template":"概率事件70.png"
                         }
                     }
                 }

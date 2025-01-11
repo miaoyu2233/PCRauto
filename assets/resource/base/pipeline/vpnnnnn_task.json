@@ -30,7 +30,7 @@
 		"timeout":180000,
 		"threshold":0.9,
 		"recognition":"TemplateMatch",
-        "template":"Scre.png",
+        "template":["Scre.png","ClashMeta.png"],
 		"action":"Click",
 		"post_delay":1500,
 		"next":[

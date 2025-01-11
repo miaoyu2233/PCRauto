@@ -59,7 +59,7 @@
 		"is_sub":true,
 		"timeout":60000,
         "recognition":"OCR",
-		"expected":["防御结果","防禦设定","防御设定"],
+		"expected":["防御结果","防守结果"],
 		"post_delay":1000,
 		"next":[
 			"退出防御完成界面"

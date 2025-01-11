@@ -9,7 +9,7 @@
 		"timeout":60000,
 		"action":"Click",
 		"target":[729,684,0,0],
-		"post_delay":2000,
+		"post_delay":3000,
 		"next":[
 			"进入探险",
 			"选择探险冒险界面"
@@ -18,24 +18,43 @@
 	"进入探险":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"探险文字.png",
+		"template":["探险文字.png"],
 		"action":"Click",
 		"post_delay":2500,
 		"next":[
+			"进入探险判断"
+		]
+	},
+	"进入探险判断":{
+		"next":[
 			"探险有返回的队伍",
-			"点击探险"
+			"点击探险",
+			"进入探险判断"
 		]
 	},
 	"探险有返回的队伍":{
 		"timeout":60000,
-		"rate_limit":2000,
 		"recognition":"TemplateMatch",
 		"template":"探险已有返回的队伍.png",
 		"action":"Click",
-		"post_delay":3000,
+		"post_delay":800,
 		"target":[859,648,0,0],
 		"next":[
-			"探险再次出发"
+			"探险再次出发1"
+		]
+	},
+	"探险再次出发1":{
+		"action":"Click",
+		"target":[1114,662,0,0],
+		"next":[
+			"探险出发弹窗"
+		]
+	},
+	"探险出发弹窗":{	
+		"next":[
+			"探险回忆事件",
+			"探险再次出发",
+			"探险出发弹窗"
 		]
 	},
 	"探险再次出发":{
@@ -43,10 +62,9 @@
 		"recognition":"TemplateMatch",
 		"template":"探险再次出发.png",
 		"action":"Click",
-		"post_delay":2000,
+		"post_delay":2500,
 		"target":[1046,655,0,0],
 		"next":[
-			"探险回忆事件",
 			"探险再次出发2"
 		]
 	},
@@ -55,7 +73,6 @@
 		"post_delay":3000,
 		"target":[1046,655,0,0],
 		"next":[
-			"探险回忆事件",
 			"探险确定再次出发"
 		]
 	},
@@ -64,9 +81,16 @@
 		"recognition":"TemplateMatch",
 		"template":"探险回忆事件.png",
 		"action":"Click",
-		"post_delay":2000,
+		"post_delay":5000,
 		"next":[
-			"探险确定再次出发"
+			"回忆事件获得装备"
+		]
+	},
+	"回忆事件获得装备":{
+		"action":"Click",
+		"target":[1157,648,0,0],
+		"next":[
+			"探险再次出发"
 		]
 	},
 	"探险确定再次出发":{
@@ -99,8 +123,7 @@
 		"template":"探险全部返回.png",
 		"action":"Click",
 		"target":[1222,565,0,0],
-		"post_delay":1000,
-		"rate_limit":2000,
+		"post_delay":600,
 		"next":[
 			"探险没有已返回的队伍",
 			"点击探险2"

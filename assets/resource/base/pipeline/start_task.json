@@ -54,10 +54,10 @@
 		"timeout":120000,
 		"rate_limit":10,
 		"next":[
-			"下载资源",
 			"签到",
 			"公告",
 			"新手冲刺",
+			"下载资源",
 			"掉线",
 			"进入游戏",
 			"游戏进入状态"
@@ -67,16 +67,17 @@
 		"threshold":0.9,
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"下载资源.png",
-		"action":"Click",
+		"template":["资料下载.png","JZ//jz数据下载.png"],
+		"post_delay":2000,
 		"next":[
-			"确定下载资源"
+			"确定下载资源",
+			"确定下载资源状态"
 		]
 	},
 	"确定下载资源":{
 		"timeout":240000,
-		"recognition":"TemplateMatch",
-		"template":"OK.png",
+		"recognition":"OCR",
+		"template":["OK","确认"],
 		"action":"Click",
 		"post_delay":1000,
 		"next":[
@@ -96,7 +97,7 @@
 	"掉线":{
 		"timeout":120000,
 		"recognition":"OCR",
-		"expected":"前往標題",
+		"expected":["前往標題","前往标题"],
 		"action": "Click",
 		"post_delay":3000,
 		"next":[

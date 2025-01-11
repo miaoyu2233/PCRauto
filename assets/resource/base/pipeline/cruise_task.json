@@ -3,13 +3,23 @@
 		"post_delay":4000,
 		"timeout":180000,
 		"next":[
-			"开始巡游"
+			"冒险选择巡游"
+		]
+	},
+	"冒险选择巡游":{
+		"timeout":60000,
+		"action":"Click",
+		"target":[729,684,0,0],
+		"post_delay":2000,
+		"next":[
+			"开始巡游",
+			"冒险选择巡游"
 		]
 	},
 	"开始巡游":{
 		"timeout":180000,
 		"recognition":"TemplateMatch",
-		"template":"巡游.png",
+		"template":["巡游.png","巡游01.png"],
 		"action":"Click",
 		"next":[
 			"巡游界面"
@@ -26,14 +36,16 @@
 		]
 	},
 	"是否吃料理":{
+		"timeout":180000,
 		"is_sub":true,
 		"next":[
-			"吃料理"
+			"吃料理",
+			"巡游事件"
 		]
 	},
 	"吃料理":{
 		"timeout":180000,
-		"post_delay":500,
+		"post_delay":1000,
 		"rate_limit":100,
 		"recognition":"TemplateMatch",
 		"template":["巡游吃料理.png","吃料理2.png"],
@@ -65,6 +77,7 @@
 		]
 	},
 	"当前持有料理":{
+		"threshold":0.9,
 		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"料理选择界面.png",
@@ -133,7 +146,8 @@
 			"Delicacy\\炽热烤鸡拼盘.png",
 			"Delicacy\\即食八分饱咖喱.png",
 			"Delicacy\\烂漫牛排沙拉.png",
-			"Delicacy\\冲刺三明治.png"
+			"Delicacy\\冲刺三明治.png",
+			"Delicacy\\爱情满满汉堡排.png"
 		],
 		"action":"Click",
 		"target_offset":[407,58,0,0],
@@ -154,7 +168,8 @@
 			"Delicacy\\贪吃鬼噗噗肉包.png",
 			"Delicacy\\看透真相的糖果巧克力.png",
 			"Delicacy\\彩虹招财鲷鱼烧.png",
-			"Delicacy\\好好休息沙拉.png"
+			"Delicacy\\好好休息沙拉.png",
+			"Delicacy\\不可思议甜苹果.png"
 		],
 		"action":"Click",
 		"target_offset":[407,58,0,0],
@@ -376,7 +391,7 @@
 	},
 	"掷骰子":{
 		"timeout":120000,
-		"post_delay":1000,
+		"post_delay":3000,
 		"threshold":0.8,
 		"recognition":"TemplateMatch",
 		"template":["掷骰子.png","3个骰子.png"],
@@ -404,12 +419,14 @@
 	"巡游事件":{
 		"timeout":180000,
 		"rate_limit":10,
-		"post_delay":1000,
+		"post_delay":100,
 		"next":[
 			"接水果游戏",
 			"巡游羁绊效果y",
 			"里程商店",
+			"里程商店购买完成",
 			"巡游路口",
+			"料理上限",
 			"料理已满",
 			"里程转蛋",
 			"巡游获得奖励",
@@ -419,7 +436,7 @@
 			"巡游获得抽奖券",
 			"巡游捷径",
 			"巡游回合到达",
-			"是否吃料理",
+			"吃料理",
 			"巡游事件"
 		]
 	},
@@ -427,9 +444,9 @@
 		"action":"DoNothing"
 	},
 	"巡游获得抽奖券":{
-		"rate_limit":10,
+		"threshold":0.9,
 		"recognition":"TemplateMatch",
-		"template":"巡游获得抽奖券",
+		"template":"巡游获得抽奖券.png",
 		"post_delay":1000,
 		"next":[
 			"领取抽奖券"
@@ -440,13 +457,11 @@
 		"key":111
 	},
 	"巡游获得奖励":{
-		"rate_limit":10,
 		"recognition":"TemplateMatch",
 		"template":"巡游活动奖励.png",
 		"action":"Click"
 	},
 	"巡游宝物获得":{
-		"rate_limit":10,
 		"recognition":"OCR",
 		"expected":"TOUCH!",
 		"action": "Click",
@@ -462,7 +477,6 @@
 		"target":[647,644,0,0]
 	},
 	"巡游获得料理":{
-		"rate_limit":10,
 		"recognition":"TemplateMatch",
 		"template":"巡游获得料理.png",
 		"post_delay":5430,
@@ -476,7 +490,6 @@
 		"post_delay":1400
 	},
 	"巡游羁绊效果y":{
-		"rate_limit":10,
 		"pre_delay":2500,
 		"recognition":"TemplateMatch",
 		"template":"羁绊效果y.png",
@@ -485,7 +498,6 @@
 		"post_delay":300
 	},
 	"接水果游戏":{
-		"rate_limit":10,
 		"timeout":240000,
 		"recognition":"TemplateMatch",
 		"template":["接水果.png","接水果2.png"],
@@ -528,14 +540,12 @@
 		"target":[1136,651,0,0]
 	},
 	"巡游路口":{
-		"rate_limit":10,
 		"recognition":"TemplateMatch",
 		"template":"巡游路口.png",
 		"target_offset":[0,100,0,0],
 		"action":"Click"
 	},
 	"巡游回合到达":{
-		"rate_limit":10,
 		"recognition":"TemplateMatch",
 		"template":"巡游回合到达.png",
 		"target":[697,637,0,0],
@@ -566,8 +576,17 @@
 		"action":"Click",
 		"post_delay":1600
 	},
+	"料理上限":{
+		"recognition":"TemplateMatch",
+		"template":"料理超过持有上限.png",
+		"action":"Click",
+		"target":[654,496,0,0],
+		"post_delay":1000,
+		"next":[
+			"料理已满"
+		]
+	},
 	"料理已满":{
-		"rate_limit":10,
 		"recognition":"TemplateMatch",
 		"template":"料理已满.png",
 		"action":"Click",
@@ -614,7 +633,6 @@
 		"action":"DoNothing"
 	},
 	"料理溢出":{
-		"rate_limit":10,
 		"recognition":"TemplateMatch",
 		"template":"料理溢出.png",
 		"post_delay":600,
@@ -623,11 +641,11 @@
 		]
 	},
 	"里程商店":{
-		"rate_limit":10,
 		"recognition":"TemplateMatch",
-		"template":"里程商店.png",
+		"template":["里程商店.png","里程商店01.png"],
 		"target":[1031,162,0,0],
 		"action":"Click",
+		"pre_delay":1000,
 		"post_delay":1000,
 		"next":[
 			"商店里程不足",
@@ -635,6 +653,7 @@
 		]
 	},
 	"商店里程不足":{
+		"threshold":0.8,
 		"recognition":"TemplateMatch",
 		"template":"商店里程不足.png",
 		"next":[
@@ -659,11 +678,12 @@
 		]
 	},
 	"里程商店4":{
-		"timeout":60000,
-        "recognition":"OCR",
-		"expected":["OK","确认"],
+		"timeout":120000,
+		"recognition":"TemplateMatch",
+		"template":"巡游商店购买完成.png",
 		"action":"Click",
-		"post_delay":1000,
+		"target":[654,644,0,0],
+		"post_delay":1500,
 		"next":[
 			"里程商店5"
 		]
@@ -672,8 +692,18 @@
 		"target":[791,615,0,0],
 		"action":"Click"
 	},
+	"里程商店购买完成":{
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"巡游商店购买完成.png",
+		"action":"Click",
+		"target":[654,644,0,0],
+		"post_delay":1500,
+		"next":[
+			"里程商店5"
+		]
+	},
 	"里程转蛋":{
-		"rate_limit":10,
 		"recognition":"TemplateMatch",
 		"template":"稀有转蛋.png",
 		"action":"Click",
@@ -691,14 +721,13 @@
 		]
 	},
 	"巡游获得宝物":{
-		"rate_limit":10,
+		"timeout":180000,
 		"recognition":"TemplateMatch",
 		"template":"巡游获得宝物.png",
 		"target":[607,637,0,0],
 		"action":"Click"
 	},
 	"巡游捷径":{
-		"rate_limit":10,
 		"recognition":"TemplateMatch",
 		"template":"巡游捷径.png",
 		"post_delay":1000,
@@ -720,5 +749,11 @@
 		"recognition":"TemplateMatch",
 		"template":"巡游离开捷径.png",
 		"action":"Click"
+	},
+	"巡游骰子界面":{
+		"threshold":0.8,
+		"recognition":"TemplateMatch",
+		"template":["掷骰子.png","3个骰子.png"],
+		"action":"DoNothing"
 	}
 }

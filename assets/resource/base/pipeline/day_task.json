@@ -19,9 +19,18 @@
 		"recognition":"TemplateMatch",
 		"template":["一键执行.png","JZ\\行程表一键执行.png"],
 		"action":"Click",
-		"post_delay":2000,
 		"next":[
+			"行程表完成判断",
 			"行程表事件"
+		]
+	},
+	"行程表完成判断":{
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":["没有要扫荡的项目.png","JZ//jz_没有跳过的项目.png"],
+		"post_delay":1000,
+		"next":[
+			"离开行程表"
 		]
 	},
 	"行程表事件":{
