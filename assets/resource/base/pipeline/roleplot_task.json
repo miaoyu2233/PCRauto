@@ -111,18 +111,35 @@
 		"timeout":3600000,
 		"recognition":"TemplateMatch",
 		"template":["剧情菜单.png","JZ\\jz剧情菜单.png","JP\\jp剧情菜单.png"],
-		"pre_delay":2620,
+		"pre_delay":2000,
 		"action":"Click",
-		"post_delay":630,
+		"post_delay":800,
 		"next":[
-			"跳过角色剧情"
+			"显示剧情速度",
+			"跳过角色剧情简体"
 		]
 	},
-	"跳过角色剧情":{
+	"显示剧情速度":{
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"显示速度.png",
+		"next":[
+			"跳过角色剧情繁体"
+		]
+	},
+	"跳过角色剧情繁体":{
+		"target":[1182,169,0,0],
+		"action":"Click",
+		"post_delay":1400,
+		"next":[
+			"确定跳过角色剧情"
+		]
+	},
+	"跳过角色剧情简体":{
 		"timeout":380000,
 		"target":[1089,68,0,0],
 		"action":"Click",
-		"post_delay":1410,
+		"post_delay":1400,
 		"next":[
 			"确定跳过角色剧情"
 		]
@@ -258,7 +275,7 @@
 	},
 	"JP跳过角色剧情":{
 		"timeout":380000,
-		"target":[1026,80,0,0],
+		"target":[1119,181,0,0],
 		"action":"Click",
 		"post_delay":1410,
 		"next":[
