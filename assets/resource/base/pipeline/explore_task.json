@@ -20,16 +20,15 @@
 	"进入探险2":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"探险文字.png",
+		"template":["探险文字.png","JZ\\探险.png"],
 		"action":"Click",
-		"pre_delay":4990,
-		"post_delay":6780
+		"post_delay":5000
 	},
 	"开始进入探险事件":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"冒险目的地.png",
-		"post_delay":3213,
+		"template":["冒险目的地.png","JZ\\jz_冒险目的地.png"],
+		"post_delay":3500,
 		"next":[
 			"进入探险事件new",
 			"探险事件已完成"
@@ -43,23 +42,45 @@
 		"expected":["SPECIAL!","EVENT!"],
 		"roi":[1160,187,160,160],
 		"action":"Click",
-		"post_delay":1000,
+		"post_delay":1500,
 		"next":[
 			"进入探险事件"
 		]
 	},
 	"进入探险事件":{
 		"timeout":60000,
-		"post_delay":1320,
-		"pre_delay":2312,
+		"post_delay":1000,
 		"recognition":"OCR",
 		"expected":["SPECIAL!","EVENT!"],
 		"roi":[53,86,1096,540],
 		"target_offset":[0,-100,0,0],
 		"action":"Click",
 		"next":[
+			"探险事件判断"
+		]
+	},
+	"探险事件判断":{
+		"next":[
 			"探险门",
 			"探险对话事件",
+			"探险获得装备",
+			"概率事件",
+			"探险事件判断"
+		]
+	},
+	"概率事件":{
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":"概率事件70.png",
+		"next":[
+			"怪鸟来袭选项"
+		]
+	},
+	"怪鸟来袭选项":{
+		"timeout":60000,
+		"action":"Click",
+		"target_offset":[0,30,0,0],
+		"next":[
 			"探险获得装备"
 		]
 	},
@@ -78,25 +99,45 @@
 		"recognition":"TemplateMatch",
 		"template":"探险门前进.png",
 		"action":"Click",
-		"post_delay":4617,
+		"post_delay":6000,
 		"next":[
 			"探险门前进2"
 		]
 	},
 	"探险门前进2":{
-		"post_delay":9820,
+		"post_delay":5000,
 		"action":"Click",
 		"target":[654,324,0,0],
 		"next":[
-			"探险门失败",
-			"探险门"
+			"探险门事件"
 		]
+	},
+	"探险门事件":{
+		"next":[
+			"探险门失败",
+			"探险门获得装备",
+			"探险门",
+			"探险门事件结束",
+			"探险门事件"
+		]
+	},
+	"探险门事件结束":{
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":"探险全部返回.png"
+	},
+	"探险门获得装备":{
+		"is_sub":true,
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":"探险门获得了.png",
+		"action":"Click"
 	},
 	"探险门失败":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":"探险门失败.png",
-		"post_delay":2017,
+		"template":["探险门失败.png","探索结束.png"],
+		"post_delay":2000,
 		"next":[
 			"探险门失败2"
 		]
@@ -107,17 +148,18 @@
 		"target":[624,354,0,0]
 	},
 	"探险获得装备":{
+		"timeout":60000,
 		"post_delay":1000,
 		"pre_delay":1000,
 		"recognition":"OCR",
-		"expected":"得了",
+		"expected":["得了","获得了"],
 		"action":"Click"
 	},
 	"探险对话事件":{
 		"timeout":60000,
 		"pre_delay":1602,
 		"recognition":"TemplateMatch",
-		"template":"探险对话事件跳过.png",
+		"template":["探险对话事件跳过.png","JZ\\jz探险对话事件.png"],
 		"action":"Click",
 		"post_delay":2505,
 		"next":[
@@ -132,8 +174,12 @@
 		"target":[654,324,0,0]
 	},
 	"探险事件已完成":{
-		"pre_delay":1402,
+		"pre_delay":1500,
 		"action":"Click",
-		"target":[118,684,0,0]
+		"target":[118,684,0,0],
+		"post_delay":1000,
+		"next":[
+			"结束任务"
+		]
 	}
 }

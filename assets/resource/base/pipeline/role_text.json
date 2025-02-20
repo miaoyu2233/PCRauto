@@ -1,4 +1,11 @@
-{
+{	
+	"杏奈_海盗":{
+		"threshold":0.9,
+		"recognition":"TemplateMatch",
+		"template":"role\\杏奈_海盗.png",
+		"action":"Click",
+		"target_offset":[70,-12,0,0]
+	},
 	"碧_工作服":{
 		"threshold":0.9,
 		"recognition":"TemplateMatch",

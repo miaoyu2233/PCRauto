@@ -27,7 +27,7 @@
 	},
 	"选择遗迹":{
 		"action":"Click",
-		"target":[708,511,0,0],
+		"target":[787,453,0,0],
 		"post_delay":2990,
 		"next":[
 			"选择遗迹2"
@@ -58,7 +58,27 @@
 		"target":[751,493,0,0],
 		"post_delay":1730,
 		"next":[
+			"遗迹次数不足",
 			"选择遗迹4x"
+		]
+	},
+	"遗迹次数不足":{
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":["确定要恢复吗.png","JZ//jz_要回复吗.png"],
+		"action":"Click",
+		"target":[496,493,0,0],
+		"post_delay":1000,
+		"next":[
+			"遗迹次数不足2"
+		]
+	},
+	"遗迹次数不足2":{
+		"action":"Click",
+		"target":[ 884,604,0,0],
+		"post_delay":1000,
+		"next":[
+			"选择遗迹6"
 		]
 	},
 	"选择遗迹4x":{
@@ -66,6 +86,7 @@
 		"recognition":"TemplateMatch",
 		"template":["调查扫荡结果.png","JZ\\jz扫荡结果.png"],
 		"target":[672,633,0,0],
+		"pre_delay":300,
 		"post_delay":300,
 		"action":"Click",
 		"next":[
@@ -76,6 +97,7 @@
 		"timeout":60000,
 		"recognition":"TemplateMatch",
 		"template":["遗迹扫荡完成.png","JZ\\jz遗迹扫荡完成.png"],
+		"pre_delay":500,
 		"target":[672,633,0,0],
 		"post_delay":3000,
 		"action":"Click",

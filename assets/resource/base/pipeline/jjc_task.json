@@ -38,8 +38,11 @@
 		"recognition":"TemplateMatch",
 		"template":["战斗jjc.png","JZ//jz战斗jjc.png"],
 		"pre_delay":3000,
+		"post_delay":1000,
 		"action": "Click",
 		"next":[
+			"jjc防御完成or",
+			"jjc防御完成",
 			"jjc战斗"
 		]
 	},
@@ -52,21 +55,46 @@
 		"action":"Click",
 		"target":[661,514,0,0]
 	},
+	"jjc防御完成":{
+		"is_sub":true,
+		"timeout":60000,
+        "recognition":"OCR",
+		"expected":["防御结果","防守结果"],
+		"post_delay":1000,
+		"next":[
+			"退出防御完成界面"
+		]
+	},
+	"jjc防御完成or":{
+		"is_sub":true,
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":["jjc防御结果.png"],
+		"post_delay":1000,
+		"next":[
+			"退出防御完成界面"
+		]
+	},
+	"退出防御完成界面":{
+		"action":"Key",
+		"key":111,
+		"post_delay":1500
+	},
 	"jjc战斗开始":{
 		"is_sub":true,
 		"timeout":120000,
 		"recognition":"TemplateMatch",
 		"template":["jjc战斗开始.png","JZ//jz_jjc战斗开始.png"],
 		"action":"Click",
-		"post_delay":1000,
 		"next":[
 			"jjc跳过"
 		]
 	},
 	"jjc跳过":{
-		"timeout":180000,
+		"timeout":240000,
 		"recognition":"TemplateMatch",
 		"template":["jjc跳过.png","JZ//jz_jjc跳过.png"],
+		"pre_delay":300,
 		"action":"Click",
 		"post_delay":1000,
 		"next":[
@@ -74,7 +102,7 @@
 		]
 	},
 	"战斗jjc下一步":{
-		"timeout":180000,
+		"timeout":240000,
 		"recognition":"OCR",
 		"expected":"下一步",
 		"action":"Click",
@@ -124,7 +152,7 @@
 	"jjc返回主页":{
 		"action":"Key",
 		"key":111,
-		"post_delay":2930,
+		"post_delay":3000,
 		"next":[
 			"进入冒险页面公主jjc"
 		]
@@ -134,7 +162,8 @@
 		"target":[686,698,0,0],
 		"post_delay":1000,
 		"next":[
-			"公主jjc"
+			"公主jjc",
+			"进入冒险页面公主jjc"
 		]
 	},
 	"公主jjc":{
@@ -142,14 +171,17 @@
 		"recognition":"TemplateMatch",
 		"template":["公主jjc.png","JZ//jz公主jjc.png"],
 		"action":"Click",
+		"post_delay":3000,
 		"next":[
+			"jjc防御完成or",
+			"jjc防御完成",
 			"开始公主jjc战斗"
 		]	
 	},
 	"开始公主jjc战斗":{
-		"pre_delay":3000,
 		"action":"Click",
 		"target":[661,514,0,0],
+		"post_delay":1000,
 		"next":[
 			"公主jjc选择队伍2"
 		]
@@ -172,21 +204,20 @@
 		]
 	},
 	"公主jjc开始战斗":{
-		"timeout":60000,
+		"timeout":420000,
 		"recognition":"TemplateMatch",
 		"template":["jjc战斗开始.png","JZ//jz_jjc战斗开始.png"],
 		"action":"Click",
-		"post_delay":1000,
 		"next":[
 			"公主jjc跳过"
 		]
 	},
 	"公主jjc跳过":{
-		"timeout":120000,
+		"timeout":420000,
 		"recognition":"TemplateMatch",
 		"template":["jjc跳过.png","JZ//jz_jjc跳过.png"],
 		"action":"Click",
-		"pre_delay":1000,
+		"pre_delay":300,
 		"post_delay":12000,
 		"next":[
 			"公主jjc下一步"

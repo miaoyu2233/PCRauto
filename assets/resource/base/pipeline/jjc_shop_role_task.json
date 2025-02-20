@@ -18,7 +18,8 @@
     },
     "进入竞技场商店2":{
         "timeout":60000,
-        "threshold":0.9,
+        "threshold":0.6,
+        "roi":[194,72,1000,40],
         "recognition":"TemplateMatch",
 		"template":"竞技场商店.png",
 		"action":"Click",
@@ -144,6 +145,7 @@
     },
     "竞技场碎片重置确认":{
         "threshold":0.9,
+        "timeout":60000,
         "recognition":"TemplateMatch",
 		"template":["碎片重置确认.png","JZ\\jz碎片重置确认.png"],
         "action":"Click",

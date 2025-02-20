@@ -28,6 +28,7 @@
 	"开始购买":{
 		"timeout":60000,
 		"is_sub":true,
+		"threshold":0.6,
 		"recognition":"TemplateMatch",
 		"template":["已进入商店.png","JZ\\jz已进入商店.png"],
 		"post_delay":1000,
@@ -38,7 +39,7 @@
 	"选中一般商店":{
 		"timeout":60000,
 		"recognition":"TemplateMatch",
-		"template":["一般商店.png","JZ\\jz一般商店.png"],
+		"template":["一般商店.png","JZ\\jz一般商店.png","JZ\\jz通常商店.png"],
 		"action":"Click",
 		"post_delay":1000,
 		"next":[

@@ -12,7 +12,7 @@
 		"is_sub":true,
 		"action":"Click",
 		"target":[269,680,0,0],
-		"post_delay":3120,
+		"post_delay":3000,
 		"next":[
 			"选择角色分类"
 		]
@@ -88,7 +88,7 @@
 	"羁绊剧情2":{
 		"timeout":120000,
 		"action":"Click",
-		"post_delay":1810,
+		"post_delay":1800,
 		"target":[891,295,0,0],
 		"next":[
 			"羁绊已满",
@@ -99,7 +99,7 @@
 		"timeout":60000,
 		"is_sub":true,
 		"recognition":"TemplateMatch",
-		"template":["羁绊已上限.png","JZ\\jz_好感度已上限.png"],
+		"template":["羁绊已上限.png","蛋糕不足.png","JZ\\jz_好感度已上限.png","JZ\\jz蛋糕不足.png"],
 		"action":"Key",
 		"post_delay":710,
 		"key":111,

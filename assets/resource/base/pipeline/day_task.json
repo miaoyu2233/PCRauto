@@ -19,9 +19,18 @@
 		"recognition":"TemplateMatch",
 		"template":["一键执行.png","JZ\\行程表一键执行.png"],
 		"action":"Click",
-		"post_delay":2000,
 		"next":[
+			"行程表完成判断",
 			"行程表事件"
+		]
+	},
+	"行程表完成判断":{
+		"timeout":60000,
+		"recognition":"TemplateMatch",
+		"template":["没有要扫荡的项目.png","JZ//jz_没有跳过的项目.png"],
+		"post_delay":1000,
+		"next":[
+			"离开行程表"
 		]
 	},
 	"行程表事件":{
@@ -57,6 +66,8 @@
 	},
 	"购买mana是否花费钻石":{
 		"post_delay":1000,
+		"action":"Click",
+		"target":[539,500,0,0],
 		"next":[
 			"购买mana2"
 		]
@@ -83,7 +94,6 @@
 		]
 	},
 	"扫荡地下城下一步":{
-		"post_delay":1000,
 		"target":[665,648,0,0],
 		"action":"Click",
 		"next":[
@@ -91,10 +101,11 @@
 		]
 	},
 	"扫荡地下城下一步2":{
+		"recognition":"OCR",
+		"expected":["OK","确认"],
 		"timeout":60000,
 		"target":[665,648,0,0],
 		"action":"Click",
-		"post_delay":1000,
 		"next":[
 			"mana冒险"
 		]
@@ -111,7 +122,6 @@
 			]
 	},
 	"mana冒险下一步":{
-		"post_delay":1000,
 		"target":[636,640,0,0],
 		"action":"Click",
 		"next":[
@@ -119,10 +129,11 @@
 		]
 	},	
 	"mana冒险下一步2":{
+		"recognition":"OCR",
+		"expected":["OK","确认"],
 		"timeout":60000,
 		"target":[636,640,0,0],
 		"action":"Click",
-		"post_delay":1000,
 		"next":[
 			"经验值冒险"
 		]
@@ -139,7 +150,6 @@
 			]
 	},
 	"经验值冒险下一步":{
-		"post_delay":1000,
 		"target":[661,648,0,0],
 		"action":"Click",
 		"next":[
@@ -147,9 +157,11 @@
 		]
 	},
 	"经验值冒险下一步2":{
+		"timeout":60000,
+		"recognition":"OCR",
+		"expected":["OK","确认"],
 		"target":[661,648,0,0],
 		"action":"Click",
-		"post_delay":1000,
 		"next":[
 			"经验值冒险下一步3"
 		]

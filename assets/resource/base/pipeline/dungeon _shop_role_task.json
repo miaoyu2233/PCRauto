@@ -18,7 +18,8 @@
     },
     "进入地下城商店2":{
         "timeout":60000,
-        "threshold":0.9,
+        "threshold":0.6,
+        "roi":[194,72,1000,40],
         "recognition":"TemplateMatch",
 		"template":["地下城商店.png","JZ\\jz地下城商店.png"],
 		"action":"Click",
@@ -141,6 +142,7 @@
         ]
     },
     "碎片重置确认":{
+        "timeout":60000,
         "threshold":0.9,
         "recognition":"TemplateMatch",
 		"template":["碎片重置确认.png","JZ\\jz碎片重置确认.png"],
@@ -150,7 +152,6 @@
         "next":[
             "识别地下城碎片"
         ]
-
     },
     "点击碎片刷新":{
         "target":[794,583,0,0],
@@ -160,6 +161,7 @@
         ]
     },
     "角色碎片回到主页":{
+        "pre_delay":2000,
 		"target":[118,680,0,0],
 		"action":"Click",
         "post_delay":1000,
