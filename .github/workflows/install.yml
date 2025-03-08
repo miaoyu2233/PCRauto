@@ -23,7 +23,11 @@ jobs:
   meta:
     runs-on: ubuntu-latest
     steps:
+<<<<<<< HEAD
       - uses: actions/checkout@v4
+=======
+      - uses: actions/checkout@v3
+>>>>>>> afc8e6a (Initial commit)
         with:
           fetch-depth: 0
       - id: set_tag
@@ -49,25 +53,44 @@ jobs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
 
+<<<<<<< HEAD
   install:
     needs: meta
     runs-on: macos-latest
     strategy:
       matrix:
         os: [win, macos, linux, android]
+=======
+  windows:
+    needs: meta
+    runs-on: windows-latest
+    strategy:
+      matrix:
+>>>>>>> afc8e6a (Initial commit)
         arch: [aarch64, x86_64]
       fail-fast: false
 
     steps:
+<<<<<<< HEAD
       - uses: actions/checkout@v4
+=======
+      - uses: actions/checkout@v3
+>>>>>>> afc8e6a (Initial commit)
         with:
           submodules: true
 
       - name: Download MaaFramework
+<<<<<<< HEAD
         uses: robinraju/release-downloader@v1
         with:
           repository: MaaXYZ/MaaFramework
-          fileName: "PCRauto-${{ matrix.os }}-${{ matrix.arch }}*"
+          fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
+=======
+        uses: robinraju/release-downloader@v1.8
+        with:
+          repository: MaaXYZ/MaaFramework
+          fileName: "MAA-win-${{ matrix.arch }}*"
+>>>>>>> afc8e6a (Initial commit)
           latest: true
           out-file-path: "deps"
           extract: true
@@ -77,6 +100,7 @@ jobs:
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
 
+<<<<<<< HEAD
       - name: Download MFAWPF
         if: ${{ matrix.os == 'win' }}
         uses: robinraju/release-downloader@v1
@@ -113,14 +137,92 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: MaaXXX-${{ matrix.os }}-${{ matrix.arch }}
+=======
+      - uses: actions/upload-artifact@v3
+        with:
+          name: MaaXXX-win-${{ matrix.arch }}
+          path: "install"
+
+  ubuntu:
+    needs: meta
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [aarch64, x86_64]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Download MaaFramework
+        uses: robinraju/release-downloader@v1.8
+        with:
+          repository: MaaXYZ/MaaFramework
+          fileName: "MAA-linux-${{ matrix.arch }}*"
+          latest: true
+          out-file-path: "deps"
+          extract: true
+
+      - name: Install
+        shell: bash
+        run: |
+          python ./install.py ${{ needs.meta.outputs.tag }}
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: MaaXXX-linux-${{ matrix.arch }}
+          path: "install"
+
+  macos:
+    needs: meta
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        arch: [aarch64, x86_64]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Download MaaFramework
+        uses: robinraju/release-downloader@v1.8
+        with:
+          repository: MaaXYZ/MaaFramework
+          fileName: "MAA-macos-${{ matrix.arch }}*"
+          latest: true
+          out-file-path: "deps"
+          extract: true
+
+      - name: Install
+        shell: bash
+        run: |
+          python ./install.py ${{ needs.meta.outputs.tag }}
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: MaaXXX-macos-${{ matrix.arch }}
+>>>>>>> afc8e6a (Initial commit)
           path: "install"
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
+<<<<<<< HEAD
     needs: install
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
+=======
+    needs: [meta, windows, ubuntu, macos]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v3
+>>>>>>> afc8e6a (Initial commit)
         with:
           path: assets
 
@@ -129,9 +231,16 @@ jobs:
           for f in *; do
             (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
           done
+<<<<<<< HEAD
 
       - uses: softprops/action-gh-release@v2
         with:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
           generate_release_notes: true
+=======
+      - uses: softprops/action-gh-release@v1
+        with:
+          files: assets/*
+          tag_name: ${{ needs.meta.outputs.tag }}
+>>>>>>> afc8e6a (Initial commit)
