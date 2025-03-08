@@ -69,10 +69,23 @@ def install_chores():
         install_path,
     )
 
+<<<<<<< HEAD
+def install_agent():
+    shutil.copytree(
+        working_dir / "agent",
+        install_path / "agent",
+        dirs_exist_ok=True,
+    )
+=======
+>>>>>>> afc8e6a (Initial commit)
 
 if __name__ == "__main__":
     install_deps()
     install_resource()
     install_chores()
+<<<<<<< HEAD
+    install_agent()
+=======
+>>>>>>> afc8e6a (Initial commit)
 
     print(f"Install to {install_path} successfully.")
