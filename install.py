@@ -15,7 +15,7 @@ version = len(sys.argv) > 1 and sys.argv[1] or "v0.0.1"
 def install_deps():
     if not (working_dir / "deps" / "bin").exists():
         print("Please download the MaaFramework to \"deps\" first.")
-        print("请先下载 MaaFramework 到 \"deps\"。")
+        print("璇峰厛涓嬭浇 MaaFramework 鍒? \"deps\"銆?")
         sys.exit(1)
 
     shutil.copytree(
@@ -69,23 +69,17 @@ def install_chores():
         install_path,
     )
 
-<<<<<<< HEAD
 def install_agent():
     shutil.copytree(
         working_dir / "agent",
         install_path / "agent",
         dirs_exist_ok=True,
     )
-=======
->>>>>>> afc8e6a (Initial commit)
 
 if __name__ == "__main__":
     install_deps()
     install_resource()
     install_chores()
-<<<<<<< HEAD
     install_agent()
-=======
->>>>>>> afc8e6a (Initial commit)
 
     print(f"Install to {install_path} successfully.")
